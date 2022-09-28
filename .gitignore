@@ -1,5 +1,3 @@
-# Ignore python compiled file
-*.py[cod]
 
 # Ignore tmp file
 *.sw?
