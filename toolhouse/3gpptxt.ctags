@@ -1,0 +1,4 @@
+--langdef=3gpptxt
+--langmap=3gpptxt:.3gpptxt
+--kinddef-3gpptxt=f,field,field of text
+--regex-3gpptxt=/^([0-9]{1,2})(([.]){1}[a-zA-Z0-9]{1,2})*(\s)*(\s\S)+/\1/f/

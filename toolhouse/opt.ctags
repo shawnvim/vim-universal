@@ -1,0 +1,8 @@
+--kinddef-Erlang=R,Record,Record definitions with macro name
+--regex-Erlang=/^-\s*(record|define)\s*\(?\s*\?([^ \t]+),/\2/R/{exlusive}
+--kinddef-Erlang=a,atom,atom definitions
+--regex-Erlang=/^-\s*(record|define)\s*\(?\s*'([^ \t]+)'/\2/a/{exlusive}
+--map-c=+.idl
+--kinds-c=dstg
+--kinds-ttcn=MtcdfsCaGP
+--languages=-rake
