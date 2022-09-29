@@ -25,3 +25,6 @@
 [submodule "pack/original/start/vim-cursorword"]
 	path = pack/original/start/vim-cursorword
 	url = https://github.com/itchyny/vim-cursorword
+[submodule "pack/original/start/vim-fugitive"]
+	path = pack/original/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
