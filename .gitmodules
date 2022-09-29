@@ -31,3 +31,6 @@
 [submodule "pack/original/start/vim-gutentags"]
 	path = pack/original/start/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags
+[submodule "pack/original/start/vim-interestingwords"]
+	path = pack/original/start/vim-interestingwords
+	url = https://github.com/lfv89/vim-interestingwords
