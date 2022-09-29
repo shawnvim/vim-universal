@@ -1,3 +1,6 @@
 [submodule "pack/original/start/LeaderF"]
 	path = pack/original/start/LeaderF
 	url = https://github.com/Yggdroot/LeaderF
+[submodule "pack/original/start/asyncrun.vim"]
+	path = pack/original/start/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim
