@@ -64,3 +64,6 @@
 [submodule "pack/forked/start/vim-move"]
 	path = pack/forked/start/vim-move
 	url = https://github.com/shawnvim/vim-move
+[submodule "pack/forked/start/vim-commentary"]
+	path = pack/forked/start/vim-commentary
+	url = https://github.com/shawnvim/vim-commentary
