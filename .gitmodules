@@ -46,3 +46,6 @@
 [submodule "pack/original/start/vim-rooter"]
 	path = pack/original/start/vim-rooter
 	url = https://github.com/airblade/vim-rooter
+[submodule "pack/forked/start/gruvbox"]
+	path = pack/forked/start/gruvbox
+	url = https://github.com/shawnvim/gruvbox
