@@ -43,3 +43,6 @@
 [submodule "pack/original/start/vim-rhubarb"]
 	path = pack/original/start/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb
+[submodule "pack/original/start/vim-rooter"]
+	path = pack/original/start/vim-rooter
+	url = https://github.com/airblade/vim-rooter
