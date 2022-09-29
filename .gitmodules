@@ -4,3 +4,6 @@
 [submodule "pack/original/start/asyncrun.vim"]
 	path = pack/original/start/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim
+[submodule "pack/original/start/ListToggle"]
+	path = pack/original/start/ListToggle
+	url = https://github.com/Valloric/ListToggle
