@@ -13,3 +13,6 @@
 [submodule "pack/original/start/nerdtree"]
 	path = pack/original/start/nerdtree
 	url = https://github.com/preservim/nerdtree
+[submodule "pack/original/start/QFGrep"]
+	path = pack/original/start/QFGrep
+	url = https://github.com/sk1418/QFGrep
