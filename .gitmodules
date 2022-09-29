@@ -19,3 +19,6 @@
 [submodule "pack/forked/start/quickfix-reflector.vim"]
 	path = pack/forked/start/quickfix-reflector.vim
 	url = https://github.com/shawnvim/quickfix-reflector.vim
+[submodule "pack/original/start/rainbow_csv"]
+	path = pack/original/start/rainbow_csv
+	url = https://github.com/mechatroner/rainbow_csv
