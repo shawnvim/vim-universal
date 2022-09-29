@@ -195,10 +195,14 @@ function! setup#TerminalMacMode()
     map £ <A-3>
     map ¢ <A-4>
 
+    " map ˜ <A-n>
     map å <A-a>
     map ∫ <A-b>
-"     map ˜ <A-n>
     map œ <A-q>
+
+    map ∆ <A-j>
+    map ˚ <A-k>
+
 endfunc
 
 "-----------------------------------------------------------------------------"
