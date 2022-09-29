@@ -40,3 +40,6 @@
 [submodule "pack/forked/start/vim-quickui"]
 	path = pack/forked/start/vim-quickui
 	url = https://github.com/shawnvim/vim-quickui
+[submodule "pack/original/start/vim-rhubarb"]
+	path = pack/original/start/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb
