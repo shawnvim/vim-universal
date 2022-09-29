@@ -16,3 +16,6 @@
 [submodule "pack/original/start/QFGrep"]
 	path = pack/original/start/QFGrep
 	url = https://github.com/sk1418/QFGrep
+[submodule "pack/forked/start/quickfix-reflector.vim"]
+	path = pack/forked/start/quickfix-reflector.vim
+	url = https://github.com/shawnvim/quickfix-reflector.vim
