@@ -34,3 +34,6 @@
 [submodule "pack/original/start/vim-interestingwords"]
 	path = pack/original/start/vim-interestingwords
 	url = https://github.com/lfv89/vim-interestingwords
+[submodule "pack/original/start/vim-peekaboo"]
+	path = pack/original/start/vim-peekaboo
+	url = https://github.com/junegunn/vim-peekaboo
