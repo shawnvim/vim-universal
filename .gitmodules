@@ -61,3 +61,6 @@
 [submodule "pack/forked/start/vim-ttcn"]
 	path = pack/forked/start/vim-ttcn
 	url = https://github.com/shawnvim/vim-ttcn
+[submodule "pack/forked/start/vim-move"]
+	path = pack/forked/start/vim-move
+	url = https://github.com/shawnvim/vim-move
