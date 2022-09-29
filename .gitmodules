@@ -49,3 +49,6 @@
 [submodule "pack/forked/start/gruvbox"]
 	path = pack/forked/start/gruvbox
 	url = https://github.com/shawnvim/gruvbox
+[submodule "pack/forked/start/markdown-preview.nvim"]
+	path = pack/forked/start/markdown-preview.nvim
+	url = https://github.com/shawnvim/markdown-preview.nvim
