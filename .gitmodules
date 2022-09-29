@@ -52,3 +52,6 @@
 [submodule "pack/forked/start/markdown-preview.nvim"]
 	path = pack/forked/start/markdown-preview.nvim
 	url = https://github.com/shawnvim/markdown-preview.nvim
+[submodule "pack/original/start/vim-erlang-tagjump"]
+	path = pack/original/start/vim-erlang-tagjump
+	url = https://github.com/shawnvim/vim-erlang-tagjump
