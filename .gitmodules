@@ -10,3 +10,6 @@
 [submodule "pack/forked/start/minibufexpl.vim"]
 	path = pack/forked/start/minibufexpl.vim
 	url = https://github.com/shawnvim/minibufexpl.vim
+[submodule "pack/original/start/nerdtree"]
+	path = pack/original/start/nerdtree
+	url = https://github.com/preservim/nerdtree
