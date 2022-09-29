@@ -71,7 +71,6 @@ inoremap <S-BS> <C-w>
 
 let g:path_tool = g:path_vimrc . '/toolhouse'
 
-
 " Setup to select general using tools
 let s:file_rg     = setup#SelectCliWithPattern(['rg', g:path_tool . '/rg'], 'ripgrep')
 let s:file_uctags = setup#SelectCliWithPattern(['ctags', g:path_tool . '/ctags'], 'universal\ ctags')
