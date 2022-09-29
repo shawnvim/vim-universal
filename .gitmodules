@@ -58,3 +58,6 @@
 [submodule "pack/forked/start/fugitive-gerrit.vim"]
 	path = pack/forked/start/fugitive-gerrit.vim
 	url = https://github.com/shawnvim/fugitive-gerrit.vim
+[submodule "pack/forked/start/vim-ttcn"]
+	path = pack/forked/start/vim-ttcn
+	url = https://github.com/shawnvim/vim-ttcn
