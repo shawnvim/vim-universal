@@ -37,3 +37,6 @@
 [submodule "pack/original/start/vim-peekaboo"]
 	path = pack/original/start/vim-peekaboo
 	url = https://github.com/junegunn/vim-peekaboo
+[submodule "pack/forked/start/vim-quickui"]
+	path = pack/forked/start/vim-quickui
+	url = https://github.com/shawnvim/vim-quickui
