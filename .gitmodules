@@ -55,3 +55,6 @@
 [submodule "pack/original/start/vim-erlang-tagjump"]
 	path = pack/original/start/vim-erlang-tagjump
 	url = https://github.com/shawnvim/vim-erlang-tagjump
+[submodule "pack/forked/start/fugitive-gerrit.vim"]
+	path = pack/forked/start/fugitive-gerrit.vim
+	url = https://github.com/shawnvim/fugitive-gerrit.vim
