@@ -28,3 +28,6 @@
 [submodule "pack/original/start/vim-fugitive"]
 	path = pack/original/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "pack/original/start/vim-gutentags"]
+	path = pack/original/start/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags
