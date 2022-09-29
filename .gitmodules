@@ -7,3 +7,6 @@
 [submodule "pack/original/start/ListToggle"]
 	path = pack/original/start/ListToggle
 	url = https://github.com/Valloric/ListToggle
+[submodule "pack/forked/start/minibufexpl.vim"]
+	path = pack/forked/start/minibufexpl.vim
+	url = https://github.com/shawnvim/minibufexpl.vim
