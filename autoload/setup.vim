@@ -48,7 +48,7 @@ endfun
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-fun! setup#utilFunction(file_plantuml)
+fun! setup#utilFunction(file_plantuml, file_pandoc)
     let s:vim_tmp = expand('~/.cache/vim')
     " check path and create if not exist "
     if !isdirectory(s:vim_tmp)
@@ -73,6 +73,23 @@ fun! setup#utilFunction(file_plantuml)
         call DisplayHTML(tmp_uml . '.' . 'html')
         return
     endfunction
+
+    let s:file_pandoc = a:file_pandoc
+    function DisplayPandoc()
+        let root = getcwd()
+        exe ":cd " . expand("%:p:h")
+        let cli = s:file_pandoc . ' -f markdown -t html ' . expand("%:p") . ' -o ' . expand("%:p:r") . '.html' .
+                    \ ' --filter ' . g:path_tool . '/pandocfilters/examples/plantuml.py' .
+                    \ ' -s --toc'
+        echom 'Generate html by pandoc: ' . cli
+        call system(cli)
+        exe ":cd " . root
+        call DisplayHTML(expand("%:p:r") . '.html')
+    endfunction
+
+
+
+
 
 endfun
 
@@ -519,6 +536,7 @@ fun! setup#quickuiMenu()
 
     call quickui#menu#install("&Display", [
                 \ ["Display &MD by MKDP", 'MarkdownPreviewToggle'],
+                \ ["Display MD by &Pandoc", 'call DisplayPandoc()'],
                 \ ["Display by &Browser", 'call DisplayHTML(expand("%"))'],
                 \ ["Display by &UML", 'call DisplayUML()'],
                 \ ["Display by S&Office", 'call DisplaySoffice(expand("%"))'],
