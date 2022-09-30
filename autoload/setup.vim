@@ -261,16 +261,16 @@ fun! setup#grep(file_uctags)
 
     " nnoremap <C-h> :grep! -Hnri --exclude=*.{out,beam,html,cov,log,Pbeam,history,swp} --exclude-dir={test,do3} --exclude=tags --include=*.{erl,hrl} 
 
-    nnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . SetInclude() . "--exclude=*.{" . g:grep_exclude . "} --exclude=tags --exclude=*.tags %s", expand("<cword>"))<CR>
-    xnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . SetInclude() . "--exclude=*.{" . g:grep_exclude . "} --exclude=tags --exclude=*.tags %s", leaderf#Rg#visual())<CR>
+    nnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", expand("<cword>"))<CR>
+    xnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", leaderf#Rg#visual())<CR>
 
     let s:file_uctags = a:file_uctags
 
     function! SetInclude()
         if expand('%:e') == ""
-            return "--include=* "
+            return "--include=\\* "
         elseif &ft == ""
-            return "--include=*.{" . expand('%:e') . '} '
+            return "--include=\\*.{" . expand('%:e') . '} '
         else
             let def_ext_name = expand('%:e')
             let cli_ext_name = s:file_uctags . ' --list-map-extensions  | grep -i ^' . &ft . 
@@ -278,9 +278,9 @@ fun! setup#grep(file_uctags)
             echom cli_ext_name
             let ext_name = system(cli_ext_name)
             if ext_name =~# def_ext_name
-                return "--include=*.{" . ext_name . '} '
+                return "--include=\\*.{" . ext_name . '} '
             else
-                return "--include=*.{" . ext_name . def_ext_name . '} '
+                return "--include=\\*.{" . ext_name . def_ext_name . '} '
             endif
 
         endif
