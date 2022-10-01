@@ -87,10 +87,6 @@ fun! setup#utilFunction(file_plantuml, file_pandoc)
         call DisplayHTML(expand("%:p:r") . '.html')
     endfunction
 
-
-
-
-
 endfun
 
 "-----------------------------------------------------------------------------"
@@ -554,7 +550,7 @@ fun! setup#quickuiMenu()
                 \ ["Git &Status", 'G'],
                 \ ["Git &Blame\t gb", 'G blame'],
                 \ ["Git Browse&Review", 'GBrowse'],
-                \ ["Git Browse&Commit", "GBrowse \"expand('<cword>')\""],
+                \ ["Git Browse&Commit", "GBrowse <cword>"],
                 \ ["Git Lo&g", '0Gclog'],
                 \ ["Git &Diff", 'G difftool'],
                 \ ["Git Diff&Master", 'G difftool origin/master...'],
@@ -564,6 +560,7 @@ fun! setup#quickuiMenu()
                 \ ["Cancel &AsyncJob\tF12", 'AsyncStop!'],
                 \ ])
 
+                " \ ["Git Browse&Commit", "GBrowse \"expand('<cword>')\""],
 
 endfun
 

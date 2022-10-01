@@ -72,9 +72,10 @@ inoremap <S-BS> <C-w>
 let g:path_tool = g:path_vimrc . '/toolhouse'
 
 " Setup to select general using tools
-let s:file_rg     = setup#SelectCliWithPattern(['rg', g:path_tool . '/rg'], 'ripgrep')
+let s:file_rg = setup#SelectCliWithPattern(['rg', g:path_tool . '/rg'], 'ripgrep')
 let s:file_uctags = setup#SelectCliWithPattern(['ctags', g:path_tool . '/ctags'], 'universal\ ctags')
-let s:file_pandoc = setup#SelectCliWithPattern(['pandoc', g:path_tool . '/pandoc'], 'pandoc-types')
+let s:file_pandoc = setup#SelectCliWithPattern(['pandoc', g:path_tool . '/pandoc', expand("~/pandoc")], 'pandoc-types')
+let s:file_inkscape = setup#SelectCliWithPattern(['inkscape', g:path_tool . '/inkscape', expand("~/inkscape")], '^inkscape')
 
 let s:file_ctags_opt = g:path_tool . '/opt.ctags'
 let s:file_plantuml  = g:path_tool . '/plantuml.jar'
