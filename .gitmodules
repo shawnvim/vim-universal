@@ -67,3 +67,6 @@
 [submodule "pack/forked/start/vim-commentary"]
 	path = pack/forked/start/vim-commentary
 	url = https://github.com/shawnvim/vim-commentary
+[submodule "lib/lua-filters"]
+	path = lib/lua-filters
+	url = https://github.com/pandoc/lua-filters
