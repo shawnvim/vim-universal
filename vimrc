@@ -70,12 +70,13 @@ vnoremap <C-s> <Esc><Esc>:w<CR>
 inoremap <S-BS> <C-w>
 
 let g:path_tool = g:path_vimrc . '/toolhouse'
+let g:path_bin  = g:path_vimrc . '/bin'
 
 " Setup to select general using tools
-let s:file_rg = setup#SelectCliWithPattern(['rg', g:path_tool . '/rg'], 'ripgrep')
-let s:file_uctags = setup#SelectCliWithPattern(['ctags', g:path_tool . '/ctags'], 'universal\ ctags')
-let s:file_pandoc = setup#SelectCliWithPattern(['pandoc', g:path_tool . '/pandoc', expand("~/pandoc")], 'pandoc-types')
-let s:file_inkscape = setup#SelectCliWithPattern(['inkscape', g:path_tool . '/inkscape', expand("~/inkscape")], '^inkscape')
+let s:file_rg = setup#SelectCliWithPattern(['rg', g:path_bin . '/rg'], 'ripgrep')
+let s:file_uctags = setup#SelectCliWithPattern(['ctags', g:path_bin . '/ctags'], 'universal\ ctags')
+let s:file_pandoc = setup#SelectCliWithPattern(['pandoc', g:path_bin . '/pandoc', expand("~/pandoc")], 'pandoc-types')
+let s:file_inkscape = setup#SelectCliWithPattern(['inkscape', g:path_bin . '/inkscape', expand("~/inkscape")], '^inkscape')
 
 let s:file_ctags_opt = g:path_tool . '/opt.ctags'
 let s:file_plantuml  = g:path_tool . '/plantuml.jar'
