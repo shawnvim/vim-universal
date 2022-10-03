@@ -67,6 +67,3 @@
 [submodule "pack/forked/start/vim-commentary"]
 	path = pack/forked/start/vim-commentary
 	url = https://github.com/shawnvim/vim-commentary
-[submodule "toolhouse/pandocfilters"]
-	path = toolhouse/pandocfilters
-	url = https://github.com/shawnvim/pandocfilters
