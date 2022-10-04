@@ -71,6 +71,7 @@ inoremap <S-BS> <C-w>
 
 let g:path_tool = g:path_vimrc . '/toolhouse'
 let g:path_bin  = g:path_vimrc . '/bin'
+let g:path_lib  = g:path_vimrc . '/lib'
 
 " Setup to select general using tools
 let s:file_rg = setup#SelectCliWithPattern(['rg', g:path_bin . '/rg'], 'ripgrep')
@@ -84,11 +85,15 @@ let s:file_plantuml  = g:path_tool . '/plantuml.jar'
 " Personal ctag script or options
 let s:file_ctags_opt_3gpptxt = g:path_tool . '/3gpptxt.ctags'
 
+let s:path_lua_filters = g:path_lib . '/lua-filters'
+
+
+
 let s:rooter_patterns = ['.root', '.git', '.project']
 
 call setup#screenAndMouse()
 call setup#paste()
-call setup#utilFunction(s:file_plantuml, s:file_pandoc)
+call setup#utilFunction(s:file_plantuml, s:file_pandoc, s:path_lua_filters)
 call setup#netrw()
 call setup#NERDTree()
 call setup#minibufexpl()
