@@ -77,20 +77,17 @@ fun! setup#utilFunction(file_plantuml, file_pandoc, path_lua_filters)
     let s:file_pandoc = a:file_pandoc
     let s:path_lua_filters = a:path_lua_filters
     function DisplayPandoc()
-        let root = getcwd()
-        exe ":cd " . expand("%:p:h")
-        let cli = s:file_pandoc . ' -f markdown -t html ' . expand("%:t") . 
+        let cli = s:file_pandoc . ' -f markdown -t html ' . expand("%:p") . 
                     \ ' --lua-filter=' . s:path_lua_filters . '/diagram-generator/diagram-generator.lua' .
                     \ ' --metadata=plantumlPath:' . s:file_plantuml . 
-                    \ ' -o ' . expand("%:t:r") . '.html' .
-                    \ ' --extract-media=./ --toc'
+                    \ ' -o ' . expand("%:p:r") . '.html' .
+                    \ ' --extract-media=' . expand("%:p:h") . '/media --toc'
         echom cli
         " let cli = s:file_pandoc . ' -f markdown -t html ' . expand("%:p") . ' -o ' . expand("%:p:r") . '.html' .
         "             \ ' --filter ' . g:path_tool . '/pandocfilters/examples/plantuml.py' .
         "             \ ' -s --toc'
         " echom 'Generate html by pandoc: ' . cli
         call system(cli)
-        exe ":cd " . root
         call DisplayHTML(expand("%:p:r") . '.html')
     endfunction
 
