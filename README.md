@@ -4,7 +4,7 @@ A universal VIM integration
 
  - Written in Python and VimL
  - Extended plugins with pack by submodules
- - Support MacOS and Linux_x86
+ - Support MacOS and Linux-x86_64
 
 Requirements
 ------------
@@ -28,6 +28,7 @@ If you have duplicated plugins locally, you can remove submodule by:
 git submodule deinit project-sub-1
 git rm project-sub-1
 ```
+and then remove the related configuration in `vimrc`
 
 Update
 -----
