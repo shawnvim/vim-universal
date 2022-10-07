@@ -151,7 +151,7 @@ function! setup#TerminalMetaMode(mode)
     elseif &ttimeoutlen > 80 || &ttimeoutlen <= 0
         set ttimeoutlen=80
     endif
-    if has('nvim') || has('gui_running')
+    if te#env#IsNvim() || te#env#IsGui()
         return
     endif
     function! s:metacode(mode, key)
@@ -190,18 +190,17 @@ endfunc
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! setup#TerminalMacMode()
-    map ¡ <A-1>
-    map ™ <A-2>
-    map £ <A-3>
-    map ¢ <A-4>
+    call te#meta#map('map','1','<A-1>')
+    call te#meta#map('map','2','<A-2>')
+    call te#meta#map('map','3','<A-3>')
+    call te#meta#map('map','4','<A-4>')
 
-    " map ˜ <A-n>
-    map å <A-a>
-    map ∫ <A-b>
-    map œ <A-q>
+    call te#meta#map('map','a','<A-a>')
+    call te#meta#map('map','b','<A-b>')
+    call te#meta#map('map','q','<A-q>')
 
-    map ∆ <A-j>
-    map ˚ <A-k>
+    call te#meta#map('map','j','<A-j>')
+    call te#meta#map('map','k','<A-k>')
 
 endfunc
 

@@ -97,7 +97,8 @@ call setup#utilFunction(s:file_plantuml, s:file_pandoc, s:path_lua_filters)
 call setup#netrw()
 call setup#NERDTree()
 call setup#minibufexpl()
-call setup#TerminalMetaMode(0) "enable Alt for terminal mode
+" call setup#TerminalMetaMode(0) "enable Alt for terminal mode
+call te#meta#init()
 call setup#TerminalMacMode()
 call setup#relativenumber()
 call setup#wrap()
