@@ -321,7 +321,7 @@ fun! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gpptxt)
     let g:Lf_StlColorscheme = 'gruvbox'
     let g:Lf_PopupColorscheme = 'gruvbox_material'
     let g:Lf_CtagsFuncOpts = {
-                \ 'erlang': '--options=' . a:file_ctags_opt . ' --kinds-erlang=frdRa',
+                \ 'erlang': '--options=' . a:file_ctags_opt . ' --kinds-erlang=frdRat',
                 \ '3gpptxt': '--options=' . a:file_ctags_opt_3gpptxt,
                 \ 'ttcn': '--kinds-ttcn=MtcdfsCaGP',
                 \ 'idl': '--language-force=c --kinds-c=dstg',
