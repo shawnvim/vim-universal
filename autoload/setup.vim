@@ -274,7 +274,6 @@ fun! setup#grep(file_uctags)
             let def_ext_name = expand('%:e')
             let cli_ext_name = s:file_uctags . ' --list-map-extensions  | grep -i ^' . &ft . 
                         \ " | awk \'{print $NF}\' | uniq -i | tr '\\n' ','"
-            echom cli_ext_name
             let ext_name = system(cli_ext_name)
             if ext_name =~# def_ext_name
                 return "--include=\\*.{" . ext_name . '} '
