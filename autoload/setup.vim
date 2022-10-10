@@ -197,7 +197,9 @@ function! setup#TerminalMacMode()
 
     call te#meta#map('map','a','<A-a>')
     call te#meta#map('map','b','<A-b>')
+
     call te#meta#map('map','q','<A-q>')
+    call te#meta#map('map','l','<A-l>')
 
     call te#meta#map('map','j','<A-j>')
     call te#meta#map('map','k','<A-k>')
@@ -323,18 +325,20 @@ fun! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gpptxt)
                 \ }
 
     nnoremap <silent><C-f> :LeaderfFunction<CR>
+    nnoremap <silent><C-S-f> :LeaderfFunctionAll<CR>
+
     nnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom --current-buffer -e %s ", expand("<cword>"))<CR>
     xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom --current-buffer -e %s ", leaderf#Rg#visual())<CR>
     nnoremap gh :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom -i -e %s ", expand("<cword>"))<CR>
     xnoremap gh :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom -i -e %s ", leaderf#Rg#visual())<CR>
     nnoremap go :<C-U>Leaderf! rg --stayOpen --nowrap --bottom --recall<CR>
     
-    nnoremap <silent>gt :Leaderf tag<CR>
-    nnoremap <silent>gr :Leaderf rg<CR>
-    nnoremap <silent><C-a> :LeaderfFunctionAll<CR>
+    nnoremap <silent><leader>t :Leaderf tag<CR>
+    nnoremap <silent><leader>r :Leaderf rg<CR>
     
-    nnoremap <silent>gq :LeaderfQuickFix<CR>
-    nnoremap <silent>gl :LeaderfLocList<CR>
+    nnoremap <silent><leader>q :LeaderfQuickFix<CR>
+    nnoremap <silent><leader>l :LeaderfLocList<CR>
+    nnoremap <silent><leader>s :LeaderfSelf<CR>
     
 endfun
 
@@ -537,12 +541,12 @@ fun! setup#quickuiMenu()
                 \ [ "Goto file used &Recent", 'Leaderf mru --regexMode', 'Open recently accessed files'],
                 \ [ "--", ],
                 \ [ "Find &function in current buffer\t(ctrl-f)", 'Leaderf function', 'List functions in current buffer'],
-                \ [ "Find function in &all buffers\t(ctrl-a)", 'LeaderfFunctionAll'],
-                \ [ "Find &tag\tgt", 'Leaderf tag'],
-                \ [ "Find in &quickfix\tgq", 'LeaderfQuickFix'],
-                \ [ "Find in l&ocationlist\tgl", 'LeaderfLocList'],
+                \ [ "Find function in &all buffers\t(ctrl-shift-f)", 'LeaderfFunctionAll'],
+                \ [ "Find &tag\t(leader-t)", 'Leaderf tag'],
+                \ [ "Find in &quickfix\t(leader-q)", 'LeaderfQuickFix'],
+                \ [ "Find in l&ocationlist\t(leader-l)", 'LeaderfLocList'],
                 \ [ "--", ],
-                \ [ "&Grep on the fly\tgr", 'Leaderf rg'],
+                \ [ "&Grep on the fly\t(leader-r)", 'Leaderf rg'],
                 \ [ "--", ],
                 \ [ "&NERDTree\tF2", 'call NERDTreeToggleInCurDir()'],
                 \ [ "--", ],

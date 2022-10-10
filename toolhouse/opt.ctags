@@ -4,6 +4,6 @@
 --regex-Erlang=/^-\s*(record|define)\s*\(?\s*'([^ \t]+)'/\2/a/{exlusive}
 --kinds-erlang=frdRat
 --map-c=+.idl
---kinds-c=dstg
+--kinds-c=dstgp
 --kinds-ttcn=MtcdfsCaGP
 --languages=-rake
