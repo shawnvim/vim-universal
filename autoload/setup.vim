@@ -243,7 +243,7 @@ endfunc
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-fun! setup#grep(file_uctags)
+fun! setup#grep()
     set grepprg=grep
 
     cnoremap <C-g> <C-R>=' ' . GetRootDirectory() . '/*'<CR>
@@ -262,28 +262,23 @@ fun! setup#grep(file_uctags)
 
     nnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", expand("<cword>"))<CR>
     xnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", leaderf#Rg#visual())<CR>
-
-    let s:file_uctags = a:file_uctags
-
+    
     function! SetInclude()
-        if expand('%:e') == ""
+        let extended_name_set = get(b:, 'extended_name_set', '')
+        let def_ext_name = expand('%:e')
+
+        if def_ext_name == ""
             return "--include=\\* "
-        elseif &ft == ""
-            return "--include=\\*.{" . expand('%:e') . '} '
+        elseif extended_name_set == ""
+            return "--include=\\*.{" . def_ext_name . '} '
         else
-            let def_ext_name = expand('%:e')
-            let cli_ext_name = s:file_uctags . ' --list-map-extensions  | grep -i ^' . &ft . 
-                        \ " | awk \'{print $NF}\' | uniq -i | tr '\\n' ','"
-            let ext_name = system(cli_ext_name)
-            if ext_name =~# def_ext_name
-                return "--include=\\*.{" . ext_name . '} '
+            if extended_name_set =~# def_ext_name
+                return "--include=\\*.{" . extended_name_set . '} '
             else
-                return "--include=\\*.{" . ext_name . def_ext_name . '} '
+                return "--include=\\*.{" . extended_name_set . def_ext_name . '} '
             endif
 
         endif
-
-
     endfunction
 
 endfun
@@ -454,9 +449,13 @@ endfun
 "-----------------------------------------------------------------------------"
 " https://github.com/qiushihao/vim-erlang-tagjump
 "-----------------------------------------------------------------------------"
-fun! setup#vimErlangTagJump(algorithmFile)
+fun! setup#vimErlangTagJump(file_uctags, algorithmFile)
     let g:vimErlangTagJump_sortTag = a:algorithmFile
     let g:vimErlangTagJump_sortLengthMax = 15
+    autocmd BufNewFile,BufRead *.* let b:extended_name_set =
+                \ system(s:file_uctags . ' --list-map-extensions  | grep -i ^' . &ft . 
+                \ " | awk \'{print $NF}\' | uniq -i | tr '\\n' ','")
+    autocmd BufNewFile,BufRead *.* setlocal tagfunc=vimErlangTagJump#FbTagFunc
     autocmd BufNewFile,BufRead *.erl,*.hrl setlocal tagfunc=vimErlangTagJump#TagFunc
 endfun
 
