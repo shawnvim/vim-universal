@@ -454,8 +454,8 @@ fun! setup#vimErlangTagJump(file_uctags, algorithmFile)
     let g:vimErlangTagJump_sortLengthMax = 15
     let s:file_uctags = a:file_uctags
     autocmd BufNewFile,BufRead *.* let b:extended_name_set =
-                \ system(s:file_uctags . ' --list-map-extensions  | grep -wi ^' . setup#convertedFt() . 
-                \ " | awk \'{print $NF}\' | uniq -i | grep \'^[a-zA-z0-9]\*$\' | tr '\\n' ','")
+                \ tolower(system(s:file_uctags . ' --list-map-extensions  | grep -wi ^' . setup#convertedFt() . 
+                \ " | awk \'{print $NF}\' | grep \'^[a-zA-z0-9]\*$\' | sort -f | uniq -i | tr '\\n' ','"))
     autocmd BufNewFile,BufRead *.* setlocal tagfunc=vimErlangTagJump#FbTagFunc
     autocmd BufNewFile,BufRead *.erl,*.hrl setlocal tagfunc=vimErlangTagJump#TagFunc
 endfun
