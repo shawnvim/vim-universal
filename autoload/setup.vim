@@ -338,6 +338,9 @@ fun! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gpptxt)
     nnoremap <silent>gr :Leaderf rg<CR>
     nnoremap <silent><C-a> :LeaderfFunctionAll<CR>
     
+    nnoremap <silent>gq :LeaderfQuickFix<CR>
+    nnoremap <silent>gl :LeaderfLocList<CR>
+    
 endfun
 
 
@@ -424,7 +427,7 @@ endfun
 " https://github.com/Valloric/ListToggle
 "-----------------------------------------------------------------------------"
 fun! setup#ListToggle()
-    let g:lt_location_list_toggle_map = '<A-b>'
+    let g:lt_location_list_toggle_map = '<A-l>'
     let g:lt_quickfix_list_toggle_map = '<A-q>'
     let g:lt_height = 27
 endfun
