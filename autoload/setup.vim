@@ -453,7 +453,7 @@ fun! setup#vimErlangTagJump(file_uctags, algorithmFile)
     let g:vimErlangTagJump_sortTag = a:algorithmFile
     let g:vimErlangTagJump_sortLengthMax = 15
     autocmd BufNewFile,BufRead *.* let b:extended_name_set =
-                \ system(s:file_uctags . ' --list-map-extensions  | grep -i ^' . &ft . 
+                \ system(s:file_uctags . ' --list-map-extensions  | grep -i ^' . (&ft == '' ? 'None' : &ft) . 
                 \ " | awk \'{print $NF}\' | uniq -i | tr '\\n' ','")
     autocmd BufNewFile,BufRead *.* setlocal tagfunc=vimErlangTagJump#FbTagFunc
     autocmd BufNewFile,BufRead *.erl,*.hrl setlocal tagfunc=vimErlangTagJump#TagFunc
