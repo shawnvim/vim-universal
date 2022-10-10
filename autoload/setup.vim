@@ -1,4 +1,4 @@
-fun! setup#screenAndMouse()
+function! setup#screenAndMouse()
     if has("gui_running")
         " Full screen
         set lines=999 columns=999
@@ -18,12 +18,12 @@ fun! setup#screenAndMouse()
         set mouse=a
     endif
 
-endfun
+endfunction
 
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-fun! setup#paste()
+function! setup#paste()
     nnoremap <C-v> "0p
     nnoremap <C-S-v> "+P
 
@@ -43,12 +43,12 @@ fun! setup#paste()
     vnoremap  <silent><C-c> "0y:let @+ = getreg('0')<CR>
     nnoremap  <silent><C-c> :let @+ = getreg('0')<CR>
 
-endfun
+endfunction
 
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-fun! setup#utilFunction(file_plantuml, file_pandoc, path_lua_filters)
+function! setup#utilFunction(file_plantuml, file_pandoc, path_lua_filters)
     let s:vim_tmp = expand('~/.cache/vim')
     " check path and create if not exist "
     if !isdirectory(s:vim_tmp)
@@ -91,38 +91,31 @@ fun! setup#utilFunction(file_plantuml, file_pandoc, path_lua_filters)
         call DisplayHTML(expand("%:p:r") . '.html')
     endfunction
 
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-fun! setup#netrw()
+function! setup#netrw()
     let g:netrw_keepdir = 0 
     let g:netrw_winsize = 30
     let g:netrw_browse_split = 4
     let g:netrw_liststyle = 3
     let g:netrw_altv = 1
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-fun! setup#NERDTree()
+function! setup#NERDTree()
     let NERDTreeQuitOnOpen=1 "close NREDTree after file opened
 
-    noremap <F2> :call NERDTreeToggleInCurDir()<CR>
-    function! NERDTreeToggleInCurDir()
-        " If NERDTree is open in the current buffer
-        if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-            exe ":NERDTreeToggle"
-        else
-            exe ":NERDTreeFind"
-        endif
-    endfunction
-endfun
+    noremap <F2> :call util#NERDTreeToggleInCurDir()<CR>
+
+endfunction
 
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-fun! setup#minibufexpl()
+function! setup#minibufexpl()
     " ShowBufNum shoule be enable to let mru work
     let g:miniBufExplShowBufNumbers = 1 " def is 1
     let g:miniBufExplSortBy = 'mru'
@@ -139,7 +132,7 @@ fun! setup#minibufexpl()
     let g:miniBufExplSetUT = 0 " def is 1
     " Too small will let other plugin(Leaderf) slow
     set updatetime=700
-endfun
+endfunction
 
 
 "-----------------------------------------------------------------------------"
@@ -185,7 +178,7 @@ function! setup#TerminalMetaMode(mode)
             call s:metacode(a:mode, c)
         endfor
     endif
-endfunc
+endfunction
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
@@ -218,7 +211,7 @@ function! setup#relativenumber()
             set relativenumber number
         endif
     endfunc
-endfunc
+endfunction
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
@@ -231,7 +224,7 @@ function! setup#wrap()
             set wrap
         endif
     endfunc
-endfunc
+endfunction
 
 
 "-----------------------------------------------------------------------------"
@@ -240,58 +233,33 @@ endfunc
 function! setup#Commentary()
 
 
-endfunc
+endfunction
 
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-fun! setup#grep()
+function! setup#grep()
     set grepprg=grep
 
-    cnoremap <C-g> <C-R>=' ' . GetRootDirectory() . '/*'<CR>
-    function! GetRootDirectory()
-        let rootdir = FindRootDirectory()
-        if rootdir == ""
-            return expand('%:p:h')
-        else
-            return rootdir
-        endif
-    endfunction
+    cnoremap <C-g> <C-R>=' ' . util#GetRootDirectory() . '/*'<CR>
 
     let g:grep_exclude = 'out,beam,html,cov,log,Pbeam,history,swp'
 
     " nnoremap <C-h> :grep! -Hnri --exclude=*.{out,beam,html,cov,log,Pbeam,history,swp} --exclude-dir={test,do3} --exclude=tags --include=*.{erl,hrl} 
 
-    nnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", expand("<cword>"))<CR>
-    xnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", leaderf#Rg#visual())<CR>
-    
-    function! SetInclude()
-        let extended_name_set = get(b:, 'extended_name_set', '')
-        let def_ext_name = expand('%:e')
+    nnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . util#SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", expand("<cword>"))<CR>
+    xnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . util#SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", leaderf#Rg#visual())<CR>
 
-        if def_ext_name == ""
-            return "--include=\\* "
-        elseif extended_name_set == ""
-            return "--include=\\*.{" . def_ext_name . '} '
-        else
-            if extended_name_set =~# def_ext_name
-                return "--include=\\*.{" . extended_name_set . '} '
-            else
-                return "--include=\\*.{" . extended_name_set . def_ext_name . '} '
-            endif
 
-        endif
-    endfunction
-
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/airblade/vim-rooter
 "-----------------------------------------------------------------------------"
-fun! setup#rooter(rooter_patterns)
+function! setup#rooter(rooter_patterns)
     " auto change cwd
     let g:rooter_patterns = a:rooter_patterns
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/Yggdroot/LeaderF
@@ -299,7 +267,7 @@ endfun
 " :LeaderfInstallCExtension
 " :echo g:Lf_fuzzyEngine_C
 "-----------------------------------------------------------------------------"
-fun! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gpptxt)
+function! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gpptxt)
     let g:Lf_HideHelp = 1
     let g:Lf_ShortcutF = "<C-P>"
     let g:Lf_RootMarkers = g:rooter_patterns
@@ -340,45 +308,29 @@ fun! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gpptxt)
     nnoremap <silent><leader>l :LeaderfLocList<CR>
     nnoremap <silent><leader>s :LeaderfSelf<CR>
     
-endfun
+endfunction
 
 
 "-----------------------------------------------------------------------------"
 " https://github.com/skywind3000/asyncrun.vim
 "-----------------------------------------------------------------------------"
-fun! setup#asyncrun()
+function! setup#asyncrun()
     let g:asyncrun_exit = "echom 'Async job done, check result by <Alt-q>'"
     " let g:asyncrun_open = 17 "open quickfix auto
 
-    nmap <F10> :call AsyncCompileSubSystem('beam')<CR>
-    nmap <F11> :call AsyncCompileSubSystem('')<CR>
+    " User defined command Gmake
+    command! -nargs=* Gmake call util#AsyncCompileSubSystem(<q-args>)
+
+    nmap <F10> :Gmake beam<CR>
+    nmap <F11> :Gmake<CR>
     nmap <F12> :AsyncStop!<CR>
 
-    function! AsyncCompileSubSystem(cli)
-        let root = getcwd()
-        let curdir = expand("%:p:h")
-        exe ':cd ' . curdir
-        while !filereadable("./Makefile") || system("cat Makefile | grep -i '.*#.*obsolete'") != ""
-            cd ..
-            if getcwd() == root
-                break
-            endif
-        endwhile
-        if filereadable("./Makefile")
-            call asyncrun#run("", "", 'gmake -j ' . a:cli)
-        endif
-        exe ':cd ' . root
-    endfunction
-
-    " User defined command Gmake
-    command! -nargs=* Gmake call AsyncCompileSubSystem(<q-args>)
-
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/ludovicchabant/vim-gutentags
 "-----------------------------------------------------------------------------"
-fun! setup#gutentags(file_uctags, file_ctags_opt)
+function! setup#gutentags(file_uctags, file_ctags_opt)
     let s:vim_tags = expand('~/.cache/tags')
     " check path and create if not exist "
     if !isdirectory(s:vim_tags)
@@ -407,12 +359,12 @@ fun! setup#gutentags(file_uctags, file_ctags_opt)
     let g:gutentags_ctags_extra_args=['--options=' . a:file_ctags_opt]
 
 
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/lfv89/vim-interestingwords
 "-----------------------------------------------------------------------------"
-fun! setup#interestingwords()
+function! setup#interestingwords()
     let g:interestingWordsDefaultMappings = 0
     nnoremap <silent> <C-k> :call InterestingWords('n')<cr>
     vnoremap <silent> <C-k> :call InterestingWords('v')<cr>
@@ -420,40 +372,40 @@ fun! setup#interestingwords()
 
     nnoremap <silent> n :call WordNavigation(1)<cr>
     nnoremap <silent> N :call WordNavigation(0)<cr>
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/Valloric/ListToggle
 "-----------------------------------------------------------------------------"
-fun! setup#ListToggle()
+function! setup#ListToggle()
     let g:lt_location_list_toggle_map = '<A-l>'
     let g:lt_quickfix_list_toggle_map = '<A-q>'
     let g:lt_height = 27
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/qiushihao/quickfix-reflector.vim
 "-----------------------------------------------------------------------------"
-fun! setup#quickfixreflector()
+function! setup#quickfixreflector()
     " quickfix-reflector will autocmd when BuffReadPost which will affect fugitive
     " add manual keymap to activate quickfix buffer write
     nmap <A-a> :call OnQuickfixInit()<CR>
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/mechatroner/rainbow_csv
 "-----------------------------------------------------------------------------"
-fun! setup#rainbowcsv()
+function! setup#rainbowcsv()
     let g:disable_rainbow_key_mappings = 1
     let g:rcsv_max_columns=999
     let g:multiline_search_range=999
     autocmd BufNewFile,BufRead *.csv   set filetype=rfc_semicolon
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/qiushihao/vim-erlang-tagjump
 "-----------------------------------------------------------------------------"
-fun! setup#vimErlangTagJump(file_uctags, algorithmFile)
+function! setup#vimErlangTagJump(file_uctags, algorithmFile)
     let g:vimErlangTagJump_sortTag = a:algorithmFile
     let g:vimErlangTagJump_sortLengthMax = 15
     let s:file_uctags = a:file_uctags
@@ -462,57 +414,57 @@ fun! setup#vimErlangTagJump(file_uctags, algorithmFile)
                 \ " | awk \'{print $NF}\' | grep \'^[a-zA-z0-9]\*$\' | sort -f | uniq -i | tr '\\n' ','"))
     autocmd BufNewFile,BufRead *.* setlocal tagfunc=vimErlangTagJump#FbTagFunc
     autocmd BufNewFile,BufRead *.erl,*.hrl setlocal tagfunc=vimErlangTagJump#TagFunc
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-fun! setup#convertedFt()
+function! setup#convertedFt()
     if &ft == ''
         return 'NONE'
     elseif &ft == 'cpp'
         return 'c\+\+'
     else
         return &ft
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/qiushihao/vim-ttcn
 "-----------------------------------------------------------------------------"
-fun! setup#vimttcn()
+function! setup#vimttcn()
     let g:ttcn_hl_naming_convention = 1
-endfun
+endfunction
 
 "-----------------------------------------------------------------------------"
 " Convert CLI in terminal
 " > soffice --convert-to 3gpptxt:Text *.docx
 "-----------------------------------------------------------------------------"
-fun! setup#vim3gpptxt()
+function! setup#vim3gpptxt()
     au BufRead,BufNewFile *.3gpptxt set filetype=3gpptxt
-endfun
+endfunction
 
 
 "-----------------------------------------------------------------------------"
 " https://github.com/tpope/vim-fugitive
 "-----------------------------------------------------------------------------"
-fun! setup#fugitive()
+function! setup#fugitive()
     let g:fugitive_summary_format = "%an %ai %s"
     nnoremap gb :G blame<CR>
     vnoremap gb :G blame<CR> 
-endfun
+endfunction
 
 
 "-----------------------------------------------------------------------------"
 " https://github.com/iamcco/markdown-preview.nvim
 "-----------------------------------------------------------------------------"
-fun! setup#mkdp()
+function! setup#mkdp()
     let g:mkdp_browserfunc = 'DisplayHTML'
-endfun
+endfunction
 
 
 "-----------------------------------------------------------------------------"
 " https://github.com/skywind3000/vim-quickui
 "-----------------------------------------------------------------------------"
-fun! setup#quickui(file_uctags)
+function! setup#quickui(file_uctags)
 
     let g:quickui_ctags_exe = a:file_uctags
     let g:quickui_color_scheme = 'gruvbox'
@@ -527,12 +479,12 @@ fun! setup#quickui(file_uctags)
     nnoremap <silent><A-3> :call quickui#tools#list_function()<CR>
     let g:asyncrun_timer = 1500 " to prevent gui freeze by massive output
 
-endfun
+endfunction
 
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-fun! setup#quickuiMenu()
+function! setup#quickuiMenu()
 
     call quickui#menu#reset()
 
@@ -548,16 +500,16 @@ fun! setup#quickuiMenu()
                 \ [ "--", ],
                 \ [ "&Grep on the fly\t(leader-r)", 'Leaderf rg'],
                 \ [ "--", ],
-                \ [ "&NERDTree\tF2", 'call NERDTreeToggleInCurDir()'],
+                \ [ "&NERDTree\tF2", 'call util#NERDTreeToggleInCurDir()'],
                 \ [ "--", ],
                 \ [ "E&xit", 'qa' ],
                 \ ])
 
     call quickui#menu#install("&Make", [
-                \ ["Make &All", 'call AsyncCompileSubSystem("all")'],
-                \ ["Make &Beam\tF10", 'call AsyncCompileSubSystem("beam")'],
-                \ ["Make &General\tF11", 'call AsyncCompileSubSystem("")'],
-                \ ["Make &Ts", 'call AsyncCompileSubSystem("ts")'],
+                \ ["Make &All", 'Gmake all'],
+                \ ["Make &Beam\tF10", 'Gmake beam'],
+                \ ["Make &General\tF11", 'Gmake'],
+                \ ["Make &Ts", 'Gmake ts'],
                 \ ])
 
     call quickui#menu#install('&Tags', [
@@ -593,28 +545,15 @@ fun! setup#quickuiMenu()
 
                 " \ ["Git Browse&Commit", "GBrowse \"expand('<cword>')\""],
 
-endfun
+endfunction
 
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-fun! setup#ToolBar()
+function! setup#ToolBar()
     an 1.250 ToolBar.Make			:Gmake<CR>
     an 1.270 ToolBar.RunCtags		:GutentagsUpdate<CR>
-endfun
+endfunction
 
 
-"-----------------------------------------------------------------------------"
-"-----------------------------------------------------------------------------"
-fun! setup#SelectCliWithPattern(cli_list, pattern)
-    for cli in a:cli_list
-        if executable(cli) && system(cli . ' --version | grep -i ' . a:pattern) != ""
-            return cli
-        else
-            continue
-        endif
-    endfor
-    echom a:pattern . " not found"
-    return a:cli_list[0]
-endfun
 
