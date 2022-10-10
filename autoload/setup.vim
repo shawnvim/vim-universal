@@ -333,6 +333,11 @@ fun! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gpptxt)
     nnoremap gh :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom -i -e %s ", expand("<cword>"))<CR>
     xnoremap gh :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom -i -e %s ", leaderf#Rg#visual())<CR>
     nnoremap go :<C-U>Leaderf! rg --stayOpen --nowrap --bottom --recall<CR>
+    
+    nnoremap <silent>gt :Leaderf tag<CR>
+    nnoremap <silent>gr :Leaderf rg<CR>
+    nnoremap <silent><C-a> :LeaderfFunctionAll<CR>
+    
 endfun
 
 
