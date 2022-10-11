@@ -118,6 +118,7 @@ call setup#vimttcn()
 call setup#vim3gpptxt()
 call setup#fugitive()
 call setup#mkdp()
+call setup#tablemode()
 call setup#quickui(s:file_uctags)
 
 

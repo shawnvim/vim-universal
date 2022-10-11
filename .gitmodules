@@ -76,3 +76,6 @@
 [submodule "pack/original/start/undotree"]
 	path = pack/original/start/undotree
 	url = https://github.com/mbbill/undotree
+[submodule "pack/original/start/vim-table-mode"]
+	path = pack/original/start/vim-table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode
