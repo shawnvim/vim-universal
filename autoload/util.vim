@@ -57,6 +57,11 @@ endfunction
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! util#AsyncCompileSubSystem(cli)
+    if executable('gmake')
+        let make = 'gmake'
+    else
+        let make = 'make'
+    endif
     let root = getcwd()
     let curdir = expand("%:p:h")
     exe ':cd ' . curdir
@@ -67,7 +72,7 @@ function! util#AsyncCompileSubSystem(cli)
         endif
     endwhile
     if filereadable("./Makefile")
-        call asyncrun#run("", "", 'gmake -j ' . a:cli)
+        call asyncrun#run("", "", make . ' -j ' . a:cli)
     endif
     exe ':cd ' . root
 endfunction
