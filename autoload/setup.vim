@@ -1,3 +1,6 @@
+
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
 function! setup#screenAndMouse()
     if has("gui_running")
         " Full screen
@@ -228,11 +231,9 @@ endfunction
 
 
 "-----------------------------------------------------------------------------"
-" https://github.com/qiushihao/vim-commentary
 "-----------------------------------------------------------------------------"
-function! setup#Commentary()
-
-
+function! setup#undotree()
+    nnoremap <leader>u :UndotreeToggle<CR>
 endfunction
 
 
