@@ -407,6 +407,8 @@ endfunction
 " https://github.com/qiushihao/vim-erlang-tagjump
 "-----------------------------------------------------------------------------"
 function! setup#vimErlangTagJump(file_uctags, algorithmFile)
+    let g:erlang_minlines = 128
+    let g:erlang_maxlines = 999
     let g:vimErlangTagJump_sortTag = a:algorithmFile
     let g:vimErlangTagJump_sortLengthMax = 15
     let s:file_uctags = a:file_uctags
