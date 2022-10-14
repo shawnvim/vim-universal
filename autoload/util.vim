@@ -15,20 +15,13 @@ endfunction
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! util#SetInclude()
-    let extended_name_set = get(b:, 'extended_name_set', '')
+    let extended_name_set = get(b:, 'extended_name_set', [])
     let def_ext_name = expand('%:e')
 
     if def_ext_name == ""
         return "--include=\\* "
-    elseif extended_name_set == ""
-        return "--include=\\*.{" . def_ext_name . '} '
     else
-        if extended_name_set =~# def_ext_name
-            return "--include=\\*.{" . extended_name_set . '} '
-        else
-            return "--include=\\*.{" . extended_name_set . def_ext_name . '} '
-        endif
-
+        return "--include=\\*.{" . join(uniq(sort(add(extended_name_set, def_ext_name))),',') . '} '
     endif
 endfunction
 
