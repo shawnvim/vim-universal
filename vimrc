@@ -97,7 +97,6 @@ call setup#utilFunction(s:file_plantuml, s:file_pandoc, s:path_lua_filters)
 call setup#netrw()
 call setup#NERDTree()
 call setup#minibufexpl()
-" call setup#TerminalMetaMode(0) "enable Alt for terminal mode
 call te#meta#init()
 call setup#TerminalMacMode()
 call setup#relativenumber()
@@ -136,7 +135,4 @@ if isdirectory(g:path_internal)
     call internalsetup#quickuiMenu()
     call internalsetup#ToolBar()
 endif
-
-" Function related keymapping
-nnoremap <F5> :call RemoveTag()<CR>:GutentagsUpdate<CR>
 
