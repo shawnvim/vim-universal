@@ -367,8 +367,8 @@ function! setup#vimErlangTagJump(file_uctags, algorithmFile)
     let g:vimErlangTagJump_sortLengthMax = 15
     let s:file_uctags = a:file_uctags
     autocmd BufNewFile,BufRead *.* let b:extended_name_set =
-                \ tolower(system(s:file_uctags . ' --list-map-extensions  | grep -wi ^' . setup#convertedFt() . 
-                \ " | awk \'{print $NF}\' | grep \'^[a-zA-z0-9]\*$\' | sort -f | uniq -i | tr '\\n' ','"))
+                \ systemlist(s:file_uctags . ' --list-map-extensions  | grep -wi ^' . setup#convertedFt() . 
+                \ " | awk \'{print tolower(\$NF)}\' | grep \'^[a-zA-z0-9]\*$\' | sort -f | uniq -i")
     autocmd BufNewFile,BufRead *.* setlocal tagfunc=vimErlangTagJump#FbTagFunc
     autocmd BufNewFile,BufRead *.erl,*.hrl setlocal tagfunc=vimErlangTagJump#TagFunc
 endfunction
