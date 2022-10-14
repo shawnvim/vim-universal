@@ -134,53 +134,7 @@ function! setup#minibufexpl()
     " Manually set Update Time
     let g:miniBufExplSetUT = 0 " def is 1
     " Too small will let other plugin(Leaderf) slow
-    set updatetime=700
-endfunction
-
-
-"-----------------------------------------------------------------------------"
-"-----------------------------------------------------------------------------"
-function! setup#TerminalMetaMode(mode)
-    set ttimeout
-    if $TMUX != ''
-        set ttimeoutlen=30
-    elseif &ttimeoutlen > 80 || &ttimeoutlen <= 0
-        set ttimeoutlen=80
-    endif
-    if te#env#IsNvim() || te#env#IsGui()
-        return
-    endif
-    function! s:metacode(mode, key)
-        if a:mode == 0
-            exec "set <M-".a:key.">=\e".a:key
-        elseif a:mode == 1
-            exec "set <M-".a:key.">=\e]{0}".a:key."~"
-        else
-
-        endif
-    endfunc
-    for i in range(10)
-        call s:metacode(a:mode, nr2char(char2nr('0') + i))
-    endfor
-    for i in range(26)
-        call s:metacode(a:mode, nr2char(char2nr('a') + i))
-        call s:metacode(a:mode, nr2char(char2nr('A') + i))
-    endfor
-    if a:mode != 0
-        for c in [',', '.', '/', ';', '[', ']', '{', '}']
-            call s:metacode(a:mode, c)
-        endfor
-        for c in ['?', ':', '-', '_']
-            call s:metacode(a:mode, c)
-        endfor
-    else
-        for c in [',', '.', '/', ';', '{', '}']
-            call s:metacode(a:mode, c)
-        endfor
-        for c in ['?', ':', '-', '_']
-            call s:metacode(a:mode, c)
-        endfor
-    endif
+    set updatetime=100
 endfunction
 
 "-----------------------------------------------------------------------------"
