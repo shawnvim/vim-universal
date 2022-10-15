@@ -414,7 +414,7 @@ endfunction
 "-----------------------------------------------------------------------------"
 function! setup#mkdp()
     let g:mkdp_browserfunc = 'DisplayHTML'
-    let g:mkdp_auto_close = 0   
+    let g:mkdp_auto_close = 0
 endfunction
 
 "-----------------------------------------------------------------------------"
