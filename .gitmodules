@@ -79,3 +79,9 @@
 [submodule "pack/original/start/vim-table-mode"]
 	path = pack/original/start/vim-table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode
+[submodule "pack/original/start/vim-signify"]
+	path = pack/original/start/vim-signify
+	url = https://github.com/mhinz/vim-signify
+[submodule "pack/original/start/targets.vim"]
+	path = pack/original/start/targets.vim
+	url = https://github.com/wellle/targets.vim
