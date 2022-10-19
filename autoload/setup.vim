@@ -361,14 +361,28 @@ endfunction
 " https://github.com/qiushihao/vim-erlang-tagjump
 "-----------------------------------------------------------------------------"
 function! setup#vimErlangTagJump(file_uctags, algorithmFile)
+    let s:file_uctags = a:file_uctags
+    let g:extended_name_set = {'NONE': []}
+
+    function! UpdateNameSet()
+        let file_type = setup#convertedFt()
+        if has_key(g:extended_name_set, file_type)
+            let b:extended_name_set = get(g:extended_name_set, file_type)
+        else
+            let b:extended_name_set =
+                \ systemlist(s:file_uctags . ' --list-map-extensions  | grep -wi ^' . setup#convertedFt() . 
+                \ " | awk \'{print tolower(\$NF)}\' | sort -f | uniq -i")
+            let g:extended_name_set[file_type] = b:extended_name_set
+        endif
+        return
+    endfunction
+
     let g:erlang_minlines = 128
     let g:erlang_maxlines = 999
     let g:vimErlangTagJump_sortTag = a:algorithmFile
     let g:vimErlangTagJump_sortLengthMax = 15
-    let s:file_uctags = a:file_uctags
-    autocmd BufNewFile,BufRead *.* let b:extended_name_set =
-                \ systemlist(s:file_uctags . ' --list-map-extensions  | grep -wi ^' . setup#convertedFt() . 
-                \ " | awk \'{print tolower(\$NF)}\' | grep \'^[a-zA-z0-9]\*$\' | sort -f | uniq -i")
+    autocmd BufEnter *.* call UpdateNameSet()
+
     autocmd BufNewFile,BufRead *.* setlocal tagfunc=vimErlangTagJump#FbTagFunc
     autocmd BufNewFile,BufRead *.erl,*.hrl setlocal tagfunc=vimErlangTagJump#TagFunc
 endfunction
