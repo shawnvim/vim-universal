@@ -384,7 +384,21 @@ function! setup#vimErlangTagJump(file_uctags, algorithmFile)
     autocmd BufEnter *.* call UpdateNameSet()
 
     autocmd BufNewFile,BufRead *.* setlocal tagfunc=vimErlangTagJump#FbTagFunc
-    autocmd BufNewFile,BufRead *.erl,*.hrl setlocal tagfunc=vimErlangTagJump#TagFunc
+    autocmd BufNewFile,BufRead *.erl,*.hrl setlocal tagfunc=vimErlangTagJump#TagFunc |
+                \ let b:splitjoin_split_callbacks = [
+                \ 'sj#elixir#SplitDoBlock',
+                \ 'sj#elixir#SplitArray',
+                \ 'sj#elixir#SplitCommaParenthesis',
+                \ 'sj#elixir#SplitCommaCurlybracket',
+                \ 'sj#elixir#SplitPipe',
+                \ ] |
+                \ let b:splitjoin_join_callbacks = [
+                \ 'sj#elixir#JoinDoBlock',
+                \ 'sj#elixir#JoinArray',
+                \ 'sj#elixir#JoinCommaDelimitedItems',
+                \ 'sj#elixir#JoinPipe',
+                \ ]
+
 endfunction
 
 "-----------------------------------------------------------------------------"
