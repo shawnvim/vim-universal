@@ -85,3 +85,6 @@
 [submodule "pack/original/start/targets.vim"]
 	path = pack/original/start/targets.vim
 	url = https://github.com/wellle/targets.vim
+[submodule "splitjoin.vim"]
+	path = splitjoin.vim
+	url = https://github.com/shawnvim/splitjoin.vim
