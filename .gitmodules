@@ -88,3 +88,6 @@
 [submodule "pack/forked/start/splitjoin.vim"]
 	path = pack/forked/start/splitjoin.vim
 	url = https://github.com/shawnvim/splitjoin.vim
+[submodule "pack/original/start/wilder.nvim"]
+	path = pack/original/start/wilder.nvim
+	url = https://github.com/gelguy/wilder.nvim
