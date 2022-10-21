@@ -134,7 +134,7 @@ function! setup#minibufexpl()
     " Manually set Update Time
     let g:miniBufExplSetUT = 0 " def is 1
     " Too small will let other plugin(Leaderf) slow
-    set updatetime=500
+    set updatetime=749
 endfunction
 
 "-----------------------------------------------------------------------------"
@@ -381,7 +381,7 @@ function! setup#vimErlangTagJump(file_uctags, algorithmFile)
     let g:erlang_maxlines = 999
     let g:vimErlangTagJump_sortTag = a:algorithmFile
     let g:vimErlangTagJump_sortLengthMax = 15
-    autocmd BufEnter *.* call UpdateNameSet()
+    autocmd BufWinEnter *.* call UpdateNameSet()
 
     autocmd BufNewFile,BufRead *.* setlocal tagfunc=vimErlangTagJump#FbTagFunc
     autocmd BufNewFile,BufRead *.erl,*.hrl setlocal tagfunc=vimErlangTagJump#TagFunc |
