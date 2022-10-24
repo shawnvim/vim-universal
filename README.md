@@ -37,6 +37,22 @@ If you want to update with all submodules, please use:
 git submodule foreach git pull origin master
 ```
 
+Init
+-----
+After initial install, please install Leaderf fuzzy find engine:
+```vim
+:LeaderfInstallCExtension
+```
+And you can check the nstallation status after VIM restart by:
+```vim
+:echo g:Lf_fuzzyEngine_C
+```
+
+Readme / Help
+-----
+Most of the plug-ins' configuration is in `autoload/setup`, and you can use `gx` to check their Github page, or use `gf` to go to the file directory
+
+
 Run time path
 -----
 If you have other rtp or pack directory, you can include it by:
