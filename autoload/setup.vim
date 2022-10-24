@@ -528,7 +528,7 @@ function! setup#quickuiMenu()
                 \ ])
 
     call quickui#menu#install("&View", [
-                \ ["View GerritC&omments", 'GerritComments'],
+                \ ["View Gerrit&Comments", 'GerritComments'],
                 \ ])
 
     call quickui#menu#install("&Git", [
