@@ -1,3 +1,7 @@
+"-----------------------------------------------------------------------------"
+"------------- Use gx to open URL, use gf to go to directory -----------------"
+"-----------------------------------------------------------------------------"
+
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
@@ -107,6 +111,8 @@ function! setup#netrw()
 endfunction
 
 "-----------------------------------------------------------------------------"
+" https://github.com/preservim/nerdtree
+" ./pack/original/start/nerdtree/
 "-----------------------------------------------------------------------------"
 function! setup#NERDTree()
     let NERDTreeQuitOnOpen=1 "close NREDTree after file opened
@@ -117,6 +123,8 @@ endfunction
 
 
 "-----------------------------------------------------------------------------"
+" https://github.com/shawnvim/minibufexpl.vim
+" ./pack/forked/start/minibufexpl.vim/
 "-----------------------------------------------------------------------------"
 function! setup#minibufexpl()
     " ShowBufNum shoule be enable to let mru work
@@ -185,6 +193,8 @@ endfunction
 
 
 "-----------------------------------------------------------------------------"
+" https://github.com/mbbill/undotree
+" ./pack/original/start/undotree/
 "-----------------------------------------------------------------------------"
 function! setup#undotree()
     nnoremap <leader>u :UndotreeToggle<CR>
@@ -210,6 +220,7 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/airblade/vim-rooter
+" ./pack/original/start/vim-rooter/
 "-----------------------------------------------------------------------------"
 function! setup#rooter(rooter_patterns)
     " auto change cwd
@@ -218,6 +229,8 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/Yggdroot/LeaderF
+" ./pack/original/start/LeaderF/
+"-----------------------------------------------------------------------------"
 " Please init C Engine to speed up
 " :LeaderfInstallCExtension
 " :echo g:Lf_fuzzyEngine_C
@@ -250,8 +263,8 @@ function! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gp
     nnoremap <silent><C-f> :LeaderfFunction<CR>
     nnoremap <silent><C-S-f> :LeaderfFunctionAll<CR>
 
-    nnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom --current-buffer -e %s ", expand("<cword>"))<CR>
-    xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom --current-buffer -e %s ", leaderf#Rg#visual())<CR>
+    " nnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom --current-buffer -e %s ", expand("<cword>"))<CR>
+    " xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom --current-buffer -e %s ", leaderf#Rg#visual())<CR>
     nnoremap gh :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom -i -e %s ", expand("<cword>"))<CR>
     xnoremap gh :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom -i -e %s ", leaderf#Rg#visual())<CR>
     nnoremap go :<C-U>Leaderf! rg --stayOpen --nowrap --bottom --recall<CR>
@@ -268,6 +281,7 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/skywind3000/asyncrun.vim
+" ./pack/original/start/asyncrun.vim/
 "-----------------------------------------------------------------------------"
 function! setup#asyncrun()
     let g:asyncrun_exit = "echom 'Async job done, check result by <Alt-q>'"
@@ -284,6 +298,7 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/ludovicchabant/vim-gutentags
+" ./pack/original/start/vim-gutentags/
 "-----------------------------------------------------------------------------"
 function! setup#gutentags(file_uctags, file_ctags_opt)
     let s:vim_tags = expand('~/.cache/tags')
@@ -318,6 +333,7 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/lfv89/vim-interestingwords
+" ./pack/original/start/vim-interestingwords/
 "-----------------------------------------------------------------------------"
 function! setup#interestingwords()
     let g:interestingWordsDefaultMappings = 0
@@ -331,6 +347,7 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/Valloric/ListToggle
+" ./pack/original/start/ListToggle/
 "-----------------------------------------------------------------------------"
 function! setup#ListToggle()
     let g:lt_location_list_toggle_map = '<A-l>'
@@ -339,7 +356,8 @@ function! setup#ListToggle()
 endfunction
 
 "-----------------------------------------------------------------------------"
-" https://github.com/qiushihao/quickfix-reflector.vim
+" https://github.com/shawnvim/quickfix-reflector.vim
+" ./pack/forked/start/quickfix-reflector.vim/
 "-----------------------------------------------------------------------------"
 function! setup#quickfixreflector()
     " quickfix-reflector will autocmd when BuffReadPost which will affect fugitive
@@ -349,6 +367,7 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/mechatroner/rainbow_csv
+" ./pack/original/start/rainbow_csv/
 "-----------------------------------------------------------------------------"
 function! setup#rainbowcsv()
     let g:disable_rainbow_key_mappings = 1
@@ -359,6 +378,7 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/qiushihao/vim-erlang-tagjump
+" ./pack/original/start/vim-erlang-tagjump/
 "-----------------------------------------------------------------------------"
 function! setup#vimErlangTagJump(file_uctags, algorithmFile)
     let s:file_uctags = a:file_uctags
@@ -414,6 +434,7 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/qiushihao/vim-ttcn
+" ./pack/forked/start/vim-ttcn/
 "-----------------------------------------------------------------------------"
 function! setup#vimttcn()
     let g:ttcn_hl_naming_convention = 1
@@ -430,6 +451,7 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/tpope/vim-fugitive
+" ./pack/original/start/vim-fugitive/
 "-----------------------------------------------------------------------------"
 function! setup#fugitive()
     let g:fugitive_summary_format = "%an %ai %s"
@@ -439,6 +461,8 @@ endfunction
 
 
 "-----------------------------------------------------------------------------"
+" https://github.com/shawnvim/markdown-preview.nvim
+" ./pack/forked/start/markdown-preview.nvim/
 "-----------------------------------------------------------------------------"
 function! setup#mkdp()
     let g:mkdp_browserfunc = 'DisplayHTML'
@@ -446,6 +470,8 @@ function! setup#mkdp()
 endfunction
 
 "-----------------------------------------------------------------------------"
+" https://github.com/dhruvasagar/vim-table-mode
+" ./pack/original/start/vim-table-mode/
 "-----------------------------------------------------------------------------"
 function! setup#tablemode()
     function! s:isAtStartOfLine(mapping)
@@ -465,6 +491,7 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 " https://github.com/skywind3000/vim-quickui
+" ./pack/forked/start/vim-quickui/
 "-----------------------------------------------------------------------------"
 function! setup#quickui(file_uctags)
 
