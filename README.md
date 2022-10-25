@@ -34,23 +34,24 @@ Update
 -----
 If you want to update with all submodules, please use:
 ```
-git submodule foreach git pull origin master
+git pull origin master && git submodule update --recursive
 ```
 
 Init
 -----
-After initial install, please install Leaderf fuzzy find engine:
+After initial install, please install the C extension of [Leaderf](https://github.com/Yggdroot/LeaderF#performance) fuzzy matching algorithm:
 ```vim
 :LeaderfInstallCExtension
 ```
-And you can check the nstallation status after VIM restart by:
+And you can check the installation status after VIM restart by:
 ```vim
 :echo g:Lf_fuzzyEngine_C
 ```
 
 Readme / Help
 -----
-Most of the plug-ins' configuration is in `autoload/setup`, and you can use `gx` to check their Github page, or use `gf` to go to the file directory
+Most of the plug-ins' configuration is in [`autoload/setup`](https://github.com/shawnvim/vim-universal/blob/master/autoload/setup.vim), and you can use `gx` to check their Github page, or use `gf` to go to the file directory.
+You can also find the link in [`.gitmodules`](https://github.com/shawnvim/vim-universal/blob/master/.gitmodules)
 
 
 Run time path
