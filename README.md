@@ -28,7 +28,7 @@ If you have duplicated plugins locally, you can remove submodule by:
 git submodule deinit project-sub-1
 git rm project-sub-1
 ```
-and then remove the related configuration in `vimrc`
+and then remove the related configuration in [`vimrc`](https://github.com/shawnvim/vim-universal/blob/master/vimrc)
 
 Update
 -----
