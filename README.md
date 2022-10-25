@@ -50,17 +50,24 @@ And you can check the installation status after VIM restart by:
 
 Readme / Help
 -----
-Most of the plug-ins' configuration is in [`autoload/setup`](https://github.com/shawnvim/vim-universal/blob/master/autoload/setup.vim), and you can use `gx` to check their Github page, or use `gf` to go to the file directory.
-You can also find the link in [`.gitmodules`](https://github.com/shawnvim/vim-universal/blob/master/.gitmodules)
+Most of the plug-ins' configuration is in [`autoload/setup`](https://github.com/shawnvim/vim-universal/blob/master/autoload/setup.vim), and you can use `gx` to check their Github page, or use `gf` to go to the file directory.  
+You can also find the link of all plug-ins in [`.gitmodules`](https://github.com/shawnvim/vim-universal/blob/master/.gitmodules)
 
 
 Run time path
 -----
-If you have other rtp or pack directory, you can include it by:
+If you have other run time path(rtp), you can include it by:
 ```vim
 let g:path_internal = YourOtherRTP
 if isdirectory(g:path_internal)
     let &rtp .= ','.g:path_internal
+    " let &packpath .= ','.g:path_internal
     call YourOtherFunction()
 endif
 ```
+If you have other pack directory, you can include it in a similar way: 
+```vim
+let &packpath .= ','.g:path_internal
+```
+
+
