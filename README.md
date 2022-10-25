@@ -14,12 +14,13 @@ Requirements
 
 Install
 -----
-Please clone it with all submodules
+In this repo, `git submodule` is used to manage plug-in as package([`/pack`](https://github.com/shawnvim/vim-universal/tree/master/pack))   
+Please clone repo with all submodules by:
 ```
 git clone https://github.com/shawnvim/vim-universal --recurse-submodules
 ```
-Or you can just download the `release.zip` with all submodules and rename it to `.vim`  
-If you want to keep the folder name as vim-universal, you can use `gvim -u PathToVimrc`
+Or you can just download the `release.zip` with all packages and unzip it to `.vim`  
+If you want to keep the folder name as vim-universal, you can use `gvim -u PathToVimrc` to start using
 
 Remove submodule
 -----
