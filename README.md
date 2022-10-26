@@ -1,6 +1,6 @@
 vim-universal
 =======
-A universal VIM integration
+A universal Vim integration
 
  - Written in Python and VimL
  - Extended plugins with pack by submodules
@@ -9,7 +9,7 @@ A universal VIM integration
 Requirements
 ------------
 
- - vim8.2 or higher
+ - Vim8.2 or higher
  - Python2.7+ or Python3.1+
 
 Install
@@ -21,6 +21,9 @@ git clone https://github.com/shawnvim/vim-universal --recurse-submodules
 ```
 Or you can just download the `release.zip` with all packages and unzip it to `.vim`  
 If you want to keep the folder name as vim-universal, you can use `gvim -u PathToVimrc` to start using
+
+For more details about Vim native package manager or `git submodule`, please check: <a href="https://www.danielfranklin.id.au/vim-8-package-management/">Vim 8+ native package manager</a>
+
 
 Remove submodule
 -----
