@@ -63,6 +63,10 @@ function! setup#utilFunction(file_plantuml, file_pandoc, path_lua_filters)
     endif
 
     function DisplayHTML(Url)
+        call netrw#BrowseX(a:Url, 0)
+    endfunction
+
+    function DisplayHTMLR(Url)
         call netrw#BrowseX(a:Url, 1)
     endfunction
 
