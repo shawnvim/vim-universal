@@ -98,5 +98,11 @@ General
 | `<Leader-N>`               | Relative line number toggle
 | `<Leader-W>`               | Auto wrap toggle
 | `<Leader-U>`               | Undo tree toggle
+| |
+| `<Ctrl-S>`                 | Save file
+| `<Alt-J>` `<Alt-K>`        | Line movement
+| `<F12>`                    | Stop background async process
+
+
   
   
