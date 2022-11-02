@@ -1,10 +1,10 @@
 Newbie Guide
 =======
  - This is a functional guide to help newcomers get started quickly.  
- - Only a few functions are introduced here, and it is better to check the specific introduction of the corresponding plug-in in [`/pack`](https://github.com/shawnvim/vim-universal/tree/master/pack) to get more detailed information.  
+ - Only **a few** functions are introduced here, and it is better to check the specific introduction of the corresponding plug-in in [`/pack`](https://github.com/shawnvim/vim-universal/tree/master/pack) to get more detailed information.  
  - Tips:  
- `<Leader>` is set as space bar by default  
- `<Ctrl-R><Ctrl-W>` for a quick copy from current word to command line
+ `<Leader>` is set as **space bar** by default  
+ `<Ctrl-R><Ctrl-W>` for a quick copy from **current word** to command line
 
 
 
