@@ -14,8 +14,8 @@ Finder
 | -------                    | -----------
 | `<Ctrl-P>`                 | Finder for **files** in repo
 | `<Ctrl-F>`                 | Finder for **functions** in file
-| `<Ctrl-H>`                 | Global search by **grep**
-| `gh`                       | Global search by **ripgrep**
+| `<Ctrl-H>`                 | Global search by **grep**<br>`<Ctrl-G>` to quick insert current root directory 
+| `gh`                       | Global search by **ripgrep**<br>`<Shift-Q>` to quick duplicate search result to quickfix
 
 Menu
 ------------
@@ -50,7 +50,7 @@ Quickfix
 | -------                    | -----------
 | `<Alt-Q>`                  | Quickfix toggle
 | `<Leader-G>`               | Grep within quickfix
-| `<Leader-R>>`              | Restore to original quickfix
+| `<Leader-R>`               | Restore to original quickfix
 | `<Alt-A>`                  | Enable quickfix modification
 
 Search / Replace
@@ -82,4 +82,21 @@ Commentary
 | `F8`                       | Comment
 | `F9`                       | Uncomment
 
+Register
+------------
+| Command                    | Description
+| -------                    | -----------
+| `"`                        | Open register(clipboard)
+| `<Ctrl-C>`                 | Copy to register 0 and +(system register)
+| `<Ctrl-V>`                 | Paste from register 0
+| `<Ctrl-Shift-V>`           | Paste from register +
 
+General
+------------
+| Command                    | Description
+| -------                    | -----------
+| `<Leader-N>`               | Relative line number toggle
+| `<Leader-W>`               | Auto wrap toggle
+| `<Leader-U>`               | Undo tree toggle
+  
+  
