@@ -57,11 +57,11 @@ Search / Replace
 ------------
 | Command                    | Description
 | -------                    | -----------
-| `<Ctrl-K>`                 | Highlight current word
+| `<Ctrl-K>`                 | **Highlight** current word
 | `n` `N`                    | Navigate next/previous highlighted word
 | `<Ctrl-J>`                 | Clear all highlighted words
 | |
-| `<Ctrl-N>`                 | Select current word to start modify with multiple cursors
+| `<Ctrl-N>`                 | **Select** current word to start modify with multiple cursors
 | `<Shift-→>`                | Expand selection by character
 | `n` `N`                    | Get next/previous occurrence
 | `q`                        | Skip current and get next occurrence
@@ -72,7 +72,7 @@ Compile
 ------------
 | Command                    | Description
 | -------                    | -----------
-| `:Gmake [arguments]`       | Use gmake to multi-thread compile nearby directory with Makefile
+| `:Gmake [arguments]`       | Use gmake to multi-thread compile **closest parent directory** with **Makefile**
 
 
 Commentary
@@ -86,8 +86,8 @@ Register
 ------------
 | Command                    | Description
 | -------                    | -----------
-| `"`                        | Open register(clipboard)
-| `<Ctrl-C>`                 | Copy to register 0 and +(system register)
+| `"`                        | Open register(**clipboard**)
+| `<Ctrl-C>`                 | Copy to register 0 and +(**system register**)
 | `<Ctrl-V>`                 | Paste from register 0
 | `<Ctrl-Shift-V>`           | Paste from register +
 
