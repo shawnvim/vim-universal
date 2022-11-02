@@ -74,4 +74,7 @@ If you have other pack directory, you can include it in a similar way:
 let &packpath .= ','.g:path_internal
 ```
 
+Quick start
+-----
+Please check [`NewbieGuide`](https://github.com/shawnvim/vim-universal/blob/master/NewbieGuide.md) to experience this Vim integration quickly.  
 
