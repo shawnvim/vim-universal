@@ -20,9 +20,27 @@ Menu
 | Command                    | Description
 | -------                    | -----------
 | `F2`                       | NERDTree file system explorer
-| `<Alt-1>`                  | QuickUI menu for common functions
 | `<Alt-2>`                  | Most recently used buffers
 | `<Alt-3>`                  | Nearby functions
+| `<Alt-4>`                  | For internal testing only
+
+| Command                    | Description
+| -------                    | -----------
+| `<Alt-1>`                  | QuickUI menu for following commands
+| |
+| `TU`                       | Tags update
+| `TS`                       | For internal testing only
+| `DM`                       | Display as markdown
+| `DB`                       | Display as file/html explorer
+| `DU`                       | Display as UML
+| `DU`                       | Display as Office
+| `DR`                       | For internal testing only
+| `GB`                       | Git blame
+| `GR`                       | Git browse code review
+| `GC`                       | Git browse commit
+| `GG`                       | Git commit history log for current buffer
+| `GD`                       | Git diff
+| `GM`                       | Git diff from origin/master
 
 Quickfix
 ------------
@@ -32,3 +50,34 @@ Quickfix
 | `<Leader-G>`               | Grep within quickfix
 | `<Leader-R>>`              | Restore to original quickfix
 | `<Alt-A>`                  | Enable quickfix modification
+
+Search / Replace
+------------
+| Command                    | Description
+| -------                    | -----------
+| `<Ctrl-K>`                 | Highlight current word
+| `n` `N`                    | Navigate next/previous highlighted word
+| `<Ctrl-J>`                 | Clear all highlighted words
+| |
+| `<Ctrl-N>`                 | Select current word to start modify with multiple cursors
+| `<Shift-→>`                | Expand selection by character
+| `n` `N`                    | Get next/previous occurrence
+| `q`                        | Skip current and get next occurrence
+| `Q`                        | Remove current selected occurrence
+ 
+
+Compile
+------------
+| Command                    | Description
+| -------                    | -----------
+| `:Gmake [arguments]`       | Use gmake to multi-thread compile nearby directory with Makefile
+
+
+Commentary
+------------
+| Command                    | Description
+| -------                    | -----------
+| `F8`                       | Comment
+| `F9`                       | Uncomment
+
+
