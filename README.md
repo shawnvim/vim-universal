@@ -52,12 +52,6 @@ And you can check the installation status after VIM restart by:
 :echo g:Lf_fuzzyEngine_C
 ```
 
-Readme / Help
------
-Most of the plug-ins' configuration is in [`autoload/setup`](https://github.com/shawnvim/vim-universal/blob/master/autoload/setup.vim), and you can use `gx` to check their Github page, or use `gf` to go to the file directory.  
-You can also find the link of all plug-ins in [`.gitmodules`](https://github.com/shawnvim/vim-universal/blob/master/.gitmodules)
-
-
 Run time path
 -----
 If you have other run time path(rtp), you can include it by:
@@ -74,7 +68,13 @@ If you have other pack directory, you can include it in a similar way:
 let &packpath .= ','.g:path_internal
 ```
 
+Readme / Help
+-----
+Most of the plug-ins' configuration is in [`autoload/setup`](https://github.com/shawnvim/vim-universal/blob/master/autoload/setup.vim), and you can use `gx` to check their Github page, or use `gf` to go to the file directory.  
+You can also find the link of all plug-ins in [`.gitmodules`](https://github.com/shawnvim/vim-universal/blob/master/.gitmodules)
+
 Quick start
 -----
+If you have no time to follow all plug-ins and just want a quick start.  
 Please check [`NewbieGuide`](https://github.com/shawnvim/vim-universal/blob/master/NewbieGuide.md) to experience this Vim integration quickly.  
 
