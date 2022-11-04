@@ -254,7 +254,7 @@ function! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gp
     let g:Lf_WorkingDirectoryMode = 'ac'
     let g:Lf_ShowDevIcons = 0
     let g:Lf_Ctags = a:file_uctags
-    let g:Lf_ReverseOrder = 1
+    " let g:Lf_ReverseOrder = 1
     let g:Lf_CommandMap = {'<C-K>': ['<Up>'], '<C-J>': ['<Down>']}
     let g:Lf_Rg = a:file_rg
     let g:Lf_RgConfig = [ 
