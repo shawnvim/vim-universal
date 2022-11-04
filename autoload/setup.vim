@@ -19,6 +19,14 @@ function! setup#screenAndMouse()
 
     " Delete comment character when joining commented and no auto-wrap
     autocmd FileType * setlocal tw=0 formatoptions+=jc
+    
+    " Highlighting tabs and trailing whitespaces
+    hi link localWhitespaceError Error
+    function! ShowBlank()
+        syn match localWhitespaceError /\t\+/ containedin=ALL
+        syn match localWhitespaceError /\s\+$/ containedin=ALL
+    endfunction
+    au BufNewFile,BufRead * call ShowBlank()
 
     " In many terminal emulators the mouse works just fine, thus enable it.
     if has('mouse')
@@ -246,7 +254,7 @@ function! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gp
     let g:Lf_WorkingDirectoryMode = 'ac'
     let g:Lf_ShowDevIcons = 0
     let g:Lf_Ctags = a:file_uctags
-    let g:Lf_ReverseOrder = 1
+    " let g:Lf_ReverseOrder = 1
     let g:Lf_CommandMap = {'<C-K>': ['<Up>'], '<C-J>': ['<Down>']}
     let g:Lf_Rg = a:file_rg
     let g:Lf_RgConfig = [ 
@@ -278,7 +286,7 @@ function! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gp
     
     nnoremap <silent><leader>q :LeaderfQuickFix<CR>
     nnoremap <silent><leader>l :LeaderfLocList<CR>
-    nnoremap <silent><leader>s :LeaderfSelf<CR>
+    nnoremap <silent><leader>f :LeaderfSelf<CR>
     
 endfunction
 

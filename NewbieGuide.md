@@ -52,6 +52,10 @@ Quickfix
 | `<Leader-G>`               | Grep within quickfix
 | `<Leader-R>`               | Restore to original quickfix
 | `<Alt-A>`                  | Enable quickfix modification
+|  |
+| `za`                       | Toggle fold
+| `zr`                       | Open all folds
+| `zm`                       | Close all folds
 
 Search / Replace
 ------------
