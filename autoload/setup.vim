@@ -278,7 +278,7 @@ function! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gp
     
     nnoremap <silent><leader>q :LeaderfQuickFix<CR>
     nnoremap <silent><leader>l :LeaderfLocList<CR>
-    nnoremap <silent><leader>s :LeaderfSelf<CR>
+    nnoremap <silent><leader>f :LeaderfSelf<CR>
     
 endfunction
 
