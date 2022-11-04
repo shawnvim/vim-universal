@@ -91,3 +91,6 @@
 [submodule "pack/original/start/wilder.nvim"]
 	path = pack/original/start/wilder.nvim
 	url = https://github.com/gelguy/wilder.nvim
+[submodule "pack/original/start/vim-startify"]
+	path = pack/original/start/vim-startify
+	url = https://github.com/mhinz/vim-startify
