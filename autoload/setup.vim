@@ -22,8 +22,11 @@ function! setup#screenAndMouse()
     
     " Highlighting tabs and trailing whitespaces
     hi link localWhitespaceError Error
-    au Syntax *.* syn match localWhitespaceError /\t\+/ containedin=ALL "display
-    au Syntax *.* syn match localWhitespaceError /\s\+$/ containedin=ALL "display
+    function! ShowBlank()
+        syn match localWhitespaceError /\t\+/ containedin=ALL
+        syn match localWhitespaceError /\s\+$/ containedin=ALL
+    endfunction
+    au BufNewFile,BufRead * call ShowBlank()
 
     " In many terminal emulators the mouse works just fine, thus enable it.
     if has('mouse')
