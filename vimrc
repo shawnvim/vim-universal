@@ -132,5 +132,6 @@ if isdirectory(g:path_internal)
     call internalsetup#gerrit()
     call internalsetup#quickuiMenu()
     call internalsetup#ToolBar()
+    call internalsetup#LogTool()
 endif
 
