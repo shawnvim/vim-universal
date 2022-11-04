@@ -19,6 +19,11 @@ function! setup#screenAndMouse()
 
     " Delete comment character when joining commented and no auto-wrap
     autocmd FileType * setlocal tw=0 formatoptions+=jc
+    
+    " Highlighting tabs and trailing whitespaces
+    hi link localWhitespaceError Error
+    au Syntax * syn match localWhitespaceError /\t\+/ containedin=ALL "display
+    au Syntax * syn match localWhitespaceError /\s\+$/ containedin=ALL "display
 
     " In many terminal emulators the mouse works just fine, thus enable it.
     if has('mouse')
