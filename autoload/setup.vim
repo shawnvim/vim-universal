@@ -2,6 +2,39 @@
 "------------- Use gx to open URL, use gf to go to directory -----------------"
 "-----------------------------------------------------------------------------"
 
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
+function! setup#startify()
+    let g:startify_session_dir = '~/.vim/session'
+    let g:startify_session_persistence = 1
+    let g:startify_session_number = 2
+    let g:startify_commands = [
+        \ {'p': ['Project Finder (Ctrl-P)', 'Leaderf file']},
+        \ {'v': ['Visit Vim-universal on Github', 'call netrw#BrowseX("https://github.com/shawnvim/vim-universal", 1)']},
+        \ ]
+    let g:startify_lists = [
+                \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+                \ { 'type': 'files',     'header': ['   MRU']            },
+                \ { 'type': 'commands',  'header': ['   Commands']       },
+                \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+                \ { 'type': 'sessions',  'header': ['   Sessions']       },
+                \ ]
+    let g:startify_files_number = 10
+    let g:startify_bookmarks = [
+                \ {'r' : g:path_vimrc . '/vimrc'}
+                \ ]
+    let g:startify_custom_header = [
+                \ '    *----------------------------------------*',
+                \ '    |                                        |',
+                \ '    |   Welcome to vim-universal             |',
+                \ '    |                                        |',
+                \ '    |   Get start by Project Finder          |',
+                \ '    |                                        |',
+                \ '    *----------------------------------------*',
+                \ '',
+                \ '',
+                \ ]
+endfunction
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
@@ -19,11 +52,11 @@ function! setup#screenAndMouse()
 
     " Delete comment character when joining commented and no auto-wrap
     autocmd FileType * setlocal tw=0 formatoptions+=jc
-    
+
     " Highlighting tabs and trailing whitespaces
     hi link localWhitespaceError Error
     function! ShowBlank()
-        syn match localWhitespaceError /\t\+/ containedin=ALL
+        " syn match localWhitespaceError /\t\+/ containedin=ALL
         syn match localWhitespaceError /\s\+$/ containedin=ALL
     endfunction
     au BufNewFile,BufRead * call ShowBlank()

@@ -89,6 +89,7 @@ let s:path_lua_filters = g:path_lib . '/lua-filters'
 
 let s:rooter_patterns = ['.root', '.git', '.project']
 
+call setup#startify()
 call setup#screenAndMouse()
 call setup#paste()
 call setup#utilFunction(s:file_plantuml, s:file_pandoc, s:path_lua_filters)
