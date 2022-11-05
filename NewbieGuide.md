@@ -14,7 +14,7 @@ Finder
 | -------                    | -----------
 | `<Ctrl-P>`                 | Finder for **files** in repo
 | `<Ctrl-F>`                 | Finder for **functions** in file
-| `<Ctrl-H>`                 | Global search by **grep**<br>`<Ctrl-G>` to quick insert current root directory 
+| `<Ctrl-H>`                 | Global search by **grep**<br>`<Ctrl-G>` to quick insert current root directory
 | `gh`                       | Global search by **ripgrep**<br>`<Shift-Q>` to quick duplicate search result to quickfix
 
 Menu
