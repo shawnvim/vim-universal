@@ -20,10 +20,13 @@ function! setup#startify()
     call setup#mkdir('~/.cache/vim/files/info')
     set viminfo='100,n$HOME/.cache/vim/files/info/viminfo
     let g:startify_session_dir = setup#mkdir('~/.cache/vim/session')
-    let g:startify_session_persistence = 1
+    set ssop-=curdir
+    let g:startify_session_persistence = 0
+    let g:startify_change_cmd = 'cd'
     let g:startify_session_sort = 1
     let g:startify_session_number = 4
     let g:startify_padding_left = 3
+    let g:startify_session_delete_buffers = 1
     let g:startify_commands = [
                 \ {'p': ['Project Finder (Ctrl-P)', 'Leaderf file']},
                 \ {'v': ['Visit Vim-universal on Github',
@@ -31,9 +34,9 @@ function! setup#startify()
                 \ ]
     let g:startify_lists = [
                 \ { 'type': 'dir',       'header': ['   Recents '. getcwd()] },
-                \ { 'type': 'sessions',  'header': ['   Sessions']           },
                 \ { 'type': 'commands',  'header': ['   Recommendations']    },
                 \ { 'type': 'bookmarks', 'header': ['   Bookmarks']          },
+                \ { 'type': 'sessions',  'header': ['   Sessions']           },
                 \ ]
     let g:startify_files_number = 7
     let g:startify_bookmarks = [
@@ -65,7 +68,8 @@ function! setup#startify()
             execute("SSave! " . filename)
         endif
     endfunction
-    au ExitPre * call SaveSession()
+    au VimLeave * call SaveSession()
+    let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose' ]
 endfunction
 
 "-----------------------------------------------------------------------------"
@@ -205,13 +209,13 @@ function! setup#minibufexpl()
     let g:miniBufExplSortBy = 'mru'
     let g:miniBufExplMaxSize = 3 
     "   let g:miniBufExplMapWindowNavVim = 1
-    let g:miniBufExplBuffersNeeded = 1 "mandatory for buffer switch
+    let g:miniBufExplBuffersNeeded = 0 "mandatory for buffer switch
     "   let g:miniBufExplMapWindowNavArrows = 1
     "   let g:miniBufExplMapCTabSwitchBufs = 1
     "   let g:miniBufExplModSelTarget = 1
     " Depends on vim-rooter
     let g:miniBufExplStatusLineText = '%!FindRootDirectory()'
-    "let t:miniBufExplAutoUpdate = 0
+    let t:miniBufExplAutoUpdate = 1
     " Manually set Update Time
     let g:miniBufExplSetUT = 0 " def is 1
     " Too small will let other plugin(Leaderf) slow
