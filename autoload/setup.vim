@@ -60,7 +60,7 @@ function! setup#startify()
                 \ '',
                 \ ]
     function! SaveSession()
-        if bufname() == ''
+        if bufname() == '' || bufname() =~# 'MiniBufExplorer' || bufname() =~# 'NERD_tree'
             return
         elseif isdirectory(g:startify_session_dir)
             let num_rm = system('echo $(ls -l ' . g:startify_session_dir . ' | wc -l)') - g:startify_session_number
@@ -76,7 +76,7 @@ function! setup#startify()
     endfunction
     au VimLeave * call SaveSession()
     let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose',
-                \                          'MBECloseAll'
+                \                          'silent! tabdo MBECloseAll',
                 \ ]
 endfunction
 
