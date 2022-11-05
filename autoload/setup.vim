@@ -33,14 +33,15 @@ function! setup#startify()
                 \        'call netrw#BrowseX("https://github.com/shawnvim/vim-universal", 1)']},
                 \ ]
     let g:startify_lists = [
-                \ { 'type': 'dir',       'header': ['   Recents '. getcwd()] },
                 \ { 'type': 'commands',  'header': ['   Recommendations']    },
-                \ { 'type': 'bookmarks', 'header': ['   Bookmarks']          },
+                \ { 'type': 'bookmarks', 'header': ['   Vim in Use']          },
+                \ { 'type': 'dir',       'header': ['   Recents '. getcwd()] },
                 \ { 'type': 'sessions',  'header': ['   Sessions (only for emergency)']           },
                 \ ]
     let g:startify_files_number = 7
     let g:startify_bookmarks = [
-                \ {'u' : g:path_vimrc}
+                \ {'u' : g:path_vimrc},
+                \ {'r' : $VIMRUNTIME},
                 \ ]
     let g:startify_custom_header = [
                 \ '    *------------------------------------------------------*',
