@@ -4,8 +4,22 @@
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
+function! setup#mkdir(path)
+    let dir = expand(a:path)
+    " check path and create if not exist "
+    if !isdirectory(dir)
+        silent! call mkdir(dir, 'p')
+    endif
+    return dir
+endfunction
+
+
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
 function! setup#startify()
-    let g:startify_session_dir = '~/.vim/session'
+    call setup#mkdir('~/.cache/vim/files/info')
+    set viminfo='100,n$HOME/.cache/vim/files/info/viminfo
+    let g:startify_session_dir = setup#mkdir('~/.cache/vim/session')
     let g:startify_session_persistence = 1
     let g:startify_session_number = 2
     let g:startify_padding_left = 3
@@ -14,15 +28,14 @@ function! setup#startify()
         \ {'v': ['Visit Vim-universal on Github', 'call netrw#BrowseX("https://github.com/shawnvim/vim-universal", 1)']},
         \ ]
     let g:startify_lists = [
-                \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-                \ { 'type': 'files',     'header': ['   MRU']            },
-                \ { 'type': 'commands',  'header': ['   Recommendations']       },
+                \ { 'type': 'dir',       'header': ['   Repo '. getcwd()] },
+                \ { 'type': 'commands',  'header': ['   Recommendations']},
                 \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
                 \ { 'type': 'sessions',  'header': ['   Sessions']       },
                 \ ]
-    let g:startify_files_number = 10
+    let g:startify_files_number = 7
     let g:startify_bookmarks = [
-                \ {'r' : g:path_vimrc . '/vimrc'}
+                \ {'u' : g:path_vimrc}
                 \ ]
     let g:startify_custom_header = [
                 \ '    *------------------------------------------------------*',
@@ -101,11 +114,7 @@ endfunction
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! setup#utilFunction(file_plantuml, file_pandoc, path_lua_filters)
-    let s:vim_tmp = expand('~/.cache/vim')
-    " check path and create if not exist "
-    if !isdirectory(s:vim_tmp)
-        silent! call mkdir(s:vim_tmp, 'p')
-    endif
+    let s:vim_tmp = setup#mkdir('~/.cache/vim/tmp')
 
     function DisplayHTML(Url)
         call netrw#BrowseX(a:Url, 0)
@@ -294,7 +303,7 @@ function! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gp
     " let g:Lf_ReverseOrder = 1
     let g:Lf_CommandMap = {'<C-K>': ['<Up>'], '<C-J>': ['<Down>']}
     let g:Lf_Rg = a:file_rg
-    let g:Lf_RgConfig = [ 
+    let g:Lf_RgConfig = [
                 \ "--glob='!tags'",
                 \ "--glob='!*.tags'"
                 \ ]
@@ -350,12 +359,7 @@ endfunction
 " ./pack/original/start/vim-gutentags/
 "-----------------------------------------------------------------------------"
 function! setup#gutentags(file_uctags, file_ctags_opt)
-    let s:vim_tags = expand('~/.cache/tags')
-    " check path and create if not exist "
-    if !isdirectory(s:vim_tags)
-        silent! call mkdir(s:vim_tags, 'p')
-    endif
-
+    let s:vim_tags = setup#mkdir('~/.cache/tags')
     let g:gutentags_ctags_tagfile = '.tags'
 
     function! RemoveTag()
