@@ -60,7 +60,7 @@ function! setup#startify()
                 \ '',
                 \ ]
     function! SaveSession()
-        if bufname() == '' || bufname() =~# 'MiniBufExplorer' || bufname() =~# 'NERD_tree'
+        if bufname() == '' || bufname() =~# 'NERD_tree'
             return
         elseif isdirectory(g:startify_session_dir)
             let num_rm = system('echo $(ls -l ' . g:startify_session_dir . ' | wc -l)') - g:startify_session_number
