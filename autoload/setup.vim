@@ -8,6 +8,7 @@ function! setup#startify()
     let g:startify_session_dir = '~/.vim/session'
     let g:startify_session_persistence = 1
     let g:startify_session_number = 2
+    let g:startify_padding_left = 3
     let g:startify_commands = [
         \ {'p': ['Project Finder (Ctrl-P)', 'Leaderf file']},
         \ {'v': ['Visit Vim-universal on Github', 'call netrw#BrowseX("https://github.com/shawnvim/vim-universal", 1)']},
@@ -15,7 +16,7 @@ function! setup#startify()
     let g:startify_lists = [
                 \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
                 \ { 'type': 'files',     'header': ['   MRU']            },
-                \ { 'type': 'commands',  'header': ['   Commands']       },
+                \ { 'type': 'commands',  'header': ['   Recommendations']       },
                 \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
                 \ { 'type': 'sessions',  'header': ['   Sessions']       },
                 \ ]
@@ -24,16 +25,19 @@ function! setup#startify()
                 \ {'r' : g:path_vimrc . '/vimrc'}
                 \ ]
     let g:startify_custom_header = [
-                \ '    *----------------------------------------*',
-                \ '    |                                        |',
-                \ '    |   Welcome to vim-universal             |',
-                \ '    |                                        |',
-                \ '    |   Get start by Project Finder          |',
-                \ '    |                                        |',
-                \ '    *----------------------------------------*',
+                \ '    *------------------------------------------------------*',
+                \ '    |                                                      |',
+                \ '    |   Welcome to vim-universal                           |',
+                \ '    |                                                      |',
+                \ '    |   This is a integration for Vim 8.2 or later         |',
+                \ '    |                                                      |',
+                \ '    |   Please refer to recommendations blew to start      |',
+                \ '    |                                                      |',
+                \ '    *------------------------------------------------------*',
                 \ '',
                 \ '',
                 \ ]
+
 endfunction
 
 "-----------------------------------------------------------------------------"
