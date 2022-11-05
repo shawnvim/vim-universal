@@ -544,6 +544,15 @@ function! setup#mkdp()
 endfunction
 
 "-----------------------------------------------------------------------------"
+" https://github.com/gelguy/wilder.nvim
+" ./pack/original/start/wilder.nvim/
+"-----------------------------------------------------------------------------"
+function! setup#wilder()
+    call wilder#setup({'modes': [':', '/', '?']})
+    set shortmess-=S
+endfunction
+
+"-----------------------------------------------------------------------------"
 " https://github.com/dhruvasagar/vim-table-mode
 " ./pack/original/start/vim-table-mode/
 "-----------------------------------------------------------------------------"

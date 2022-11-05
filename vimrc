@@ -118,7 +118,7 @@ call setup#fugitive()
 call setup#mkdp()
 call setup#tablemode()
 call setup#quickui(s:file_uctags)
-call wilder#setup({'modes': [':', '/', '?']})
+call setup#wilder()
 
 " Global variables are best used for menu initialization.
 call setup#quickuiMenu()
