@@ -36,7 +36,7 @@ function! setup#startify()
                 \ { 'type': 'dir',       'header': ['   Recents '. getcwd()] },
                 \ { 'type': 'commands',  'header': ['   Recommendations']    },
                 \ { 'type': 'bookmarks', 'header': ['   Bookmarks']          },
-                \ { 'type': 'sessions',  'header': ['   Sessions']           },
+                \ { 'type': 'sessions',  'header': ['   Sessions (only for emergency)']           },
                 \ ]
     let g:startify_files_number = 7
     let g:startify_bookmarks = [
