@@ -18,15 +18,18 @@ endfunction
 "-----------------------------------------------------------------------------"
 function! setup#startify()
     call setup#mkdir('~/.cache/vim/files/info')
-    set viminfo+=n$HOME/.cache/vim/files/info/viminfo
+    set viminfo+=r$TEMP:,r$TMP:,r$TMPDIR:,n$HOME/.cache/vim/files/info/viminfo
+
     let g:startify_session_dir = setup#mkdir('~/.cache/vim/session')
     set ssop-=curdir
+
     let g:startify_session_persistence = 0
     let g:startify_change_cmd = 'cd'
     let g:startify_session_sort = 1
     let g:startify_session_number = 3
     let g:startify_padding_left = 3
     let g:startify_session_delete_buffers = 1
+
     let g:startify_commands = [
                 \ {'p': ['Project Finder (Ctrl-P)', 'Leaderf file']},
                 \ {'v': ['Visit Vim-universal on Github',
