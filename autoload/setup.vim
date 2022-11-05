@@ -61,7 +61,7 @@ function! setup#screenAndMouse()
     hi link localWhitespaceError Error
     function! ShowBlank()
         " syn match localWhitespaceError /\t\+/ containedin=ALL
-        syn match localWhitespaceError /\s\+$/ containedin=ALL
+        syn match localWhitespaceError /\s$/ containedin=ALL
     endfunction
     au BufNewFile,BufRead * call ShowBlank()
 
