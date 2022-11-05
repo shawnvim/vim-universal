@@ -53,8 +53,17 @@ function! setup#startify()
                 \ '',
                 \ ]
     function! SaveSession()
-        let filename = fnamemodify(getcwd(),':t') . '_' . localtime()
-        execute("SSave! " . filename)
+        if isdirectory(g:startify_session_dir)
+            let num_rm = system('echo $(ls -l ' . g:startify_session_dir . ' | wc -l)') - g:startify_session_number
+            if num_rm > 2
+                let num_rm -= 1
+                let cli_rm = 'cd ' . g:startify_session_dir . ' && rm $(ls -rt ' . g:startify_session_dir . ' | head -n ' . num_rm . ' )'
+                echom 'Too many sessions, cleanup: ' . cli_rm
+                call system(cli_rm)
+            endif
+            let filename = fnamemodify(getcwd(),':t') . '_' . localtime()
+            execute("SSave! " . filename)
+        endif
     endfunction
     au ExitPre * call SaveSession()
 endfunction
