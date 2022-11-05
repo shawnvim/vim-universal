@@ -24,7 +24,7 @@ function! setup#startify()
     let g:startify_session_persistence = 0
     let g:startify_change_cmd = 'cd'
     let g:startify_session_sort = 1
-    let g:startify_session_number = 4
+    let g:startify_session_number = 3
     let g:startify_padding_left = 3
     let g:startify_session_delete_buffers = 1
     let g:startify_commands = [
@@ -56,7 +56,9 @@ function! setup#startify()
                 \ '',
                 \ ]
     function! SaveSession()
-        if isdirectory(g:startify_session_dir)
+        if bufname() == ''
+            return
+        elseif isdirectory(g:startify_session_dir)
             let num_rm = system('echo $(ls -l ' . g:startify_session_dir . ' | wc -l)') - g:startify_session_number
             if num_rm > 2
                 let num_rm -= 1
