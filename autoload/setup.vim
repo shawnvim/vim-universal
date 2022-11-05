@@ -75,7 +75,9 @@ function! setup#startify()
         endif
     endfunction
     au VimLeave * call SaveSession()
-    let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose' ]
+    let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose',
+                \                          'MBECloseAll'
+                \ ]
 endfunction
 
 "-----------------------------------------------------------------------------"
