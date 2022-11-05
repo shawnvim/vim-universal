@@ -53,7 +53,7 @@ function! setup#startify()
                 \ '',
                 \ ]
     function! SaveSession()
-        let filename = expand('%:t') . '_' . localtime()
+        let filename = fnamemodify(getcwd(),':t') . '_' . localtime()
         execute("SSave! " . filename)
     endfunction
     au ExitPre * call SaveSession()
