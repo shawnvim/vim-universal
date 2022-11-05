@@ -12,7 +12,7 @@ set hidden             "jump to tags without save
 " set nocscopetag        "always jump to first tag, now it's replaced by tag/ts
 " set guioptions+=b      "bottom scroll bar
 " set guioptions-=m      "no menu bar, due to Alt hotkey
-set cursorline         " highlight current line 
+set cursorline         " highlight current line
 set modeline           " allows you to set variables specific to a file. By default, the first and last five lines are read by Vim for variable settings
 set tabstop=4          " number of visual spaces per TAB
 set expandtab          " tabs are spaces
@@ -44,7 +44,7 @@ set tags=tags;
 set tags+=./tags
 
 " root path depends on vimrc
-" let g:file_vimrc = index(v:argv, '-u') != -1 ? get(v:argv, index(v:argv, '-u') + 1, '') : $MYVIMRC 
+" let g:file_vimrc = index(v:argv, '-u') != -1 ? get(v:argv, index(v:argv, '-u') + 1, '') : $MYVIMRC
 " let g:path_vimrc = fnamemodify(g:file_vimrc, ':p:h')
 let g:path_vimrc = expand('<sfile>:p:h')
 " let g:compile_errorformat = &errorformat

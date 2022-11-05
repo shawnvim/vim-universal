@@ -18,7 +18,7 @@ endfunction
 "-----------------------------------------------------------------------------"
 function! setup#startify()
     call setup#mkdir('~/.cache/vim/files/info')
-    set viminfo='100,n$HOME/.cache/vim/files/info/viminfo
+    set viminfo+=n$HOME/.cache/vim/files/info/viminfo
     let g:startify_session_dir = setup#mkdir('~/.cache/vim/session')
     set ssop-=curdir
     let g:startify_session_persistence = 0
@@ -321,6 +321,7 @@ function! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gp
     let g:Lf_RootMarkers = g:rooter_patterns
     let g:Lf_WorkingDirectoryMode = 'ac'
     let g:Lf_ShowDevIcons = 0
+    let g:Lf_UseCache = 0
     let g:Lf_Ctags = a:file_uctags
     " let g:Lf_ReverseOrder = 1
     let g:Lf_CommandMap = {'<C-K>': ['<Up>'], '<C-J>': ['<Down>']}
