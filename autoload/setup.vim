@@ -21,17 +21,19 @@ function! setup#startify()
     set viminfo='100,n$HOME/.cache/vim/files/info/viminfo
     let g:startify_session_dir = setup#mkdir('~/.cache/vim/session')
     let g:startify_session_persistence = 1
-    let g:startify_session_number = 2
+    let g:startify_session_sort = 1
+    let g:startify_session_number = 4
     let g:startify_padding_left = 3
     let g:startify_commands = [
-        \ {'p': ['Project Finder (Ctrl-P)', 'Leaderf file']},
-        \ {'v': ['Visit Vim-universal on Github', 'call netrw#BrowseX("https://github.com/shawnvim/vim-universal", 1)']},
-        \ ]
+                \ {'p': ['Project Finder (Ctrl-P)', 'Leaderf file']},
+                \ {'v': ['Visit Vim-universal on Github',
+                \        'call netrw#BrowseX("https://github.com/shawnvim/vim-universal", 1)']},
+                \ ]
     let g:startify_lists = [
-                \ { 'type': 'dir',       'header': ['   Repo '. getcwd()] },
-                \ { 'type': 'commands',  'header': ['   Recommendations']},
-                \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-                \ { 'type': 'sessions',  'header': ['   Sessions']       },
+                \ { 'type': 'dir',       'header': ['   Recents '. getcwd()] },
+                \ { 'type': 'sessions',  'header': ['   Sessions']           },
+                \ { 'type': 'commands',  'header': ['   Recommendations']    },
+                \ { 'type': 'bookmarks', 'header': ['   Bookmarks']          },
                 \ ]
     let g:startify_files_number = 7
     let g:startify_bookmarks = [
@@ -50,7 +52,11 @@ function! setup#startify()
                 \ '',
                 \ '',
                 \ ]
-
+    function! SaveSession()
+        let filename = expand('%:t') . '_' . localtime()
+        execute("SSave! " . filename)
+    endfunction
+    au ExitPre * call SaveSession()
 endfunction
 
 "-----------------------------------------------------------------------------"
@@ -326,14 +332,14 @@ function! setup#Leaderf(file_uctags, file_rg, file_ctags_opt, file_ctags_opt_3gp
     nnoremap gh :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom -i -e %s ", expand("<cword>"))<CR>
     xnoremap gh :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen --nowrap --bottom -i -e %s ", leaderf#Rg#visual())<CR>
     nnoremap go :<C-U>Leaderf! rg --stayOpen --nowrap --bottom --recall<CR>
-    
+
     nnoremap <silent><leader>t :Leaderf tag<CR>
     nnoremap <silent><leader>r :Leaderf rg<CR>
-    
+
     nnoremap <silent><leader>q :LeaderfQuickFix<CR>
     nnoremap <silent><leader>l :LeaderfLocList<CR>
     nnoremap <silent><leader>f :LeaderfSelf<CR>
-    
+
 endfunction
 
 
@@ -348,8 +354,6 @@ function! setup#asyncrun()
     " User defined command Gmake
     command! -nargs=* Gmake call util#AsyncCompileSubSystem(<q-args>)
 
-    nmap <F10> :Gmake beam<CR>
-    nmap <F11> :Gmake<CR>
     nmap <F12> :AsyncStop!<CR>
 
 endfunction
@@ -587,11 +591,11 @@ function! setup#quickuiMenu()
                 \ [ "E&xit", 'qa' ],
                 \ ])
 
-    call quickui#menu#install("&Make", [
-                \ ["Make &All", 'Gmake all'],
-                \ ["Make &Beam\tF10", 'Gmake beam'],
-                \ ["Make &General\tF11", 'Gmake'],
-                \ ["Make &Ts", 'Gmake ts'],
+    call quickui#menu#install("G&make", [
+                \ ["&Gmake", 'Gmake'],
+                \ ["Gmake &All", 'Gmake all'],
+                \ ["Gmake &Beam", 'Gmake beam'],
+                \ ["Gmake &Ts", 'Gmake ts'],
                 \ ])
 
     call quickui#menu#install('&Tags', [
