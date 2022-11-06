@@ -2,25 +2,14 @@
 "------------- Use gx to open URL, use gf to go to directory -----------------"
 "-----------------------------------------------------------------------------"
 
-"-----------------------------------------------------------------------------"
-"-----------------------------------------------------------------------------"
-function! setup#mkdir(path)
-    let dir = expand(a:path)
-    " check path and create if not exist "
-    if !isdirectory(dir)
-        silent! call mkdir(dir, 'p')
-    endif
-    return dir
-endfunction
-
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! setup#startify()
-    call setup#mkdir('~/.cache/vim/files/info')
+    call util#mkdir('~/.cache/vim/files/info')
     set viminfo+=r$TEMP:,r$TMP:,r$TMPDIR:,n$HOME/.cache/vim/files/info/viminfo
 
-    let g:startify_session_dir = setup#mkdir('~/.cache/vim/session')
+    let g:startify_session_dir = util#mkdir('~/.cache/vim/session')
     set ssop-=curdir
 
     let g:startify_session_persistence = 0
@@ -77,6 +66,7 @@ function! setup#startify()
     au VimLeave * call SaveSession()
     let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose',
                 \                          'silent! tabdo MBECloseAll',
+                \                          'UndotreeHide',
                 \ ]
 endfunction
 
@@ -141,7 +131,7 @@ endfunction
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! setup#utilFunction(file_plantuml, file_pandoc, path_lua_filters)
-    let s:vim_tmp = setup#mkdir('~/.cache/vim/tmp')
+    let s:vim_tmp = util#mkdir('~/.cache/vim/tmp')
 
     function DisplayHTML(Url)
         call netrw#BrowseX(a:Url, 0)
@@ -282,6 +272,9 @@ endfunction
 " ./pack/original/start/undotree/
 "-----------------------------------------------------------------------------"
 function! setup#undotree()
+    call util#mkdir('~/.cache/vim/undodir')
+    set undofile
+    set undodir=$HOME/.cache/vim/undodir
     nnoremap <leader>u :UndotreeToggle<CR>
 endfunction
 
@@ -385,7 +378,7 @@ endfunction
 " ./pack/original/start/vim-gutentags/
 "-----------------------------------------------------------------------------"
 function! setup#gutentags(file_uctags, file_ctags_opt)
-    let s:vim_tags = setup#mkdir('~/.cache/tags')
+    let s:vim_tags = util#mkdir('~/.cache/tags')
     let g:gutentags_ctags_tagfile = '.tags'
 
     function! RemoveTag()

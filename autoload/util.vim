@@ -69,3 +69,14 @@ function! util#AsyncCompileSubSystem(cli)
     endif
     exe ':cd ' . root
 endfunction
+
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
+function! util#mkdir(path)
+    let dir = expand(a:path)
+    " check path and create if not exist "
+    if !isdirectory(dir)
+        silent! call mkdir(dir, 'p', 0700)
+    endif
+    return dir
+endfunction
