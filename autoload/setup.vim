@@ -6,9 +6,8 @@
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! setup#startify()
-    call util#mkdir('~/.cache/vim/files/info')
-    set viminfo+=r$TEMP:,r$TMP:,r$TMPDIR:,n$HOME/.cache/vim/files/info/viminfo
-
+    set viminfo+=r$TEMP:,r$TMP:,r$TMPDIR:
+    let &viminfo .= ',n' . util#mkdir('~/.cache/vim/files/info') . '/viminfo'
     let g:startify_session_dir = util#mkdir('~/.cache/vim/session')
     set ssop-=curdir
 
@@ -272,9 +271,8 @@ endfunction
 " ./pack/original/start/undotree/
 "-----------------------------------------------------------------------------"
 function! setup#undotree()
-    call util#mkdir('~/.cache/vim/undodir')
     set undofile
-    set undodir=$HOME/.cache/vim/undodir
+    let &undodir = util#mkdir('~/.cache/vim/undodir')
     nnoremap <leader>u :UndotreeToggle<CR>
 endfunction
 
