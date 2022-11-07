@@ -7,7 +7,7 @@
 "-----------------------------------------------------------------------------"
 function! setup#startify()
     set viminfo+=r$TEMP:,r$TMP:,r$TMPDIR:
-    let &viminfo .= ',n' . util#mkdir('~/.cache/vim/files/info') . '/viminfo'
+    let &viminfo .= ',n' . util#mkdir(g:path_cache  . '/files/info') . '/viminfo'
 
     let g:startify_change_cmd = 'cd'
     let g:startify_padding_left = 3
@@ -40,32 +40,7 @@ function! setup#startify()
                 \ '',
                 \ '',
                 \ ]
-    " let g:startify_session_dir = util#mkdir('~/.cache/vim/session')
-    " set ssop-=curdir
-    " let g:startify_session_persistence = 0
-    " let g:startify_session_sort = 1
-    " let g:startify_session_number = 3
-    " let g:startify_session_delete_buffers = 1
-    " function! SaveSession()
-    "     if bufname() == '' || bufname() =~# 'NERD_tree'
-    "         return
-    "     elseif isdirectory(g:startify_session_dir)
-    "         let num_rm = system('echo $(ls -l ' . g:startify_session_dir . ' | wc -l)') - g:startify_session_number
-    "         if num_rm > 2
-    "             let num_rm -= 1
-    "             let cli_rm = 'cd ' . g:startify_session_dir . ' && rm $(ls -rt ' . g:startify_session_dir . ' | head -n ' . num_rm . ' )'
-    "             echom 'Too many sessions, cleanup: ' . cli_rm
-    "             call system(cli_rm)
-    "         endif
-    "         let filename = fnamemodify(getcwd(),':t') . '_' . localtime()
-    "         execute("SSave! " . filename)
-    "     endif
-    " endfunction
-    " au VimLeave * call SaveSession()
-    " let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose',
-    "             \                          'silent! tabdo MBECloseAll',
-    "             \                          'UndotreeHide',
-    "             \ ]
+
 endfunction
 
 "-----------------------------------------------------------------------------"
@@ -129,7 +104,7 @@ endfunction
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! setup#utilFunction(file_plantuml, file_pandoc, path_lua_filters)
-    let s:vim_tmp = util#mkdir('~/.cache/vim/tmp')
+    let s:vim_tmp = util#mkdir(g:path_cache . '/tmp')
 
     function DisplayHTML(Url)
         call netrw#BrowseX(a:Url, 0)
@@ -270,8 +245,6 @@ endfunction
 " ./pack/original/start/undotree/
 "-----------------------------------------------------------------------------"
 function! setup#undotree()
-    " set undofile
-    " let &undodir = util#mkdir('~/.cache/vim/undodir')
     nnoremap <leader>u :UndotreeToggle<CR>
 endfunction
 
@@ -284,8 +257,6 @@ function! setup#grep()
     cnoremap <C-g> <C-R>=' ' . util#GetRootDirectory() . '/*'<CR>
 
     let g:grep_exclude = 'out,beam,html,cov,log,Pbeam,history,swp'
-
-    " nnoremap <C-h> :grep! -Hnri --exclude=*.{out,beam,html,cov,log,Pbeam,history,swp} --exclude-dir={test,do3} --exclude=tags --include=*.{erl,hrl} 
 
     nnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . util#SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", expand("<cword>"))<CR>
     xnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . util#SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", leaderf#Rg#visual())<CR>
@@ -375,7 +346,7 @@ endfunction
 " ./pack/original/start/vim-gutentags/
 "-----------------------------------------------------------------------------"
 function! setup#gutentags(file_uctags, file_ctags_opt)
-    let s:vim_tags = util#mkdir('~/.cache/tags')
+    let s:vim_tags = util#mkdir(g:path_cache . '/tags')
     let g:gutentags_ctags_tagfile = '.tags'
 
     function! RemoveTag()
@@ -661,6 +632,5 @@ function! setup#ToolBar()
     an 1.250 ToolBar.Make			:Gmake<CR>
     an 1.270 ToolBar.RunCtags		:GutentagsUpdate<CR>
 endfunction
-
 
 
