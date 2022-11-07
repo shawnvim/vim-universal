@@ -4,31 +4,10 @@
 
 
 "-----------------------------------------------------------------------------"
+" https://github.com/mhinz/vim-startify
+" ./pack/original/start/vim-startify/
 "-----------------------------------------------------------------------------"
 function! setup#startify()
-    set viminfo+=r$TEMP:,r$TMP:,r$TMPDIR:
-    let &viminfo .= ',n' . util#mkdir(g:path_cache  . '/files/info') . '/viminfo'
-
-    let g:startify_change_cmd = 'cd'
-    let g:startify_padding_left = 3
-
-    let g:startify_commands = [
-                \ {'p': ['Project Finder (Ctrl-P)', 'Leaderf file']},
-                \ {'v': ['Visit Vim-universal on Github',
-                \        'call netrw#BrowseX("https://github.com/shawnvim/vim-universal", 1)']},
-                \ {'c': ['Cache Clear ' . g:path_cache,
-                \        'echo system("rm -rf ' . g:path_cache  . '")']},
-                \ ]
-    let g:startify_lists = [
-                \ { 'type': 'commands',  'header': ['   Recommendations']    },
-                \ { 'type': 'bookmarks', 'header': ['   Vim Paths']         },
-                \ { 'type': 'dir',       'header': ['   Recents '. getcwd()] },
-                \ ]
-    let g:startify_files_number = 7
-    let g:startify_bookmarks = [
-                \ {'u' : g:path_vimrc},
-                \ {'r' : $VIMRUNTIME},
-                \ ]
     let g:startify_custom_header = [
                 \ '    *------------------------------------------------------*',
                 \ '    |                                                      |',
@@ -43,7 +22,32 @@ function! setup#startify()
                 \ '',
                 \ ]
 
+    set viminfo+=r$TEMP:,r$TMP:,r$TMPDIR:
+    let &viminfo .= ',n' . util#mkdir(g:path_cache  . '/files/info') . '/viminfo'
+
+    let g:startify_change_cmd = 'cd'
+    let g:startify_padding_left = 3
+
+    let g:startify_lists = [
+                \ { 'type': 'commands',  'header': ['   Recommendations']    },
+                \ { 'type': 'bookmarks', 'header': ['   Vim Paths']         },
+                \ { 'type': 'dir',       'header': ['   Recents '. getcwd()] },
+                \ ]
+    let g:startify_commands = [
+                \ {'p': ['Project Finder (Ctrl-P)', 'Leaderf file']},
+                \ {'v': ['Visit Vim-universal on Github',
+                \        'call netrw#BrowseX("https://github.com/shawnvim/vim-universal", 1)']},
+                \ {'c': ['Cache Clear ' . g:path_cache,
+                \        'echo system("rm -rf ' . g:path_cache  . '")']},
+                \ ]
+    let g:startify_bookmarks = [
+                \ {'u' : g:path_vimrc},
+                \ {'r' : $VIMRUNTIME},
+                \ ]
+    let g:startify_files_number = 7
+
 endfunction
+
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
