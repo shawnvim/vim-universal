@@ -15,7 +15,7 @@ function! setup#startify()
                 \ '    |                                                      |',
                 \ '    |   This is a integration for Vim 8.2 or later         |',
                 \ '    |                                                      |',
-                \ '    |   Please refer to recommendations blew to start      |',
+                \ '    |   Please refer to [Recommendations] blew to start    |',
                 \ '    |                                                      |',
                 \ '    --------------------------------------------------------',
                 \ '',
@@ -354,7 +354,8 @@ endfunction
 function! setup#gutentags(file_uctags, file_ctags_opt)
     let s:vim_tags = util#mkdir(g:path_cache . '/tags')
     let g:gutentags_ctags_tagfile = '.tags'
-
+    let g:gutentags_generate_on_empty_buffer = 1
+    
     function! RemoveTag()
         execute "silent !rm -f " . s:vim_tags . '/*' . g:gutentags_ctags_tagfile 
     endfunction
