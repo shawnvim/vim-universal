@@ -70,14 +70,15 @@ vnoremap <C-s> <Esc><Esc>:w<CR>
 " Shift-Backspace to delete a word
 inoremap <S-BS> <C-w>
 
-let g:path_tool = g:path_vimrc . '/toolhouse'
-let g:path_bin  = g:path_vimrc . '/bin'
-let g:path_lib  = g:path_vimrc . '/lib'
+let g:path_tool      = g:path_vimrc . '/toolhouse'
+let g:path_bin       = g:path_vimrc . '/bin'
+let g:path_lib       = g:path_vimrc . '/lib'
+let g:path_cache     = util#mkdir('~/.cache/vim')
 
 " Setup to select general using tools
-let s:file_rg = util#SelectCliWithPattern(['rg', g:path_bin . '/rg'], 'ripgrep')
-let s:file_uctags = util#SelectCliWithPattern(['ctags', g:path_bin . '/ctags'], 'universal\ ctags')
-let s:file_pandoc = util#SelectCliWithPattern(['pandoc', g:path_bin . '/pandoc', expand("~/pandoc")], 'pandoc-types')
+let s:file_rg        = util#SelectCliWithPattern(['rg', g:path_bin . '/rg'], 'ripgrep')
+let s:file_uctags    = util#SelectCliWithPattern(['ctags', g:path_bin . '/ctags'], 'universal\ ctags')
+let s:file_pandoc    = util#SelectCliWithPattern(['pandoc', g:path_bin . '/pandoc', expand("~/pandoc")], 'pandoc-types')
 
 let s:file_ctags_opt = g:path_tool . '/opt.ctags'
 let s:file_plantuml  = g:path_tool . '/plantuml.jar'
@@ -135,4 +136,3 @@ if isdirectory(g:path_internal)
     call internalsetup#ToolBar()
     call internalsetup#LogTool()
 endif
-
