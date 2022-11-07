@@ -27,6 +27,11 @@ set laststatus=2
 set showmatch          " show bracket match
 set wrap
 
+set nobackup       " no backup files
+set noswapfile     " no swap files
+set nowritebackup  " only in case you don't want a backup file while editing
+set noundofile     " no undo files
+
 "syntax enable
 syntax on
 filetype plugin indent on
