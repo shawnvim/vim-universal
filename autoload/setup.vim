@@ -16,10 +16,12 @@ function! setup#startify()
                 \ {'p': ['Project Finder (Ctrl-P)', 'Leaderf file']},
                 \ {'v': ['Visit Vim-universal on Github',
                 \        'call netrw#BrowseX("https://github.com/shawnvim/vim-universal", 1)']},
+                \ {'c': ['Cache Clear ' . g:path_cache,
+                \        'echo system("rm -rf ' . g:path_cache  . '")']},
                 \ ]
     let g:startify_lists = [
                 \ { 'type': 'commands',  'header': ['   Recommendations']    },
-                \ { 'type': 'bookmarks', 'header': ['   Vim in Use']         },
+                \ { 'type': 'bookmarks', 'header': ['   Vim Paths']         },
                 \ { 'type': 'dir',       'header': ['   Recents '. getcwd()] },
                 \ ]
     let g:startify_files_number = 7
