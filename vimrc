@@ -34,11 +34,11 @@ filetype plugin indent on
 let mapleader = "\<space>"
 
 " syntax for long comments
-set synmaxcol=999
+set synmaxcol=255
 set regexpengine=1
-syntax sync minlines=128
-syntax sync maxlines=999
-syntax sync linebreaks=999
+syntax sync minlines=127
+syntax sync maxlines=255
+syntax sync linebreaks=255
 
 set tags=tags;
 set tags+=./tags
