@@ -271,8 +271,8 @@ endfunction
 " ./pack/original/start/undotree/
 "-----------------------------------------------------------------------------"
 function! setup#undotree()
-    set undofile
-    let &undodir = util#mkdir('~/.cache/vim/undodir')
+    " set undofile
+    " let &undodir = util#mkdir('~/.cache/vim/undodir')
     nnoremap <leader>u :UndotreeToggle<CR>
 endfunction
 
