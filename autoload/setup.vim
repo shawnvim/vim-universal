@@ -8,15 +8,9 @@
 function! setup#startify()
     set viminfo+=r$TEMP:,r$TMP:,r$TMPDIR:
     let &viminfo .= ',n' . util#mkdir('~/.cache/vim/files/info') . '/viminfo'
-    let g:startify_session_dir = util#mkdir('~/.cache/vim/session')
-    set ssop-=curdir
 
-    let g:startify_session_persistence = 0
     let g:startify_change_cmd = 'cd'
-    let g:startify_session_sort = 1
-    let g:startify_session_number = 3
     let g:startify_padding_left = 3
-    let g:startify_session_delete_buffers = 1
 
     let g:startify_commands = [
                 \ {'p': ['Project Finder (Ctrl-P)', 'Leaderf file']},
@@ -25,9 +19,8 @@ function! setup#startify()
                 \ ]
     let g:startify_lists = [
                 \ { 'type': 'commands',  'header': ['   Recommendations']    },
-                \ { 'type': 'bookmarks', 'header': ['   Vim in Use']          },
+                \ { 'type': 'bookmarks', 'header': ['   Vim in Use']         },
                 \ { 'type': 'dir',       'header': ['   Recents '. getcwd()] },
-                \ { 'type': 'sessions',  'header': ['   Sessions (only for emergency)']           },
                 \ ]
     let g:startify_files_number = 7
     let g:startify_bookmarks = [
@@ -47,26 +40,32 @@ function! setup#startify()
                 \ '',
                 \ '',
                 \ ]
-    function! SaveSession()
-        if bufname() == '' || bufname() =~# 'NERD_tree'
-            return
-        elseif isdirectory(g:startify_session_dir)
-            let num_rm = system('echo $(ls -l ' . g:startify_session_dir . ' | wc -l)') - g:startify_session_number
-            if num_rm > 2
-                let num_rm -= 1
-                let cli_rm = 'cd ' . g:startify_session_dir . ' && rm $(ls -rt ' . g:startify_session_dir . ' | head -n ' . num_rm . ' )'
-                echom 'Too many sessions, cleanup: ' . cli_rm
-                call system(cli_rm)
-            endif
-            let filename = fnamemodify(getcwd(),':t') . '_' . localtime()
-            execute("SSave! " . filename)
-        endif
-    endfunction
-    au VimLeave * call SaveSession()
-    let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose',
-                \                          'silent! tabdo MBECloseAll',
-                \                          'UndotreeHide',
-                \ ]
+    " let g:startify_session_dir = util#mkdir('~/.cache/vim/session')
+    " set ssop-=curdir
+    " let g:startify_session_persistence = 0
+    " let g:startify_session_sort = 1
+    " let g:startify_session_number = 3
+    " let g:startify_session_delete_buffers = 1
+    " function! SaveSession()
+    "     if bufname() == '' || bufname() =~# 'NERD_tree'
+    "         return
+    "     elseif isdirectory(g:startify_session_dir)
+    "         let num_rm = system('echo $(ls -l ' . g:startify_session_dir . ' | wc -l)') - g:startify_session_number
+    "         if num_rm > 2
+    "             let num_rm -= 1
+    "             let cli_rm = 'cd ' . g:startify_session_dir . ' && rm $(ls -rt ' . g:startify_session_dir . ' | head -n ' . num_rm . ' )'
+    "             echom 'Too many sessions, cleanup: ' . cli_rm
+    "             call system(cli_rm)
+    "         endif
+    "         let filename = fnamemodify(getcwd(),':t') . '_' . localtime()
+    "         execute("SSave! " . filename)
+    "     endif
+    " endfunction
+    " au VimLeave * call SaveSession()
+    " let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose',
+    "             \                          'silent! tabdo MBECloseAll',
+    "             \                          'UndotreeHide',
+    "             \ ]
 endfunction
 
 "-----------------------------------------------------------------------------"
