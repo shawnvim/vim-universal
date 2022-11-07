@@ -37,6 +37,8 @@ function! setup#startify()
                 \ {'p': ['Project Finder (Ctrl-P)', 'Leaderf file']},
                 \ {'v': ['Visit Vim-universal on Github',
                 \        'call netrw#BrowseX("https://github.com/shawnvim/vim-universal", 1)']},
+                \ {'t': ['Tags Initialization',
+                \        'GutentagsUpdate!']},
                 \ {'c': ['Cache Clear ' . g:path_cache,
                 \        'echo system("rm -rf ' . g:path_cache  . '")']},
                 \ ]
@@ -637,7 +639,7 @@ endfunction
 "-----------------------------------------------------------------------------"
 function! setup#ToolBar()
     an 1.250 ToolBar.Make			:Gmake<CR>
-    an 1.270 ToolBar.RunCtags		:GutentagsUpdate<CR>
+    an 1.270 ToolBar.RunCtags		:GutentagsUpdate!<CR>
 endfunction
 
 
