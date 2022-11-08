@@ -357,7 +357,6 @@ function! setup#gutentags(file_uctags, file_ctags_opt)
     let s:vim_tags = util#mkdir(g:path_cache . '/tags')
     let g:gutentags_ctags_tagfile = '.tags'
     let g:gutentags_generate_on_empty_buffer = 1
-    let g:gutentags_trace = 1
     
     function! RemoveTag()
         execute "silent !rm -f " . s:vim_tags . '/*' . g:gutentags_ctags_tagfile 
