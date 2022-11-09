@@ -198,7 +198,7 @@ function! setup#minibufexpl()
     " Manually set Update Time
     let g:miniBufExplSetUT = 0 " def is 1
     " Too small will let other plugin(Leaderf) slow
-    set updatetime=749
+    set updatetime=100
 endfunction
 
 "-----------------------------------------------------------------------------"
