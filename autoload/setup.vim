@@ -360,7 +360,7 @@ function! setup#gutentags(file_uctags, file_ctags_opt)
     let g:gutentags_generate_on_empty_buffer = 1
     " let g:gutentags_trace = 1
     function! RemoveTag()
-        execute "silent !rm -f " . s:vim_tags . '/*' . g:gutentags_ctags_tagfile 
+        execute "silent !rm -f " . s:vim_tags . '/*' . g:gutentags_ctags_tagfile
     endfunction
 
     nnoremap <F5> :call RemoveTag()<CR>:GutentagsUpdate<CR>
@@ -375,9 +375,9 @@ function! setup#gutentags(file_uctags, file_ctags_opt)
     " auto-generated tags will be put into ~/.cache/tags
     let g:gutentags_cache_dir = s:vim_tags
 
-
     let g:gutentags_ctags_extra_args=['--options=' . a:file_ctags_opt]
 
+    autocmd VimEnter * let &tags .= ',' . fnameescape(gutentags#get_cachefile(getcwd(), g:gutentags_ctags_tagfile))
 
 endfunction
 
