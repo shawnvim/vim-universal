@@ -609,6 +609,7 @@ function! setup#quickuiMenu()
                 \ ["Display &MD by MKDP", 'MarkdownPreviewToggle'],
                 \ ["Display MD by &Pandoc", 'call DisplayPandoc()'],
                 \ ["Display by &Browser", 'call DisplayHTML(expand("%"))'],
+                \ ["Display by &File Manager", 'call DisplayHTMLR(expand("%:p:h"))'],
                 \ ["Display by &UML", 'call DisplayUML()'],
                 \ ["Display by S&Office", 'call DisplaySoffice(expand("%"))'],
                 \ ])
