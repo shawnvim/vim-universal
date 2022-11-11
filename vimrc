@@ -64,6 +64,7 @@ let &packpath .= ','.g:path_vimrc
 colorscheme gruvbox
 set background=dark
 set t_Co=256
+set t_TI= t_TE= "to avoid >4;2m color info in vi mode
 
 " General keymap
 
