@@ -606,11 +606,12 @@ function! setup#quickuiMenu()
                 \ ])
 
     call quickui#menu#install("&Display", [
-                \ ["Display &MD by MKDP", 'MarkdownPreviewToggle'],
-                \ ["Display MD by &Pandoc", 'call DisplayPandoc()'],
                 \ ["Display by &File Browser", 'call DisplayHTML(expand("%"))'],
                 \ ["Display by &Directory Browser", 'call DisplayHTMLR(expand("%:p:h"))'],
                 \ ["Display by &UML", 'call DisplayUML()'],
+                \ [ "--", ],
+                \ ["Display &MD by MKDP", 'MarkdownPreviewToggle'],
+                \ ["Display MD by &Pandoc", 'call DisplayPandoc()'],
                 \ ])
 
     call quickui#menu#install("&View", [
