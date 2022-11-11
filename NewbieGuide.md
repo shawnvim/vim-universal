@@ -33,9 +33,9 @@ Menu
 | `TU`                       | Tags update
 | `TS`                       | For internal testing only
 | `DM`                       | Display as markdown
-| `DB`                       | Display as file/html explorer
+| `DF`                       | Display as file(html/doc/...)
+| `DD`                       | Display as directory
 | `DU`                       | Display as UML
-| `DU`                       | Display as Office
 | `DR`                       | For internal testing only
 | `GB`                       | Git blame
 | `GR`                       | Git browse code review
