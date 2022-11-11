@@ -611,7 +611,6 @@ function! setup#quickuiMenu()
                 \ ["Display by &File Browser", 'call DisplayHTML(expand("%"))'],
                 \ ["Display by &Directory Browser", 'call DisplayHTMLR(expand("%:p:h"))'],
                 \ ["Display by &UML", 'call DisplayUML()'],
-                \ ["Display by S&Office", 'call DisplaySoffice(expand("%"))'],
                 \ ])
 
     call quickui#menu#install("&View", [
