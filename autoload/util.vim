@@ -42,6 +42,8 @@ function! util#NERDTreeToggleInCurDir()
     " If NERDTree is open in the current buffer
     if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
         exe ":NERDTreeToggle"
+    elseif empty(expand('%:p'))
+        exe ":NERDTree"
     else
         exe ":NERDTreeFind"
     endif
