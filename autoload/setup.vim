@@ -476,6 +476,7 @@ function! setup#convertedFt()
         return 'c\+\+'
     else
         return &ft
+    endif
 endfunction
 
 "-----------------------------------------------------------------------------"
