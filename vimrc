@@ -48,6 +48,9 @@ syntax sync linebreaks=255
 set tags=tags;
 set tags+=./tags
 
+set completeopt+=menuone,noinsert
+set complete-=t
+
 " root path depends on vimrc
 " let g:file_vimrc = index(v:argv, '-u') != -1 ? get(v:argv, index(v:argv, '-u') + 1, '') : $MYVIMRC
 " let g:path_vimrc = fnamemodify(g:file_vimrc, ':p:h')
