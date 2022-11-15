@@ -94,3 +94,6 @@
 [submodule "pack/original/start/vim-startify"]
 	path = pack/original/start/vim-startify
 	url = https://github.com/mhinz/vim-startify
+[submodule "pack/forked/start/erlang-motions.vim"]
+	path = pack/forked/start/erlang-motions.vim
+	url = https://github.com/shawnvim/erlang-motions.vim
