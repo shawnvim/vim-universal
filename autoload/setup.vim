@@ -545,6 +545,36 @@ function! setup#tablemode()
                 \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 endfunction
 
+
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
+function! setup#erlang_ls(erlang_ls)
+    if executable(a:erlang_ls) && filereadable(expand('~/.config/erlang_ls/erlang_ls.config'))
+        " pip install erlang_ls
+        au User lsp_setup call lsp#register_server({
+                    \ 'name': a:erlang_ls,
+                    \ 'cmd': {server_info->[a:erlang_ls]},
+                    \ 'allowlist': ['erlang'],
+                    \ })
+    endif
+
+    function! s:on_lsp_buffer_enabled() abort
+        setlocal omnifunc=lsp#complete
+        setlocal signcolumn=yes
+        " if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+        nmap <buffer> <C-d> <plug>(lsp-definition)
+        nmap <buffer> <C-S-d> :LspDocumentDiagnostics<CR>
+        " refer to doc to add more commands
+    endfunction
+
+    augroup lsp_install
+        au!
+        " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+        autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+    augroup END
+endfunction
+
+
 "-----------------------------------------------------------------------------"
 " https://github.com/skywind3000/vim-quickui
 " ./pack/forked/start/vim-quickui/
