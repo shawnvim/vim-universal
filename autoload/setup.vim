@@ -548,12 +548,12 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
-function! setup#erlang_ls(erlang_ls)
-    if executable(a:erlang_ls) && filereadable(expand('~/.config/erlang_ls/erlang_ls.config'))
+function! setup#erlang_ls()
+    if executable(g:erlang_ls) && filereadable(expand('~/.config/erlang_ls/erlang_ls.config'))
         " pip install erlang_ls
         au User lsp_setup call lsp#register_server({
-                    \ 'name': a:erlang_ls,
-                    \ 'cmd': {server_info->[a:erlang_ls]},
+                    \ 'name': g:erlang_ls,
+                    \ 'cmd': {server_info->[g:erlang_ls]},
                     \ 'allowlist': ['erlang'],
                     \ })
     endif
