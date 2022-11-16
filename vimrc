@@ -86,6 +86,7 @@ let g:path_cache     = util#mkdir('~/.cache/vim')
 
 " LSP
 let g:erlang_ls       = g:path_vimrc . '/lsp/erlang_ls/erlang_ls'
+let g:erlang_ls_config = util#GetErlangLsConfig()
 
 " Setup to select general using tools
 let s:file_rg        = util#SelectCliWithPattern(['rg', g:path_bin . '/rg'], 'ripgrep')
