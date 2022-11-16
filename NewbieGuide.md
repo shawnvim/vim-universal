@@ -71,13 +71,11 @@ Search / Replace
 | `q`                        | Skip current and get next occurrence
 | `Q`                        | Remove current selected occurrence
  
-
 Compile
 ------------
 | Command                    | Description
 | -------                    | -----------
 | `:Gmake [arguments]`       | Use gmake to multi-thread compile **closest parent directory** with **Makefile**
-
 
 Commentary
 ------------
@@ -94,6 +92,21 @@ Register
 | `<Ctrl-C>`                 | Copy to register 0 and +(**system register**)
 | `<Ctrl-V>`                 | Paste from register 0
 | `<Ctrl-Shift-V>`           | Paste from register +
+
+Completion
+------------
+| Command (Insert Mode)      | Description
+| -------                    | -----------
+| `<Ctrl-P>`                 | Complete menu
+| `<Ctrl-N>`                 | Complete menu (reverse order)
+| `<Ctrl-X><Ctrl-O>`         | Omnicomplete menu
+
+LSP
+------------
+| Command                    | Description
+| -------                    | -----------
+| `<Ctrl-D>`                 | LSP definition
+| `<Ctrl-Shift-D>`           | LSP diagnostics
 
 General
 ------------
