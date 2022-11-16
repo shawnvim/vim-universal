@@ -82,3 +82,14 @@ function! util#mkdir(path)
     endif
     return dir
 endfunction
+
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
+function! util#GetErlangLsConfig()
+    let l:config_linux = expand('~/.config/erlang_ls/erlang_ls.config')
+    if filereadable(l:config_linux)
+        return l:config_linux
+    else
+        return ""
+    endif
+endfunction
