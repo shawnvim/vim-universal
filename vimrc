@@ -82,6 +82,7 @@ inoremap <S-BS> <C-w>
 let g:path_tool      = g:path_vimrc . '/toolhouse'
 let g:path_bin       = g:path_vimrc . '/bin'
 let g:path_lib       = g:path_vimrc . '/lib'
+let g:path_lsp       = g:path_vimrc . '/lsp'
 let g:path_cache     = util#mkdir('~/.cache/vim')
 
 " Setup to select general using tools
@@ -91,6 +92,7 @@ let s:file_pandoc    = util#SelectCliWithPattern(['pandoc', g:path_bin . '/pando
 
 let s:file_ctags_opt = g:path_tool . '/opt.ctags'
 let s:file_plantuml  = g:path_tool . '/plantuml.jar'
+let s:file_erlang_ls = g:path_lsp  . '/erlang_ls/erlang_ls'
 
 " Personal ctag script or options
 let s:file_ctags_opt_3gpptxt = g:path_tool . '/3gpptxt.ctags'
@@ -127,6 +129,7 @@ call setup#vim3gpptxt()
 call setup#fugitive()
 call setup#mkdp()
 call setup#tablemode()
+call setup#erlang_ls(s:file_erlang_ls)
 call setup#quickui(s:file_uctags)
 call setup#wilder()
 
