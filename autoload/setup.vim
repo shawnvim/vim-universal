@@ -549,7 +549,9 @@ endfunction
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! setup#erlang_ls()
-    if executable(g:erlang_ls) && filereadable(expand('~/.config/erlang_ls/erlang_ls.config'))
+    if executable(g:erlang_ls) &&
+                \ filereadable(g:erlang_ls_config) &&
+                \ systemlist("cat " . fnameescape(g:erlang_ls_config) . " | grep " . fnameescape(getcwd())) != []
         " pip install erlang_ls
         au User lsp_setup call lsp#register_server({
                     \ 'name': g:erlang_ls,
