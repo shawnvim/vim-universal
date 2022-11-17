@@ -131,7 +131,7 @@ call setup#vim3gpptxt()
 call setup#fugitive()
 call setup#mkdp()
 call setup#tablemode()
-call setup#erlang_ls()
+call setup#vimlsp()
 call setup#quickui(s:file_uctags)
 call setup#wilder()
 
