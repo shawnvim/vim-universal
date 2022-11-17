@@ -97,3 +97,6 @@
 [submodule "pack/forked/start/erlang-motions.vim"]
 	path = pack/forked/start/erlang-motions.vim
 	url = https://github.com/shawnvim/erlang-motions.vim
+[submodule "pack/original/start/vim-lsp"]
+	path = pack/original/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp
