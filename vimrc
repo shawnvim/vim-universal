@@ -84,6 +84,10 @@ let g:path_bin       = g:path_vimrc . '/bin'
 let g:path_lib       = g:path_vimrc . '/lib'
 let g:path_cache     = util#mkdir('~/.cache/vim')
 
+" LSP
+let g:erlang_ls       = g:path_vimrc . '/lsp/erlang_ls/erlang_ls'
+let g:erlang_ls_config = util#GetErlangLsConfig()
+
 " Setup to select general using tools
 let s:file_rg        = util#SelectCliWithPattern(['rg', g:path_bin . '/rg'], 'ripgrep')
 let s:file_uctags    = util#SelectCliWithPattern(['ctags', g:path_bin . '/ctags'], 'universal\ ctags')
@@ -127,6 +131,7 @@ call setup#vim3gpptxt()
 call setup#fugitive()
 call setup#mkdp()
 call setup#tablemode()
+call setup#erlang_ls()
 call setup#quickui(s:file_uctags)
 call setup#wilder()
 
