@@ -1,6 +1,9 @@
 # Release
 release.zip
 
+# Merge
+*.orig
+
 # Pandoc
 */media/*.svg
 sample.html
