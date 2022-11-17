@@ -13,7 +13,7 @@ endfunction
 function! lsp#install() abort
     if executable(g:erlang_ls) &&
                 \ filereadable(g:erlang_ls_config) &&
-                \ systemlist("cat " . fnameescape(g:erlang_ls_config) . " | grep " . fnameescape(getcwd())) != []
+                \ systemlist("cat " . fnameescape(g:erlang_ls_config) . " | grep include_dirs") != []
         " pip install erlang_ls
         au User lsp_setup call lsp#register_server({
                     \ 'name': g:erlang_ls,
