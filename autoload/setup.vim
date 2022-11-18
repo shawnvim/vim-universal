@@ -265,6 +265,33 @@ endfunction
 
 
 "-----------------------------------------------------------------------------"
+" https://github.com/matze/vim-move
+" ./pack/forked/start/vim-move/
+"-----------------------------------------------------------------------------"
+function! setup#vimMove()
+    let g:move_map_keys = 0
+
+    vmap <A-j> <Plug>MoveBlockDown
+    vmap <A-k> <Plug>MoveBlockUp
+    vmap <A-h> <Plug>MoveBlockLeft
+    vmap <A-l> <Plug>MoveBlockRight
+
+    nmap <A-j> <Plug>MoveLineDown
+    nmap <A-k> <Plug>MoveLineUp
+
+    nnoremap <A-Left> <C-o>
+endfunction
+
+
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
+function! setup#InsertQuick()
+    nnoremap <A-Right> viw<ESC>a<C-n>
+    nnoremap <C-a> viw<ESC>a
+endfunction
+
+
+"-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! setup#grep()
     set grepprg=grep
