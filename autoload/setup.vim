@@ -112,6 +112,7 @@ function! setup#completion()
     " set complete-=t     \" Remove tag for slow completion
     inoremap <expr> <Tab>   (util#IsBlank() ? "\<Tab>" : (pumvisible() ? "\<Down>" : "\<C-n>"))
     inoremap <expr> <S-Tab> (util#IsBlank() ? "\<Tab>" : (pumvisible() ? "\<Up>"   : "\<C-p>"))
+    inoremap <expr> <Right> (pumvisible()   ? "\<C-l>" : "\<Right>")
 endfunction
 
 
