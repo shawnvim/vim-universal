@@ -93,3 +93,9 @@ function! util#GetErlangLsConfig()
         return ""
     endif
 endfunction
+
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
+function! util#IsBlank()
+    return strpart(getline('.'), 0, col('.')-1) =~ '^\s*$'
+endfunction
