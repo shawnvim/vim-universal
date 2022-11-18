@@ -98,7 +98,7 @@ Completion
 | Command (Insert Mode)      | Description
 | -------                    | -----------
 | `<Tab>` / `<Ctrl-N>`       | Complete list
-| `<Tab>` / `<Ctrl-P>`       | Complete list (reverse)
+| `<Shift-Tab>` / `<Ctrl-P>` | Complete list (reverse)
 | `<Ctrl-X><Ctrl-O>`         | Omnicomplete list
 
 LSP
