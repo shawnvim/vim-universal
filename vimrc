@@ -48,9 +48,6 @@ syntax sync linebreaks=255
 set tags=tags;
 set tags+=./tags
 
-set completeopt+=menuone,noinsert
-" set complete-=t " Remove tag for slow completion
-
 " root path depends on vimrc
 " let g:file_vimrc = index(v:argv, '-u') != -1 ? get(v:argv, index(v:argv, '-u') + 1, '') : $MYVIMRC
 " let g:path_vimrc = fnamemodify(g:file_vimrc, ':p:h')
@@ -106,6 +103,7 @@ let s:rooter_patterns = ['.root', '.git', '.project']
 call setup#startify()
 call setup#screenAndMouse()
 call setup#paste()
+call setup#completion()
 call setup#utilFunction(s:file_plantuml, s:file_pandoc, s:path_lua_filters)
 call setup#netrw()
 call setup#NERDTree()
