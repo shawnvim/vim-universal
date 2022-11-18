@@ -661,7 +661,6 @@ function! setup#quickuiMenu()
                 \ ])
 
     call quickui#menu#install("&View", [
-                \ ["View L&SP Status", 'LspStatus'],
                 \ ["View Gerrit&Comments", 'GerritComments'],
                 \ ])
 
