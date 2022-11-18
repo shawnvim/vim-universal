@@ -107,6 +107,16 @@ endfunction
 
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
+function! setup#completion()
+    set completeopt=menuone,noinsert
+    " set complete-=t     \" Remove tag for slow completion
+    inoremap <expr> <Tab>   (util#IsBlank() ? "\<Tab>" : (pumvisible() ? "\<Down>" : "\<C-n>"))
+    inoremap <expr> <S-Tab> (util#IsBlank() ? "\<Tab>" : (pumvisible() ? "\<Up>"   : "\<C-p>"))
+endfunction
+
+
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
 function! setup#utilFunction(file_plantuml, file_pandoc, path_lua_filters)
     let s:vim_tmp = util#mkdir(g:path_cache . '/tmp')
 
