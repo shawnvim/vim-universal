@@ -39,12 +39,13 @@ function! setup#startify()
                 \        'call netrw#BrowseX("https://github.com/shawnvim/vim-universal", 1)']},
                 \ {'t': ['Tags Initialization',
                 \        'GutentagsUpdate!']},
-                \ {'c': ['Cache Clear ' . g:path_cache,
-                \        'echo system("rm -rf ' . g:path_cache  . '")']},
+                \ {'c': ['Cache Clear Quit ' . g:path_cache,
+                \        'echo system("rm -rf ' . g:path_cache  . '") | q!']},
                 \ ]
     let g:startify_bookmarks = [
                 \ {'u' : g:path_vimrc},
                 \ {'r' : $VIMRUNTIME},
+                \ {'l' : g:path_lsp},
                 \ ]
     let g:startify_files_number = 7
 
