@@ -144,6 +144,7 @@ call setup#ToolBar()
 let g:path_internal = '/proj/git_workspace/pdupc/ezqisui/vim-internal'
 if isdirectory(g:path_internal)
     let &rtp .= ','.g:path_internal
+    call internalsetup#env()
     let g:startify_bookmarks += [{'i' : g:path_internal}]
     call internalsetup#tags(s:file_uctags, s:file_ctags_opt)
     call internalsetup#gerrit()
