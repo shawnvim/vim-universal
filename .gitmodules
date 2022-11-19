@@ -100,6 +100,3 @@
 [submodule "pack/original/start/vim-lsp"]
 	path = pack/original/start/vim-lsp
 	url = https://github.com/prabirshrestha/vim-lsp
-[submodule "pack/original/start/vim-lsp-settings"]
-	path = pack/original/start/vim-lsp-settings
-	url = https://github.com/mattn/vim-lsp-settings
