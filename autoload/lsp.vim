@@ -1,4 +1,9 @@
 "-----------------------------------------------------------------------------"
+" https://github.com/mattn/vim-lsp-settings
+" ./pack/original/start/vim-lsp-settings/
+"-----------------------------------------------------------------------------"
+
+"-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! lsp#on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
@@ -11,6 +16,16 @@ endfunction
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! lsp#install() abort
+    let g:file_erlang_ls = g:lsp_settings_servers_dir . '/erlang-ls/_build/default/bin/erlang_ls'
+    if filereadable(g:file_erlang_ls)
+        if executable(g:file_erlang_ls)
+            let g:lsp_settings = {
+                        \ 'erlang-ls': {'cmd': g:lsp_settings_servers_dir . '/erlang-ls/_build/default/bin/erlang_ls'}
+                        \}
+        else
+            echom 'erlang_ls existed but not executable, please check your PATH env for installation.'
+        endif
+    endif
     augroup lsp_install
         au!
         " call s:on_lsp_buffer_enabled only for languages that has the server registered.
