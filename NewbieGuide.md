@@ -103,9 +103,6 @@ Completion
 
 LSP
 ------------
-LSP generally requires local installation and additional configuration, please refer to: 
-[vim-lsp](https://github.com/prabirshrestha/vim-lsp), 
-[vim-lsp-settings](https://github.com/mattn/vim-lsp-settings)
 | Command                    | Description
 | -------                    | -----------
 | `<Ctrl-D>`                 | LSP definition
