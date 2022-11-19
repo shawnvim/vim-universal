@@ -45,7 +45,7 @@ function! setup#startify()
     let g:startify_bookmarks = [
                 \ {'u' : g:path_vimrc},
                 \ {'r' : $VIMRUNTIME},
-                \ {'l' : g:path_lsp},
+                \ {'l' : g:lsp_settings_servers_dir},
                 \ ]
     let g:startify_files_number = 7
 

@@ -82,8 +82,8 @@ let g:path_lib       = g:path_vimrc . '/lib'
 let g:path_cache     = util#mkdir('~/.cache/vim')
 
 " LSP
-let g:path_lsp = util#mkdir('~/.cache/vim_lsp')
-let g:file_erlang_ls_config = util#GetErlangLsConfig()
+let g:lsp_settings_servers_dir = util#mkdir('~/.cache/vim_lsp/servers')
+call lsp#install()
 
 " Setup to select general using tools
 let s:file_rg        = util#SelectCliWithPattern(['rg', g:path_bin . '/rg'], 'ripgrep')
