@@ -9,9 +9,12 @@ set autoread           "autoload when file is modified
 set clipboard+=unnamed "share clipboard
 set hidden             "jump to tags without save
 
-" set nocscopetag        "always jump to first tag, now it's replaced by tag/ts
-" set guioptions+=b      "bottom scroll bar
-" set guioptions-=m      "no menu bar, due to Alt hotkey
+" set nocscopetag        " always jump to first tag, now it's replaced by tag/ts
+" set guioptions+=b      " bottom scroll bar
+" set guioptions-=m      " no menu bar, due to Alt hotkey
+" set guioptions-=rR     " no scroll bar
+set guioptions+=d      " prefer dark theme
+set guioptions+=T      " Toolbar
 set cursorline         " highlight current line
 set modeline           " allows you to set variables specific to a file. By default, the first and last five lines are read by Vim for variable settings
 set tabstop=4          " number of visual spaces per TAB
