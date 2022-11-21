@@ -586,16 +586,6 @@ endfunction
 
 
 "-----------------------------------------------------------------------------"
-" https://github.com/prabirshrestha/vim-lsp
-" ./pack/original/start/vim-lsp/
-"-----------------------------------------------------------------------------"
-function! setup#vimlsp()
-    let g:lsp_settings_servers_dir = util#mkdir(g:path_cache . '/servers')
-    call lsp#install()
-endfunction
-
-
-"-----------------------------------------------------------------------------"
 " https://github.com/skywind3000/vim-quickui
 " ./pack/forked/start/vim-quickui/
 "-----------------------------------------------------------------------------"
