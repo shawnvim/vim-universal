@@ -84,6 +84,9 @@ let g:path_bin       = g:path_vimrc . '/bin'
 let g:path_lib       = g:path_vimrc . '/lib'
 let g:path_cache     = util#mkdir('~/.cache/vim')
 
+" Root markers
+call setup#rooter(['.root', '.git', '.git/', '.svn', '.hg', '.project'])
+
 " LSP
 let g:lsp_settings_servers_dir = util#mkdir('~/.cache/vim-lsp/servers')
 call lsp#install()
@@ -101,8 +104,6 @@ let s:file_ctags_opt_3gpptxt = g:path_tool . '/3gpptxt.ctags'
 
 let s:path_lua_filters = g:path_lib . '/lua-filters'
 
-let s:rooter_patterns = ['.root', '.git', '.project']
-
 call setup#startify()
 call setup#screenAndMouse()
 call setup#paste()
@@ -119,7 +120,6 @@ call setup#undotree()
 call setup#vimMove()
 call setup#InsertQuick()
 call setup#grep()
-call setup#rooter(s:rooter_patterns)
 call setup#Leaderf(s:file_uctags, s:file_rg, s:file_ctags_opt, s:file_ctags_opt_3gpptxt)
 call setup#asyncrun()
 call setup#gutentags(s:file_uctags, s:file_ctags_opt)
