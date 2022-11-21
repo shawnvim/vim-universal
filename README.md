@@ -20,7 +20,7 @@ Please clone repo with all submodules by:
 git clone https://github.com/shawnvim/vim-universal --recurse-submodules
 ```
 Or you can just download the `release.zip` with all packages and unzip it to `.vim`  
-If you want to keep the folder name as vim-universal, you can use `gvim -u PathToVimrc` to start using
+If you want to keep the folder name as vim-universal, you can use `gvim -u /Path/To/Your/vimrc` to start using
 
 For more details about Vim native package manager or `git submodule`, please check: <a href="https://www.danielfranklin.id.au/vim-8-package-management/">Vim 8+ native package manager</a>
 
@@ -61,7 +61,7 @@ The following are the installation steps in simple terms:
 1. Prepare required project or executable bin file, e.g.:
     - [erlang_ls](https://github.com/erlang-ls/erlang_ls) requires `rebar3`
     - [vim-language-server](https://github.com/iamcco/vim-language-server) requires `cargo`  
-2. Double check the [Path Environment Variables](https://linuxconfig.org/linux-path-environment-variable), or add it in Vim manually by `let $PATH .= `
+2. Double check the [Path Environment Variables](https://linuxconfig.org/linux-path-environment-variable), or add it in Vim manually by `let $PATH .= ':/Path/To/Your/bin'`
 3. Use `:LspInstallServer` to install the corresponding language server for current filetype
 4. Restart Vim and open the previous file
 5. Check the server status by `:LspStatus`  
