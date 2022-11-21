@@ -85,7 +85,7 @@ let g:path_lib       = g:path_vimrc . '/lib'
 let g:path_cache     = util#mkdir('~/.cache/vim')
 
 " LSP
-let g:lsp_settings_servers_dir = util#mkdir('~/.cache/vim_lsp/servers')
+let g:lsp_settings_servers_dir = util#mkdir('~/.cache/vim-lsp/servers')
 call lsp#install()
 
 " Setup to select general using tools
