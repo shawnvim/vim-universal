@@ -47,7 +47,7 @@ function! setup#startify()
                 \ {'r' : $VIMRUNTIME},
                 \ {'l' : g:lsp_settings_servers_dir},
                 \ ]
-    let g:startify_files_number = 7
+    let g:startify_files_number = 10
 
 endfunction
 
