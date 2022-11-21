@@ -412,7 +412,7 @@ function! setup#gutentags(file_uctags, file_ctags_opt)
 
     let g:gutentags_ctags_extra_args=['--options=' . a:file_ctags_opt]
 
-    autocmd VimEnter * let &tags .= ',' . fnameescape(gutentags#get_cachefile(getcwd(), g:gutentags_ctags_tagfile))
+    autocmd VimEnter * let &tags = fnameescape(gutentags#get_cachefile(getcwd(), g:gutentags_ctags_tagfile)) . ',' . &tags
 
 endfunction
 
