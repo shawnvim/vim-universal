@@ -90,7 +90,7 @@ function! setup#paste()
     xnoremap <C-v> "0p
     xnoremap <C-S-v> "+p
 
-    " If we use <C-r><C-o>" instead, Vim inserts the contents of the default register literally,
+    " If we use <C-r><C-o> instead, Vim inserts the contents of the default register literally,
     " using the current value of the default register.
     " And in this case, we can use the dot command to repeat the remaining changes.
     inoremap <C-v> <C-r><C-o>0
