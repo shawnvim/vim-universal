@@ -2,25 +2,27 @@
 set nocompatible
 set backspace=indent,eol,start
 set bufhidden=delete
-set redrawtime=7000    "extend syntax time for large file
-set hlsearch           "highlight search
+set redrawtime=7000      " extend syntax time for large file
+set updatetime=50       " too small will let other plugin(Leaderf) slow
 
-set autoread           "autoload when file is modified
-set clipboard+=unnamed "share clipboard
-set hidden             "jump to tags without save
+set hlsearch             " highlight search
+
+set autoread             " autoload when file is modified
+set clipboard+=unnamed   " share clipboard
+set hidden               " jump to tags without save
 
 " set nocscopetag        " always jump to first tag, now it's replaced by tag/ts
 " set guioptions+=b      " bottom scroll bar
 " set guioptions-=m      " no menu bar, due to Alt hotkey
 " set guioptions-=rR     " no scroll bar
-set guioptions+=d      " prefer dark theme
-set guioptions+=T      " Toolbar
-set cursorline         " highlight current line
-set modeline           " allows you to set variables specific to a file. By default, the first and last five lines are read by Vim for variable settings
-set tabstop=4          " number of visual spaces per TAB
-set expandtab          " tabs are spaces
-set softtabstop=4      " number of spaces in tab when you press the <TAB> or <BS> keys in insert mode
-set shiftwidth=4       " number of spaces in tab when you press >>, << or == in command mode
+set guioptions+=d        " prefer dark theme
+set guioptions+=T        " Toolbar
+set cursorline           " highlight current line
+set modeline             " allows you to set variables specific to a file. By default, the first and last five lines are read by Vim for variable settings
+set tabstop=4            " number of visual spaces per TAB
+set expandtab            " tabs are spaces
+set softtabstop=4        " number of spaces in tab when you press the <TAB> or <BS> keys in insert mode
+set shiftwidth=4         " number of spaces in tab when you press >>, << or == in command mode
 "set number
 
 set cmdheight=2
