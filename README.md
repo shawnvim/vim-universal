@@ -1,6 +1,6 @@
 vim-universal
 =======
-The vim-universal is a universal Vim integration with multiple open source plug-ins.
+A universal Vim integration
 
  - Written in Python and VimL
  - Extended plugins with pack by submodules
