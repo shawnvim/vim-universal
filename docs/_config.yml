@@ -1,7 +1,16 @@
 remote_theme: pages-themes/minimal@v0.2.0
 
 plugins:
-- jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jemoji
+  - jekyll-remote-theme
+
+email: qiushihao@outlook.com
+description: VIM-Universal
+favicon: true
+color-scheme: auto
+
 
 platforms:
   - name: GitHub
