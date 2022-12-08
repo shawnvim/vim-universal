@@ -24,4 +24,6 @@ navigation:
     sublist:
       - name: Image
         link: ./index.html#todo
+  - name: Readme
+    link: ../README.html
 
