@@ -1,1 +1,16 @@
-site_name: My Docs
+site_name: VIM Universal
+site_url: https://shawnvim.github.io/vim-universal
+repo_name: shawnvim/vim-universal
+repo_url: https://github.com/shawnvim/vim-universal
+edit_uri: ''
+theme:
+  name: 'material'
+  palette:
+    primary: 'red'
+    accent: 'red'
+nav:
+  - Overview: index.md
+markdown_extensions:
+  - admonition
+  - pymdownx.tabbed
+  - pymdownx.superfences
