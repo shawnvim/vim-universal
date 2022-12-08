@@ -4,7 +4,7 @@ repo_name: shawnvim/vim-universal
 repo_url: https://github.com/shawnvim/vim-universal
 edit_uri: ''
 theme:
-  name: 'material'
+  name: 'mkdocs'
   palette:
     primary: 'red'
     accent: 'red'
@@ -12,5 +12,3 @@ nav:
   - Overview: index.md
 markdown_extensions:
   - admonition
-  - pymdownx.tabbed
-  - pymdownx.superfences
