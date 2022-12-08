@@ -1,7 +1,7 @@
 name: Test code and embed into README
 
 on:
-  pull_request:
+  push:
     branches:
       - master
 jobs:
