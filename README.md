@@ -93,5 +93,5 @@ Quick start
 If you have no time to follow all plug-ins and just want a quick start.  
 Please check [`NewbieGuide`](https://github.com/shawnvim/vim-universal/blob/master/NewbieGuide.md) to experience this Vim integration quickly.  
 ```md
-// ./NewbieGuide.md
+// NewbieGuide.md
 ```
