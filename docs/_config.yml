@@ -25,5 +25,5 @@ navigation:
       - name: Image
         link: ./index.html#todo
   - name: Readme
-    link: ../README.html
+    link: ./README.html
 
