@@ -3,7 +3,7 @@ name: Test code and embed into README
 on:
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   readme-test:
     runs-on: ubuntu-latest
