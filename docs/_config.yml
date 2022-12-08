@@ -1,4 +1,4 @@
-remote_theme: BDHU/minimalist
+remote_theme: vaibhavvikas/jekyll-theme-minimalistic
 
 plugins:
   - jekyll-sitemap
@@ -6,23 +6,22 @@ plugins:
   - jemoji
   - jekyll-remote-theme
 
-email: qiushihao@outlook.com
-description: VIM-Universal
+title:  VIM-Universal
+description: A Universal VIM Integration
 favicon: true
 color-scheme: auto
 
 
 # You can find fonts from https://iconify.design or https://fontawesome.com. Below is just an example illustrating how to use custom icons
-sidebar:
+platforms:
   - name: GitHub
-    link: https://github.com/
-  - name: Twitter
-    link: https://twitter.com/
-  - name: Project Repository
+    icon: <i class="fa-brands fa-github"></i>
     link: https://github.com/shawnvim/vim-universal
 
-# https://github.com/github/pages-gem/issues/399#issuecomment-301827749
-# When running locally, we run into the following error —
-# GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
-# adding this avoids it
-github: [metadata]
+navigation:
+  - name: Index
+    link: ./index.html
+    sublist:
+      - name: Image
+        link: ./index.html#todo
+
