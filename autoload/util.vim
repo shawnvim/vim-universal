@@ -87,7 +87,7 @@ endfunction
 "-----------------------------------------------------------------------------"
 function! util#GetErlangLsConfig()
     let l:config_linux = expand('~/.config/erlang_ls/erlang_ls.config')
-    if filereadable(l:config_linux)
+    if filereadable(l:config_linux) || isdirectory(expand('~/.config/erlang_ls/'))
         return l:config_linux
     else
         return ""
