@@ -1,3 +1,18 @@
 remote_theme: pages-themes/minimal@v0.2.0
+
 plugins:
 - jekyll-remote-theme
+
+platforms:
+  - name: GitHub
+    icon: <i class="fa-brands fa-github"></i>
+    link: https://github.com/shawnvim/vim-universal
+
+navigation:
+  - name: Readme
+    link: ./index.html
+    sublist:
+      - name: Image
+        link: ./index.html#small-image
+  - name: Another Page
+    link: ./another-page.html
