@@ -70,20 +70,6 @@ In Vim, you can use <kbd>gx</kbd> to check their Github page, or use <kbd>gf</kb
  - [VIM 8 Package Management](https://www.danielfranklin.id.au/vim-8-package-management/)
 
 
-## Language Server Protocol (LSP)
-
-LSP generally requires local installation and additional configuration, please refer to 
-[vim-lsp](https://github.com/prabirshrestha/vim-lsp) and [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings) 
-for details.  
-The following are the installation steps in simple terms:  
-1. Prepare required project or executable bin file, e.g.:
-    - [erlang_ls](https://github.com/erlang-ls/erlang_ls) requires `rebar3`
-    - [vim-language-server](https://github.com/iamcco/vim-language-server) requires `cargo`  
-2. Double check the [Path Environment Variables](https://linuxconfig.org/linux-path-environment-variable), or add it in Vim manually by `let $PATH .= ':/Path/To/Your/bin'`
-3. Use `:LspInstallServer` to install the corresponding language server for current filetype
-4. Restart Vim and open the previous file
-5. Check the server status by `:LspStatus`  
-
 
 ## Run time path
 
@@ -100,11 +86,4 @@ If you have other pack directory, you can include it in a similar way:
 ```vim
 let &packpath .= ','.g:path_internal
 ```
-
-
-
-## Quick start
-
-If you have no time to follow all plug-ins and just want a quick start.  
-Please check [`NewbieGuide`](https://github.com/shawnvim/vim-universal/blob/master/NewbieGuide.md) to experience this Vim integration quickly.  
 
