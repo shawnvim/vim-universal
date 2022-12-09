@@ -9,16 +9,21 @@ A universal VIM integration
 ## Table of Contents
 
 - [Requirements](#requirements)
-- [Install](#install)
-  - [Engine Initialization](#engine-initialization)
-
-
+- [Installation](#installation)
+  - [Engine Init](#engine-init)
+- [Package Management](#package-management)
+  - [Update](#update)
+  - [Deinit](#deinit)
+  - [Configuration](#configuration)
+- [Reference](#reference)
+ 
+ 
 ## Requirements
 
- - Vim8.2 or higher
- - Python2.7+ or Python3.1+
+ - [Vim8.2](https://github.com/vim/vim) or higher
+ - [Python2.7+](https://www.python.org/downloads/release/python-2718/) or [Python3.1+](https://www.python.org/downloads/)
 
-## Install
+## Installation
 
 In this repo, `git submodule` is used to manage plug-in as package([`/pack`](https://github.com/shawnvim/vim-universal/tree/master/pack))   
 Please clone repo with all submodules by:
@@ -28,9 +33,7 @@ git clone https://github.com/shawnvim/vim-universal --recurse-submodules
 Or you can just download the `release.zip` with all packages and unzip it to `.vim`  
 If you want to keep the folder name as vim-universal, you can use `gvim -u /Path/To/Your/vimrc` to start using
 
-For more details about Vim native package manager or `git submodule`, please check: <a href="https://www.danielfranklin.id.au/vim-8-package-management/">Vim 8+ native package manager</a>
-
-### Engine Initialization
+### Engine Init
 
 After initial install, please install the C extension of [Leaderf](https://github.com/Yggdroot/LeaderF#performance) fuzzy matching algorithm:
 ```vim
@@ -39,24 +42,32 @@ After initial install, please install the C extension of [Leaderf](https://githu
 And you can check the installation status after VIM restart by:
 ```vim
 :echo g:Lf_fuzzyEngine_C
+```  
+
+## Package Management
+
+### Update
+If you want to update with all submodules, please use:
 ```
+git pull origin master && git submodule update --recursive
+```  
 
-## Remove submodule
-
-If you have duplicated plugins locally, you can remove submodule by:
+### Deinit
+If you have duplicated plugins locally, you can remove submodule by deinit:
 ```
 git submodule deinit project-sub-1
 git rm project-sub-1
 ```
-and then remove the related configuration in [`vimrc`](https://github.com/shawnvim/vim-universal/blob/master/vimrc)
+And then remove the related configuration in [`vimrc`](https://github.com/shawnvim/vim-universal/blob/master/vimrc)  
 
-## Update
+### Configuration
+Most of the plug-ins' configuration is in [`autoload/setup`](https://github.com/shawnvim/vim-universal/blob/master/autoload/setup.vim), you can also find the path of all plug-ins in [`.gitmodules`](https://github.com/shawnvim/vim-universal/blob/master/.gitmodules).  
+In Vim, you can use <kbd>gx</kbd> to check their Github page, or use <kbd>gf</kbd> to go to the file directory.  
 
-If you want to update with all submodules, please use:
-```
-git pull origin master && git submodule update --recursive
-```
 
+## Reference
+ - [VIM Universal Wiki](shawnvim.github.io/vim-universal/)
+ - [VIM 8 Package Management](https://www.danielfranklin.id.au/vim-8-package-management/)
 
 
 ## Language Server Protocol (LSP)
@@ -90,10 +101,7 @@ If you have other pack directory, you can include it in a similar way:
 let &packpath .= ','.g:path_internal
 ```
 
-## Readme / Help
 
-Most of the plug-ins' configuration is in [`autoload/setup`](https://github.com/shawnvim/vim-universal/blob/master/autoload/setup.vim), and you can use `gx` to check their Github page, or use `gf` to go to the file directory.  
-You can also find the link of all plug-ins in [`.gitmodules`](https://github.com/shawnvim/vim-universal/blob/master/.gitmodules)
 
 ## Quick start
 
