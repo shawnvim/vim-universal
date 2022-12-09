@@ -8,118 +8,117 @@
 
 
 
-## Finder
+## Finder  
 
 | Command                    | Description
 | -------                    | -----------
-| `<Ctrl-P>`                 | Finder for **files** in repo
-| `<Ctrl-F>`                 | Finder for **functions** in file
-| `<Ctrl-H>`                 | Global search by **grep**<br>`<Ctrl-G>` to quick insert current root directory
-| `gh`                       | Global search by **ripgrep**<br>`<Shift-Q>` to quick duplicate search result to quickfix
+| <kbd>Ctrl-P</kbd>                 | Finder for **files** in repo
+| <kbd>Ctrl-F</kbd>                 | Finder for **functions** in file
+| <kbd>Ctrl-H</kbd>                 | Global search by **grep**<br><kbd>Ctrl-G</kbd> to quick insert current root directory
+| <kbd>gh</kbd>                       | Global search by **ripgrep**<br><kbd>Shift-Q</kbd> to quick duplicate search result to quickfix
 
-## Menu
-
-| Command                    | Description
-| -------                    | -----------
-| `F2`                       | NERDTree file system explorer
-| `<Alt-2>`                  | Most recently used buffers
-| `<Alt-3>`                  | Nearby functions
-| `<Alt-4>`                  | For internal testing only
+## Menu  
 
 | Command                    | Description
 | -------                    | -----------
-| `<Alt-1>`                  | QuickUI menu for following commands
+| <kbd>F2</kbd>                       | NERDTree file system explorer
+| <kbd>Alt-2</kbd>                  | Most recently used buffers
+| <kbd>Alt-3</kbd>                  | Nearby functions
+| <kbd>Alt-4</kbd>                  | For internal testing only
+
+| Command                    | Description
+| -------                    | -----------
+| <kbd>Alt-1</kbd>                  | QuickUI menu for following commands
 | |
-| `TU`                       | Tags update
-| `TS`                       | For internal testing only
-| `DM`                       | Display as markdown
-| `DF`                       | Display as file(html/doc/...)
-| `DD`                       | Display as directory
-| `DU`                       | Display as UML
-| `DR`                       | For internal testing only
-| `GB`                       | Git blame
-| `GR`                       | Git browse code review
-| `GC`                       | Git browse commit
-| `GG`                       | Git commit history log for current buffer
-| `GD`                       | Git diff
-| `GM`                       | Git diff from origin/master
+| <kbd>TU</kbd>                       | Tags update
+| <kbd>TS</kbd>                       | For internal testing only
+| <kbd>DM</kbd>                       | Display as markdown
+| <kbd>DF</kbd>                       | Display as file(html/doc/...)
+| <kbd>DD</kbd>                       | Display as directory
+| <kbd>DU</kbd>                       | Display as UML
+| <kbd>DR</kbd>                       | For internal testing only
+| <kbd>GB</kbd>                       | Git blame
+| <kbd>GR</kbd>                       | Git browse code review
+| <kbd>GC</kbd>                       | Git browse commit
+| <kbd>GG</kbd>                       | Git commit history log for current buffer
+| <kbd>GD</kbd>                       | Git diff
+| <kbd>GM</kbd>                       | Git diff from origin/master
 
-## Quickfix
+## Quickfix  
 
 | Command                    | Description
 | -------                    | -----------
-| `<Alt-Q>`                  | Quickfix toggle
-| `<Leader-G>`               | Grep within quickfix
-| `<Leader-R>`               | Restore to original quickfix
-| `<Alt-A>`                  | Enable quickfix modification
+| <kbd>Alt-Q</kbd>                  | Quickfix toggle
+| <kbd>Leader-G</kbd>               | Grep within quickfix
+| <kbd>Leader-R</kbd>               | Restore to original quickfix
+| <kbd>Alt-A</kbd>                  | Enable quickfix modification
 |  |
-| `za`                       | Toggle fold
-| `zr`                       | Open all folds
-| `zm`                       | Close all folds
+| <kbd>za</kbd>                       | Toggle fold
+| <kbd>zr</kbd>                       | Open all folds
+| <kbd>zm</kbd>                       | Close all folds
 
-## Search / Replace
+## Search / Replace  
 
 | Command                    | Description
 | -------                    | -----------
-| `<Ctrl-K>`                 | **Highlight** current word
-| `n` `N`                    | Navigate next/previous highlighted word
-| `<Ctrl-J>`                 | Clear all highlighted words
+| <kbd>Ctrl-K</kbd>                 | **Highlight** current word
+| <kbd>n</kbd> / <kbd>N</kbd>                    | Navigate next/previous highlighted word
+| <kbd>Ctrl-J</kbd>                 | Clear all highlighted words
 | |
-| `<Ctrl-N>`                 | **Select** current word to start modify with multiple cursors
-| `<Shift-→>`                | Expand selection by character
-| `n` `N`                    | Get next/previous occurrence
-| `q`                        | Skip current and get next occurrence
-| `Q`                        | Remove current selected occurrence
- 
-## Compile
+| <kbd>Ctrl-N</kbd>                 | **Select** current word to start modify with multiple cursors
+| <kbd>Shift-→</kbd>                | Expand selection by character
+| <kbd>n</kbd> <kbd>N</kbd>                    | Get next/previous occurrence
+| <kbd>q</kbd>                        | Skip current and get next occurrence
+| <kbd>Q</kbd>                        | Remove current selected occurrence
+
+## Compile  
 
 | Command                    | Description
 | -------                    | -----------
 | `:Gmake [arguments]`       | Use gmake to multi-thread compile **closest parent directory** with **Makefile**
 
-## Commentary
+## Commentary  
 
 | Command                    | Description
 | -------                    | -----------
-| `F8`                       | Comment
-| `F9`                       | Uncomment
+| <kbd>F8</kbd>                       | Comment
+| <kbd>F9</kbd>                       | Uncomment
 
-## Register
+## Register  
 
 | Command                    | Description
 | -------                    | -----------
-| `"`                        | Open register(**clipboard**)
-| `<Ctrl-C>`                 | Copy to register 0 and +(**system register**)
-| `<Ctrl-V>`                 | Paste from register 0
-| `<Ctrl-Shift-V>`           | Paste from register +
+| <kbd>"</kbd>                        | Open register(**clipboard**)
+| <kbd>Ctrl-C</kbd>                 | Copy to register 0 and +(**system register**)
+| <kbd>Ctrl-V</kbd>                 | Paste from register 0
+| <kbd>Ctrl-Shift-V</kbd>           | Paste from register +
 
-## Completion
+## Completion  
 
 | Command (Insert Mode)      | Description
 | -------                    | -----------
-| `<Tab>` / `<Ctrl-N>`       | Complete list
-| `<Shift-Tab>` / `<Ctrl-P>` | Complete list (reverse)
-| `<Ctrl-X><Ctrl-O>`         | Omnicomplete list
+| <kbd>Tab</kbd> / <kbd>Ctrl-N</kbd>       | Complete list
+| <kbd>Shift-Tab</kbd> / <kbd>Ctrl-P</kbd> | Complete list (reverse)
+| <kbd>Ctrl-X><Ctrl-O</kbd>         | Omnicomplete list
 
-## LSP
-
-| Command                    | Description
-| -------                    | -----------
-| `<Ctrl-D>`                 | LSP definition
-| `<Ctrl-Shift-D>`           | LSP diagnostics<br>`<Alt-L>` to toggle location list
-
-## General
+## LSP  
 
 | Command                    | Description
 | -------                    | -----------
-| `<Leader-N>`               | Relative line number toggle
-| `<Leader-W>`               | Auto wrap toggle
-| `<Leader-U>`               | Undo tree toggle
+| <kbd>Ctrl-D</kbd>                 | LSP definition
+| <kbd>Ctrl-Shift-D</kbd>           | LSP diagnostics<br><kbd>Alt-L</kbd> to toggle location list
+
+## General  
+
+| Command                    | Description
+| -------                    | -----------
+| <kbd>Leader-N</kbd>               | Relative line number toggle
+| <kbd>Leader-W</kbd>               | Auto wrap toggle
+| <kbd>Leader-U</kbd>               | Undo tree toggle
 | |
-| `<Ctrl-S>`                 | Save file
-| `<Alt-J>` `<Alt-K>`        | Line movement
-| `<F12>`                    | Stop background async process
+| <kbd>Ctrl-S</kbd>                 | Save file
+| <kbd>Alt-J</kbd> <kbd>Alt-K</kbd>        | Line movement
+| <kbd>F12</kbd>                    | Stop background async process
 
 
-  
-  
+
