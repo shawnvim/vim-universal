@@ -71,19 +71,3 @@ In Vim, you can use <kbd>gx</kbd> to check their Github page, or use <kbd>gf</kb
 
 
 
-## Run time path
-
-If you have other run time path(rtp), you can include it by:
-```vim
-let g:path_internal = YourOtherRTP
-if isdirectory(g:path_internal)
-    let &rtp .= ','.g:path_internal
-    " let &packpath .= ','.g:path_internal
-    call YourOtherFunction()
-endif
-```
-If you have other pack directory, you can include it in a similar way: 
-```vim
-let &packpath .= ','.g:path_internal
-```
-
