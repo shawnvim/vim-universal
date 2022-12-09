@@ -21,10 +21,14 @@ platforms:
 navigation:
   - name: Intro
     link: ./index.html
-    sublist:
-      - name: Image
-        link: ./index.html#todo
-  - name: VIM Universal Newbie Guide.md
+  - name: VIM Universal Newbie Guide
     link: ./newbie-guide.html
+  - name: VIM LSP
+    link: ./lsp.html
+    sublist:
+      - name: Installation
+        link: ./lsp.html#installation
+      - name: Reference
+        link: ./lsp.html#reference
 
 
