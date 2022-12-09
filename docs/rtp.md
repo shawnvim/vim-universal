@@ -1,6 +1,6 @@
 # Run Time Path (RTP)
 
-If you have other VIM RTP, you can include it by:
+If you have other VIM RTP, you can include it in [vimrc](https://github.com/shawnvim/vim-universal/blob/master/vimrc):
 ```vim
 let g:path_internal = "/Path/To/Your/Other/RTP"
 if isdirectory(g:path_internal)
