@@ -16,7 +16,7 @@ color-scheme: auto
 platforms:
   - name: GitHub
     icon: <i class="fa-brands fa-github"></i>
-    link: https://github.com/shawnvim/vim-universal
+    link: https://github.com/shawnvim/
 
 navigation:
   - name: Intro
