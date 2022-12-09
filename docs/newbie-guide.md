@@ -4,7 +4,7 @@
  - Only **a few** functions are introduced here, and it is better to check the specific introduction of the corresponding plug-in in [`/pack`](https://github.com/shawnvim/vim-universal/tree/master/pack) to get more detailed information.  
  - Tips:  
  <kbd>Leader</kbd> is set as <kbd>Space</kbd> by default  
- <kbd>Ctrl-R</kbd> <kbd>Ctrl-W</kbd> for a quick copy from **current word** to command line
+ <kbd>Ctrl-R</kbd><kbd>Ctrl-W</kbd> for a quick copy from **current word** to command line
 
 
 
@@ -99,7 +99,7 @@
 | -------                    | -----------
 | <kbd>Tab</kbd> / <kbd>Ctrl-N</kbd>       | Complete list
 | <kbd>Shift-Tab</kbd> / <kbd>Ctrl-P</kbd> | Complete list (reverse)
-| <kbd>Ctrl-X><Ctrl-O</kbd>         | Omnicomplete list
+| <kbd>Ctrl-X</kbd><kbd>Ctrl-O</kbd>         | Omnicomplete list
 
 ## LSP  
 
