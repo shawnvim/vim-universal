@@ -19,12 +19,12 @@ platforms:
     link: https://github.com/shawnvim/vim-universal
 
 navigation:
-  - name: Index
+  - name: Intro
     link: ./index.html
     sublist:
       - name: Image
         link: ./index.html#todo
-  - name: Readme
-    link: ./README.html
+  - name: VIM Universal Newbie Guide.md
+    link: ./newbie-guide.html
 
 
