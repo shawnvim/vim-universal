@@ -75,7 +75,7 @@
 
 | Command                                    | Description
 | ----------------------                     | ----------------------
-| `:Gmake [opt]`                             | Use gmake to multi-thread compile **closest parent directory** with **Makefile**
+| `:Gmake`                             | Use gmake to multi-thread compile **closest parent directory** with **Makefile**
 
 ## Commentary  
 
