@@ -58,11 +58,11 @@ If you have duplicated plugins locally, you can remove submodule by deinit:
 git submodule deinit project-sub-1
 git rm project-sub-1
 ```
-And then remove the related configuration in [`vimrc`](https://github.com/shawnvim/vim-universal/blob/master/vimrc)  
+And then remove the related configuration in [`vimrc`](https://github.com/shawnvim/vim-universal/blob/master/vimrc) and [`autoload/setup`](https://github.com/shawnvim/vim-universal/blob/master/autoload/setup.vim)  
 
 ### Configuration
 Most of the plug-ins' configuration is in [`autoload/setup`](https://github.com/shawnvim/vim-universal/blob/master/autoload/setup.vim), you can also find the path of all plug-ins in [`.gitmodules`](https://github.com/shawnvim/vim-universal/blob/master/.gitmodules).  
-In Vim, you can use <kbd>gx</kbd> to check their Github page, or use <kbd>gf</kbd> to go to the file directory.  
+In Vim, you can use <kbd>gx</kbd> to check their Github page and use <kbd>gf</kbd> to go to the file directory.  
 
 
 ## Reference
