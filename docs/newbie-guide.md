@@ -1,5 +1,5 @@
-Newbie Guide
-=======
+# Newbie Guide
+
  - This is a functional guide to help newcomers get started quickly.  
  - Only **a few** functions are introduced here, and it is better to check the specific introduction of the corresponding plug-in in [`/pack`](https://github.com/shawnvim/vim-universal/tree/master/pack) to get more detailed information.  
  - Tips:  
@@ -8,8 +8,8 @@ Newbie Guide
 
 
 
-Finder
-------------
+## Finder
+
 | Command                    | Description
 | -------                    | -----------
 | `<Ctrl-P>`                 | Finder for **files** in repo
@@ -17,8 +17,8 @@ Finder
 | `<Ctrl-H>`                 | Global search by **grep**<br>`<Ctrl-G>` to quick insert current root directory
 | `gh`                       | Global search by **ripgrep**<br>`<Shift-Q>` to quick duplicate search result to quickfix
 
-Menu
-------------
+## Menu
+
 | Command                    | Description
 | -------                    | -----------
 | `F2`                       | NERDTree file system explorer
@@ -44,8 +44,8 @@ Menu
 | `GD`                       | Git diff
 | `GM`                       | Git diff from origin/master
 
-Quickfix
-------------
+## Quickfix
+
 | Command                    | Description
 | -------                    | -----------
 | `<Alt-Q>`                  | Quickfix toggle
@@ -57,8 +57,8 @@ Quickfix
 | `zr`                       | Open all folds
 | `zm`                       | Close all folds
 
-Search / Replace
-------------
+## Search / Replace
+
 | Command                    | Description
 | -------                    | -----------
 | `<Ctrl-K>`                 | **Highlight** current word
@@ -71,21 +71,21 @@ Search / Replace
 | `q`                        | Skip current and get next occurrence
 | `Q`                        | Remove current selected occurrence
  
-Compile
-------------
+## Compile
+
 | Command                    | Description
 | -------                    | -----------
 | `:Gmake [arguments]`       | Use gmake to multi-thread compile **closest parent directory** with **Makefile**
 
-Commentary
-------------
+## Commentary
+
 | Command                    | Description
 | -------                    | -----------
 | `F8`                       | Comment
 | `F9`                       | Uncomment
 
-Register
-------------
+## Register
+
 | Command                    | Description
 | -------                    | -----------
 | `"`                        | Open register(**clipboard**)
@@ -93,23 +93,23 @@ Register
 | `<Ctrl-V>`                 | Paste from register 0
 | `<Ctrl-Shift-V>`           | Paste from register +
 
-Completion
-------------
+## Completion
+
 | Command (Insert Mode)      | Description
 | -------                    | -----------
 | `<Tab>` / `<Ctrl-N>`       | Complete list
 | `<Shift-Tab>` / `<Ctrl-P>` | Complete list (reverse)
 | `<Ctrl-X><Ctrl-O>`         | Omnicomplete list
 
-LSP
-------------
+## LSP
+
 | Command                    | Description
 | -------                    | -----------
 | `<Ctrl-D>`                 | LSP definition
 | `<Ctrl-Shift-D>`           | LSP diagnostics<br>`<Alt-L>` to toggle location list
 
-General
-------------
+## General
+
 | Command                    | Description
 | -------                    | -----------
 | `<Leader-N>`               | Relative line number toggle
