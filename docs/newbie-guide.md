@@ -75,7 +75,7 @@
 
 | Command                    | Description
 | -------                    | -----------
-| `:Gmake [arguments]`       | Use gmake to multi-thread compile **closest parent directory** with **Makefile**
+| `:Gmake [opt]`       | Use gmake to multi-thread compile **closest parent directory** with **Makefile**
 
 ## Commentary  
 
@@ -117,7 +117,7 @@
 | <kbd>Leader-U</kbd>               | Undo tree toggle
 | |
 | <kbd>Ctrl-S</kbd>                 | Save file
-| <kbd>Alt-J</kbd> <kbd>Alt-K</kbd>        | Line movement
+| <kbd>Alt-J</kbd> / <kbd>Alt-K</kbd>        | Line movement
 | <kbd>F12</kbd>                    | Stop background async process
 
 
