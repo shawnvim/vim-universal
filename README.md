@@ -1,5 +1,8 @@
 # VIM Universal
 
+<a href="https://shawnvim.github.io/vim-universal/"><img src="https://img.shields.io/badge/Wiki-VIM Universal-9cf?style=flat"></a>
+<a href="https://github.com/shawnvim/vim-universal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-Apache 2.0-brightgreen?style=flat"></a>
+
 A universal VIM integration
 
  - Written in Python and VimL
