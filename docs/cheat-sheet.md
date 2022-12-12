@@ -1,8 +1,10 @@
 # Cheat Sheet
+
+The most important commands and shortcuts to master Vim.
+
 <br>
 
 ## Cursor Motions
-<br>
 
 ### Moving by Characters, Words
 
