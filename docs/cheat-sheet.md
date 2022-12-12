@@ -1,6 +1,6 @@
 # Cheat Sheet
 
-## Cursor Movement
+## Cursor Motions
 
 ### Moving by Characters, Words
     h j k l - Arrow keys
@@ -23,6 +23,13 @@
     ctrl+e / ctrl+y - Scroll down/up one line
 
 ### Moving by Files
+     :tag function_name  - jump to that function
+     ctrl-] / ctrl-leftclick   - calls :tag on the word under the cursor
+     ctrl-o   - goes to previous cursor spot
+     ctrl-t   - goes to previous cursor spot where you called :tag
+     gx - Open the URL under the cursor
+     gf - Open the file located at the filepath under the cursor
+
 
 ## Editing Text
 ### Inserting Text
