@@ -8,27 +8,40 @@
 
 |||
 |-|-|
-<kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>| Arrow keys
+<kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd> | Arrow keys
 <kbd>←</kbd> <kbd>↓</kbd> <kbd>↑</kbd> <kbd>→</kbd> | Arrow keys
-w / b | Next/previous word
-W / B | Next/previous word (space seperated)
-e / ge | Next/previous end of word
+<kbd>w</kbd>                                        | Next word
+<kbd>b</kbd>                                        | Previous word
+<kbd>W</kbd>                                        | Next word (space seperated)
+<kbd>B</kbd>                                        | Previous word (space seperated)
+<kbd>e</kbd>                                        | Next end of word
+<kbd>ge</kbd>                                       | Previous end of word
 
 <br>
 
 ### Moving by Lines
-    0 / $ - Start/End of line
-    ^ - First non-blank character of line (same as 0w)
-    #G / #gg / :# – move to a specified line number (replace # with the line number)
+
+|||
+|-|-|
+<kbd>0</kbd> | Start of line
+<kbd>$</kbd> | End of line
+<kbd>^</kbd> / <kbd>0w</kbd> | First non-blank character of line
+<kbd>Num</kbd><kbd>G</kbd> / <kbd>Num</kbd><kbd>gg</kbd> / `:[num]` | move to a specified line number
+
+<br>
 
 ### Moving by Screens
-    Ctrl+d - Move down half a page
-    Ctrl+u - Move up half a page
-    } - Go forward by paragraph (the next blank line)
-    { - Go backward by paragraph (the next blank line)
-    gg - Go to the top of the page
-    G - Go the bottom of the page
-    ctrl+e / ctrl+y - Scroll down/up one line
+
+|||
+|-|-|
+ <kbd>Ctrl+D</kbd> |  Move down half a page
+ <kbd>Ctrl+U</kbd> |  Move up half a page
+ <kbd>}</kbd> |  Go forward by paragraph (the next blank line)
+ <kbd>{</kbd> |  Go backward by paragraph (the next blank line)
+ <kbd>gg</kbd> |  Go to the top of the page
+ <kbd>G</kbd> |  Go the bottom of the page
+ <kbd>Ctrl+E</kbd> |  Scroll down one line
+ <kbd>Ctrl+Y</kbd> |  Scroll up one line
 
 ### Moving by Files
      :tag function_name  - jump to that function

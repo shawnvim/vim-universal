@@ -1,6 +1,6 @@
 # Newbie Guide
 
- - This is a functional guide to help newcomers get started quickly.  
+ - This is a functional guide to help newcomers get started quickly in VIM Universal.  
  - Only **a few** functions are introduced here, and it is better to check the specific introduction of the corresponding plug-in in [`/pack`](https://github.com/shawnvim/vim-universal/tree/master/pack) to get more detailed information.  
  - Tips:  
  <kbd>Leader</kbd> is set as <kbd>Space</kbd> by default  
