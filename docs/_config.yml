@@ -21,6 +21,8 @@ platforms:
 navigation:
   - name: Intro
     link: ./index.html
+  - name: VIM Cheat Sheet
+    link: ./cheat-sheet.html
   - name: VIM Universal Newbie Guide
     link: ./newbie-guide.html
   - name: VIM LSP
