@@ -3,8 +3,7 @@
 
 ## Cursor Motions
 
-### Moving by Characters, Words
-
+### Moving by Characters, Words<br>
 |||
 |-|-|
 <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>| Arrow keys
