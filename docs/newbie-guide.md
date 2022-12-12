@@ -6,7 +6,7 @@
  <kbd>Leader</kbd> is set as <kbd>Space</kbd> by default  
  <kbd>Ctrl-R</kbd><kbd>Ctrl-W</kbd> for a quick copy from **current word** to command line
 
-
+<br>
 
 ## Finder  
 
@@ -16,6 +16,8 @@
 | <kbd>Ctrl-F</kbd>                          | Finder for **functions** in file
 | <kbd>Ctrl-H</kbd>                          | Global search by **grep**<br><kbd>Ctrl-G</kbd> to quick insert current root directory
 | <kbd>gh</kbd>                              | Global search by **ripgrep**<br><kbd>Shift-Q</kbd> to quick duplicate search result to quickfix
+
+<br>
 
 ## Menu  
 
@@ -44,6 +46,8 @@
 | <kbd>GD</kbd>                              | Git diff
 | <kbd>GM</kbd>                              | Git diff from origin/master
 
+<br>
+
 ## Quickfix  
 
 | Command                                    | Description
@@ -56,6 +60,8 @@
 | <kbd>za</kbd>                              | Toggle fold
 | <kbd>zr</kbd>                              | Open all folds
 | <kbd>zm</kbd>                              | Close all folds
+
+<br>
 
 ## Search / Replace  
 
@@ -71,11 +77,15 @@
 | <kbd>q</kbd>                               | Skip current and get next occurrence
 | <kbd>Q</kbd>                               | Remove current selected occurrence
 
+<br>
+
 ## Compile  
 
 | Command                                    | Description
 | ----------------------                     | ----------------------
 | `:Gmake`                             | Use gmake to multi-thread compile **closest parent directory** with **Makefile**
+
+<br>
 
 ## Commentary  
 
@@ -83,6 +93,8 @@
 | ----------------------                     | ----------------------
 | <kbd>F8</kbd>                              | Comment
 | <kbd>F9</kbd>                              | Uncomment
+
+<br>
 
 ## Register  
 
@@ -93,6 +105,8 @@
 | <kbd>Ctrl-V</kbd>                          | Paste from register 0
 | <kbd>Ctrl-Shift-V</kbd>                    | Paste from register +
 
+<br>
+
 ## Completion  
 
 | Command (Insert Mode)                      | Description
@@ -101,12 +115,16 @@
 | <kbd>Shift-Tab</kbd> / <kbd>Ctrl-P</kbd>   | Complete list (reverse)
 | <kbd>Ctrl-X</kbd><kbd>Ctrl-O</kbd>         | Omnicomplete list
 
+<br>
+
 ## LSP  
 
 | Command                                    | Description
 | ----------------------                     | ----------------------
 | <kbd>Ctrl-D</kbd>                          | LSP definition
 | <kbd>Ctrl-Shift-D</kbd>                    | LSP diagnostics<br><kbd>Alt-L</kbd> to toggle location list
+
+<br>
 
 ## General  
 
@@ -120,5 +138,5 @@
 | <kbd>Alt-J</kbd> / <kbd>Alt-K</kbd>        | Line movement
 | <kbd>F12</kbd>                             | Stop background async process
 
-
+<br>
 
