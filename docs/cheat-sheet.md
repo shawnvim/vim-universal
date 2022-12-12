@@ -3,10 +3,13 @@
 ## Cursor Motions
 
 ### Moving by Characters, Words
-    h j k l - Arrow keys
-    w / b - Next/previous word
-    W / B - Next/previous word (space seperated)
-    e / ge - Next/previous end of word
+| | |
+|-|-|
+|<kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>| Arrow keys|
+|<kbd>←</kbd> <kbd>↓</kbd> <kbd>↑</kbd> <kbd>→</kbd> | Arrow keys
+|w / b | Next/previous word|
+|W / B | Next/previous word (space seperated)|
+|e / ge | Next/previous end of word|
     
 ### Moving by Lines
     0 / $ - Start/End of line
