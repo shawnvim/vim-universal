@@ -2,6 +2,7 @@
 <br>
 
 ## Cursor Motions
+<br>
 
 ### Moving by Characters, Words<br>
 |||
@@ -11,6 +12,7 @@
 w / b | Next/previous word
 W / B | Next/previous word (space seperated)
 e / ge | Next/previous end of word
+<br>
     
 ### Moving by Lines
     0 / $ - Start/End of line
