@@ -4,6 +4,7 @@
 ## Cursor Motions
 
 ### Moving by Characters, Words
+
 |||
 |-|-|
 <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>| Arrow keys
