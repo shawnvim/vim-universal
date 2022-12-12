@@ -1,10 +1,11 @@
 # Cheat Sheet
-
 <br>
+
 ## Cursor Motions
-
 <br>
-### Moving by Characters, Words<br>
+
+### Moving by Characters, Words
+
 |||
 |-|-|
 <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>| Arrow keys
@@ -14,6 +15,7 @@ W / B | Next/previous word (space seperated)
 e / ge | Next/previous end of word
 
 <br>
+
 ### Moving by Lines
     0 / $ - Start/End of line
     ^ - First non-blank character of line (same as 0w)
