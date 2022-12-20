@@ -69,7 +69,7 @@ In Vim, you can use <kbd>gx</kbd> to check their Github page and use <kbd>gf</kb
 
 
 ## Reference
- - [VIM Universal Wiki](shawnvim.github.io/vim-universal/)
+ - [VIM Universal Wiki](https://shawnvim.github.io/vim-universal/)
  - [VIM 8 Package Management](https://www.danielfranklin.id.au/vim-8-package-management/)
 
 
