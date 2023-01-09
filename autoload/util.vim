@@ -103,12 +103,12 @@ endfunction
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! util#GrepEscape(str)
-    let str_shellescape = shellescape(a:str, 1)
-    let str_escape = escape(str_shellescape, '|[]$')
+    let str_escape = escape(a:str, '\|[]$')
+    let str_shellescape = shellescape(str_escape, 1)
     " let str_quota  = substitute(str_escape, '"' , '"\\""', 'g')
     " let str_dollar = substitute(str_escape, '\$' , '\"\\$\"', 'g')
 
-    return str_escape
+    return str_shellescape
 endfunction
 
 
