@@ -300,7 +300,7 @@ function! setup#grep()
     let g:grep_exclude = 'out,beam,html,cov,log,Pbeam,history,swp'
 
     nnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . util#SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", expand("<cword>"))<CR>
-    xnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . util#SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", '"' . substitute(escape(@*, '#\|\%\[\]'), '"' , '"\\""', 'g') . '"')<CR>
+    xnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . util#SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", util#GrepEscape(@*))<CR>
 
 endfunction
 
