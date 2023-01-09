@@ -69,7 +69,7 @@ The most important commands and shortcuts to master Vim.
 <kbd>I</kbd> / <kbd>A</kbd>                   | Start insert mode at the beginning/end of the line
 <kbd>o</kbd> / <kbd>O</kbd>                   | Add blank line below/above current line
 <kbd>ea</kbd>                      | Insert text at the end of the word
-<kbd>Esc</kbd> / <kbd>Ctrl+[</kbd> | Exit insert mode
+<kbd>Esc</kbd> / <kbd>Ctrl-[</kbd> | Exit insert mode
 <kbd>d</kbd>                       | Delete
 <kbd>c</kbd>                       | Delete, then start insert mode
 
@@ -117,7 +117,7 @@ You can also combine operators with motions. E.g.: <kbd>d$</kbd> deletes from th
 <kbd>v</kbd>                       | Start visual mode
 <kbd>V</kbd>                       | Start linewise visual mode
 <kbd>Ctrl-V</kbd>                  | Start visual block mode
-<kbd>Esc</kbd> / <kbd>Ctrl+[</kbd> | Exit visual mode
+<kbd>Esc</kbd> / <kbd>Ctrl-[</kbd> | Exit visual mode
 
 <br>
 
