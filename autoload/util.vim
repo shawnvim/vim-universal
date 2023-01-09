@@ -99,3 +99,15 @@ endfunction
 function! util#IsBlank()
     return strpart(getline('.'), 0, col('.')-1) =~ '^\s*$'
 endfunction
+
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
+function! util#GrepEscape(str)
+    let str_escape = escape(a:str, '#\|\%\[\]')
+    let str_quota  = substitute(str_escape, '"' , '"\\""', 'g')
+    let str_dollar = substitute(str_quota, '\$' , '\"\\$\"', 'g')
+
+    return '"' . str_dollar . '"'
+endfunction
+
+
