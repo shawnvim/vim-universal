@@ -31,6 +31,7 @@ set laststatus=2
 "set scrolloff=10
 set showmatch          " show bracket match
 set wrap
+set spelloptions=camel
 
 set nobackup       " no backup files
 set noswapfile     " no swap files
