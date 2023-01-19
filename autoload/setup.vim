@@ -297,7 +297,7 @@ function! setup#grep()
 
     cnoremap <C-g> <C-R>=' ' . util#GetRootDirectory() . '/*'<CR>
 
-    let g:grep_exclude = 'out,beam,html,cov,log,Pbeam,history,swp'
+    let g:grep_exclude = 'out,beam,cov,Pbeam,history,swp'
 
     nnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . util#SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", expand("<cword>"))<CR>
     xnoremap <C-h> :<C-U><C-R>=printf("grep! -Hnri " . util#SetInclude() . "--exclude=\\*.{" . g:grep_exclude . "} --exclude=tags --exclude=\\*.tags %s", util#GrepEscape(@*))<CR>
