@@ -20,7 +20,10 @@ endfunction
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! lsp#install() abort
+    let g:lsp_use_native_client = 1
     let g:lsp_use_event_queue = 1
+    let g:lsp_document_highlight_enabled = 0
+    
     let g:lsp_settings_root_markers = g:rooter_patterns
     let g:file_erlang_ls_config = util#GetErlangLsConfig()
     let g:file_erlang_ls = g:lsp_settings_servers_dir . '/erlang-ls/_build/default/bin/erlang_ls'
