@@ -42,3 +42,12 @@ function! lsp#install() abort
         autocmd User lsp_buffer_enabled call lsp#on_lsp_buffer_enabled()
     augroup END
 endfunction
+
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
+function! lsp#restart_server() abort
+    :LspStopServer
+    :sleep 3
+    :e %:p
+endfunction
+
