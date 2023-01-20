@@ -662,6 +662,11 @@ function! setup#quickuiMenu()
                 \ ["Git Diff&Master", 'G difftool origin/master...'],
                 \ ])
 
+    call quickui#menu#install("&LSP", [
+                \ ["LSP &Install Server", 'LspInstallServer'],
+                \ ["LSP &Restart Server", 'call lsp#restart_server()'],
+                \ ])
+
     call quickui#menu#install("&Cancel", [
                 \ ["Cancel &AsyncJob\tF12", 'AsyncStop!'],
                 \ ])
