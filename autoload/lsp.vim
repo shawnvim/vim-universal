@@ -10,7 +10,7 @@
 "-----------------------------------------------------------------------------"
 "-----------------------------------------------------------------------------"
 function! lsp#on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
+    " setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
     " if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     nmap <buffer> <C-d> <plug>(lsp-definition)
@@ -23,6 +23,12 @@ function! lsp#install() abort
     let g:lsp_use_native_client = 1
     let g:lsp_use_event_queue = 1
     let g:lsp_document_highlight_enabled = 0
+    let g:lsp_insert_text_enabled = 0
+    let g:lsp_text_edit_enabled = 0
+    let g:lsp_completion_documentation_enabled = 0
+    let g:lsp_diagnostics_virtual_text_enabled = 0
+    let g:lsp_fold_enabled = 0
+    let g:lsp_preview_float = 0
     
     let g:lsp_settings_root_markers = g:rooter_patterns
     let g:file_erlang_ls_config = util#GetErlangLsConfig()
