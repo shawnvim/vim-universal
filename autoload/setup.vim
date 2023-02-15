@@ -664,6 +664,7 @@ function! setup#quickuiMenu()
 
     call quickui#menu#install("&LSP", [
                 \ ["LSP &Status", 'echom lsp#get_server_status()'],
+                \ ["LSP &CodeLens", 'LspCodeLens'],
                 \ ["LSP &Install Server", 'LspInstallServer'],
                 \ ["LSP &Restart Server", 'call lsp#restart_server()'],
                 \ ])
