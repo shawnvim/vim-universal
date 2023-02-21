@@ -111,4 +111,31 @@ function! util#GrepEscape(str)
     return str_shellescape
 endfunction
 
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
+function! util#Record2Map()
+    silent exe "normal f{"
+    let Ending = util#CheckWordAfterBrace()
+    if Ending =~ '^}[\s ]*='
+        let eq = ':='
+    else
+        let eq = '=>'
+    endif
+    silent exe "normal dT#"
+    silent exe "normal vab"
+    silent exe "normal J"
+    call sj#elixir#Record2Map('{', '}', eq)
+endfunction
+
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
+function! util#CheckWordAfterBrace()
+    silent exe "normal %"
+    exe "normal y2e"
+    let Ending = getreg('"')
+    silent exe "normal %"
+    return Ending
+endfunction
+
+
 
