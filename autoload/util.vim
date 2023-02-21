@@ -116,14 +116,17 @@ endfunction
 function! util#Record2Map()
     silent exe "normal f{"
     let Ending = util#CheckWordAfterBrace()
-    if Ending =~ '^}[\s ]*='
+    if Ending =~ '^}[\s\n ]*='
         let eq = ':='
     else
         let eq = '=>'
     endif
     silent exe "normal dT#"
-    silent exe "normal vab"
-    silent exe "normal J"
+    silent exe "normal vaby"
+    if getreg('"') =~ '\n'
+        silent exe "normal gvJ"
+    endif
+
     call sj#elixir#Record2Map('{', '}', eq)
 endfunction
 
