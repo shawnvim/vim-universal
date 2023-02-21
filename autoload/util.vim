@@ -116,12 +116,15 @@ endfunction
 function! util#Record2Map()
     silent exe "normal f{"
     let Ending = util#CheckWordAfterBrace()
+
+    silent exe "normal dT#"
     if Ending =~ '^}[\s\n ]*='
         let eq = ':='
-    else
+    elseif getline('.')[col('.') - 3] =~ "[0-9a-zA-Z']"
         let eq = '=>'
+    else
+        let eq = ':='
     endif
-    silent exe "normal dT#"
     silent exe "normal vaby"
     if getreg('"') =~ '\n'
         silent exe "normal gvJ"
