@@ -667,7 +667,6 @@ function! setup#quickuiMenu()
                 \ ["LSP &CodeLens", 'LspCodeLens'],
                 \ ["LSP &References", 'LspReferences'],
                 \ ["LSP &Install Server", 'LspInstallServer'],
-                \ ["LSP &Restart Server", 'call lsp#restart_server()'],
                 \ ])
 
     call quickui#menu#install("&Cancel", [
