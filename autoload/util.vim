@@ -130,7 +130,7 @@ function! util#Record2Map()
         silent exe "normal gvJ"
     endif
 
-    call sj#elixir#Record2Map('{', '}', eq)
+    call sj#elixir#Record2Map('{', '}', eq, [])
 endfunction
 
 "-----------------------------------------------------------------------------"
