@@ -106,3 +106,6 @@
 [submodule "pack/original/start/vim-exchange"]
 	path = pack/original/start/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange
+[submodule "pack/original/start/tagbar"]
+	path = pack/original/start/tagbar
+	url = https://github.com/preservim/tagbar
