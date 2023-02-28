@@ -195,7 +195,9 @@ function! setup#tagbar(file_uctags)
     let g:tagbar_sort = 0
     let g:tagbar_foldlevel = 2
     let g:tagbar_autoshowtag = 1
-    " let g:tagbar_scrolloff = 10
+    let g:tagbar_help_visibility = 1
+    " let g:tagbar_scrolloff = winheight(0) / 2
+    let g:tagbar_jump_offset = winheight(0) / 2
 
     noremap <F3> :TagbarToggle<CR>
 
