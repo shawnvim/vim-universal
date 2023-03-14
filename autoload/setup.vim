@@ -110,6 +110,7 @@ endfunction
 "-----------------------------------------------------------------------------"
 function! setup#completion()
     set completeopt=menuone,noinsert
+    set complete-=t
     " set complete-=t     \" Remove tag for slow completion
     inoremap <expr> <Tab>   (util#IsBlank() ? "\<Tab>" : (pumvisible() ? "\<Down>" : "\<C-n>"))
     inoremap <expr> <S-Tab> (util#IsBlank() ? "\<Tab>" : (pumvisible() ? "\<Up>"   : "\<C-p>"))
