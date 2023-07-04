@@ -58,12 +58,6 @@ function! setup#screenAndMouse()
     if has("gui_running")
         " Full screen
         set lines=999 columns=999
-    else
-        " Enable scroll in terminal mode
-        :map <ScrollWheelUp> 3<C-Y>
-        :map <S-ScrollWheelUp> <C-U>
-        :map <ScrollWheelDown> 3<C-E>
-        :map <S-ScrollWheelDown> <C-D>
     endif
 
     " Delete comment character when joining commented and no auto-wrap
@@ -72,11 +66,6 @@ function! setup#screenAndMouse()
     " Highlighting tailing whitespace
     hi link localWhitespaceError Error
     au Syntax * syn match localWhitespaceError /\s$/ containedin=ALL
-
-    " In many terminal emulators the mouse works just fine, thus enable it.
-    if has('mouse')
-        set mouse=a
-    endif
 
 endfunction
 
