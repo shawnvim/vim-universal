@@ -67,6 +67,10 @@ function! setup#screenAndMouse()
     hi link localWhitespaceError Error
     au Syntax * syn match localWhitespaceError /\s$/ containedin=ALL
 
+    if has('mouse')
+        set mouse=a
+    endif
+
 endfunction
 
 
