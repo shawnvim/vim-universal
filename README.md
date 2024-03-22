@@ -1,7 +1,7 @@
 # VIM Universal
 
-<a href="https://shawnvim.github.io/vim-universal/"><img src="https://img.shields.io/badge/Wiki-VIM Universal-9cf?style=flat"></a>
-<a href="https://github.com/shawnvim/vim-universal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-Apache 2.0-brightgreen?style=flat"></a>
+<a href="https://vim90.github.io/vim-universal/"><img src="https://img.shields.io/badge/Wiki-VIM Universal-9cf?style=flat"></a>
+<a href="https://github.com/vim90/vim-universal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-Apache 2.0-brightgreen?style=flat"></a>
 
 A universal VIM integration
 
@@ -28,10 +28,10 @@ A universal VIM integration
 
 ## Installation
 
-In this repo, `git submodule` is used to manage plug-in as package([`/pack`](https://github.com/shawnvim/vim-universal/tree/master/pack))   
+In this repo, `git submodule` is used to manage plug-in as package([`/pack`](https://github.com/vim90/vim-universal/tree/master/pack))   
 Please clone repo with all submodules by:
 ```
-git clone https://github.com/shawnvim/vim-universal --recurse-submodules
+git clone https://github.com/vim90/vim-universal --recurse-submodules
 ```
 Or you can just download the `release.zip` with all packages and unzip it to `.vim`  
 If you want to keep the folder name as vim-universal, you can use `gvim -u /Path/To/Your/vimrc` to start using
@@ -61,15 +61,15 @@ If you have duplicated plugins locally, you can remove submodule by deinit:
 git submodule deinit project-sub-1
 git rm project-sub-1
 ```
-And then remove the related configuration in [`vimrc`](https://github.com/shawnvim/vim-universal/blob/master/vimrc) and [`autoload/setup`](https://github.com/shawnvim/vim-universal/blob/master/autoload/setup.vim)  
+And then remove the related configuration in [`vimrc`](https://github.com/vim90/vim-universal/blob/master/vimrc) and [`autoload/setup`](https://github.com/vim90/vim-universal/blob/master/autoload/setup.vim)  
 
 ### Configuration
-Most of the plug-ins' configuration is in [`autoload/setup`](https://github.com/shawnvim/vim-universal/blob/master/autoload/setup.vim), you can also find the path of all plug-ins in [`.gitmodules`](https://github.com/shawnvim/vim-universal/blob/master/.gitmodules).  
+Most of the plug-ins' configuration is in [`autoload/setup`](https://github.com/vim90/vim-universal/blob/master/autoload/setup.vim), you can also find the path of all plug-ins in [`.gitmodules`](https://github.com/vim90/vim-universal/blob/master/.gitmodules).  
 In Vim, you can use <kbd>gx</kbd> to check their Github page and use <kbd>gf</kbd> to go to the file directory.  
 
 
 ## Reference
- - [VIM Universal Wiki](https://shawnvim.github.io/vim-universal/)
+ - [VIM Universal Wiki](https://vim90.github.io/vim-universal/)
  - [VIM 8 Package Management](https://www.danielfranklin.id.au/vim-8-package-management/)
 
 
