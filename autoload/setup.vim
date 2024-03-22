@@ -338,6 +338,7 @@ function! setup#grep()
     set grepprg=grep
 
     cnoremap <C-g> <C-R>=' ' . util#GetRootDirectory() . '/*'<CR>
+    cnoremap <C-S-g> <C-R>=' ' . expand('%:p:h') . '/*'<CR>
 
     let g:grep_exclude = 'out,beam,cov,Pbeam,history,swp'
 
